@@ -1,5 +1,5 @@
 {
-  "name": "acf/sigur-banner",
+  "name": "acf/hdg-banner",
   "title": "Sigur Rós Banner",
   "description": "Banner block",
   "style": "file:./banner.css",

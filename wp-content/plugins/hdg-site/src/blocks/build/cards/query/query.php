@@ -18,7 +18,7 @@ $cards_count = 0;
 $has_description = true;
 $has_image = $has_kicker = $has_author = $has_meta = $has_date = false;
 $heading_level = "h2";
-$thumbnail_size = "sigur-medium-card";
+$thumbnail_size = "hdg-medium-card";
 
 //Post type
 $post_type = get_post_type();
@@ -38,7 +38,7 @@ if ($picker) {
 }
 
 // Get the mappings
-$cardTypeMappings = Sigur_Site_Public::sigur_get_card_type_mappings();
+$cardTypeMappings = HDG_Site_Public::hdg_get_card_type_mappings();
 
 // Initialize flags and classes with default settings
 extract($cardTypeMappings['default']);
@@ -169,7 +169,7 @@ $card_index = 1;
 
 //Build out the grids class
 $grid_classes_arr = [
-    "sigur-cards__grid",
+    "hdg-cards__grid",
     "grid-count--" . $cards_count,
     $grid_classes,
 ];
@@ -184,7 +184,7 @@ if ($block_type == "picker"): ?>
         foreach ($picker as $card): ?>
 			<?php
             $card = $card->ID;
-            require SIGUR_SITE_PLUGIN_BLOCKS . 'build/cards/partials/card.php';
+            require HDG_SITE_PLUGIN_BLOCKS . 'build/cards/partials/card.php';
             $card_index++;
             ?>
 		<?php endforeach; 
@@ -201,12 +201,12 @@ if ($block_type == "picker"): ?>
          $cards_query->the_post();
          $card_index = $cards_query->current_post + 1;
          $card = get_the_ID();
-         require SIGUR_SITE_PLUGIN_BLOCKS . 'build/cards/partials/card.php';
+         require HDG_SITE_PLUGIN_BLOCKS . 'build/cards/partials/card.php';
      endwhile;
      wp_reset_postdata();
  else:
       ?>
-		<p class="sigur-cards__no-results"><?php esc_html_e(
+		<p class="hdg-cards__no-results"><?php esc_html_e(
       "No posts found.",
       "cfc"
   ); ?></p>
@@ -217,7 +217,7 @@ if ($block_type == "picker"): ?>
      $total_pages = $cards_query->max_num_pages;
      $prev_url = get_previous_posts_page_link();
 	 $next_url = get_next_posts_page_link();
-     require SIGUR_SITE_PLUGIN_BLOCKS . 'build/cards/partials/pagination.php';
+     require HDG_SITE_PLUGIN_BLOCKS . 'build/cards/partials/pagination.php';
  endif; ?>
 	<?php wp_reset_query(); ?>	
 <?php endif; ?>

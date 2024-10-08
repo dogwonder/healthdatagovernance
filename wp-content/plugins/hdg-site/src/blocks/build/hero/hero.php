@@ -13,7 +13,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values. and "align" values.
-$class_name = 'sigur-block sigur-hero';
+$class_name = 'hdg-block hdg-hero';
 if ( ! empty( $block['className'] ) ) {
 	$class_name .= ' ' . $block['className'];
 }
@@ -31,7 +31,7 @@ $video           = get_field( 'video', false, false );
 $has_logo        = get_field( 'has_logo' ) ? : '';
 
 // Block attributes (set in native block editor)
-$block_attrs  = Sigur_Site_Public::sigur_get_block_attrs( $block ) ? : '';
+$block_attrs  = HDG_Site_Public::hdg_get_block_attrs( $block ) ? : '';
 $block_classes = $block_attrs['class'] ? $block_attrs['class'] : '';
 $block_styles = $block_attrs['style'] ? $block_attrs['style'] : '';
 
@@ -39,7 +39,7 @@ $overlay  = get_field( 'overlay' ) ? : '';
 if($overlay) {
 	//Convert to RGB
 	$overlay_color  = get_field( 'overlay_color' ) ? : '';
-	$hex2rgb = Sigur_Site_Public::sigur_hex2rgb( $overlay_color );
+	$hex2rgb = HDG_Site_Public::hdg_hex2rgb( $overlay_color );
 	$overlay_opacity  = get_field( 'overlay_opacity' ) ? : '0.7';
 	$overlay_opacity = $overlay_opacity / 100;
 	//Loop through RGB values and add opacity
@@ -84,11 +84,11 @@ $block_template = array(
 				//Consider using 'bits' for this and using the pages feaured image 
 				//https://make.wordpress.org/core/2024/06/08/proposal-bits-as-dynamic-tokens/ 
 				
-				$image_tiny        = $image['sizes']['sigur-tiny'];
-				$image_small = $image['sizes']['sigur-medium'];
-				$image_small_width  = esc_attr( $image['sizes']['sigur-medium-width'] );
-				$image_small_height = esc_attr( $image['sizes']['sigur-medium-height'] );
-				$image_large       = $image['sizes']['sigur-large'];
+				$image_tiny        = $image['sizes']['hdg-tiny'];
+				$image_small = $image['sizes']['hdg-medium'];
+				$image_small_width  = esc_attr( $image['sizes']['hdg-medium-width'] );
+				$image_small_height = esc_attr( $image['sizes']['hdg-medium-height'] );
+				$image_large       = $image['sizes']['hdg-large'];
 				$image_alt         = esc_attr( $image['alt'] );
 				$image_width       = esc_attr( $image['width'] );
 				$image_height      = esc_attr( $image['height'] );
@@ -101,7 +101,7 @@ $block_template = array(
 				<link rel="preload" href="<?php echo $image_large; ?>" as="image" media="(min-width: 40.0625em)">
 				<?php if ( $overlay ) : ?>
 					<style>
-					#<?php echo $block_id; ?>.sigur-hero:before {
+					#<?php echo $block_id; ?>.hdg-hero:before {
 						display: block;
 						z-index: 2;
 						content: '';
@@ -160,7 +160,7 @@ $block_template = array(
 			<?php if ( $video_type == 'youtube' ) { ?>
 					<iframe 
 					id="youtube_player" 
-					title="<?php esc_html_e( 'Video modal', 'sigur' ); ?>"
+					title="<?php esc_html_e( 'Video modal', 'hdg' ); ?>"
 					src="http://www.youtube.com/embed/<?php echo $video_id; ?>?enablejsapi=1" 
 					frameborder="0" 
 					allowfullscreen 
@@ -169,7 +169,7 @@ $block_template = array(
 				<?php if ( $video_type == 'vimeo' ) { ?>
 					<iframe 
 					id="vimeo_player" 
-					title="<?php esc_html_e( 'Video modal', 'sigur' ); ?>"
+					title="<?php esc_html_e( 'Video modal', 'hdg' ); ?>"
 					src="https://player.vimeo.com/video/<?php echo $video_id; ?>" 
 					frameborder="0" 
 					allowfullscreen 
@@ -178,15 +178,15 @@ $block_template = array(
 			<?php endif; ?>
 
 
-			<div class="sigur-hero__wrapper">
+			<div class="hdg-hero__wrapper">
 
-				<div class="sigur-hero__inner">   
+				<div class="hdg-hero__inner">   
 
-					<div class="sigur-hero__content stack">
+					<div class="hdg-hero__content stack">
 
 						<?php if ( isset( $block_logo ) && ! empty( $block_logo ) ) : ?>
-							<div class="sigur-hero__logo">
-								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/logo-alt.png" alt="<?php esc_html_e( 'Sigur Rós', 'sigur' ); ?>">
+							<div class="hdg-hero__logo">
+								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/logo-alt.png" alt="<?php esc_html_e( 'Sigur Rós', 'hdg' ); ?>">
 							</div>
 						<?php endif; ?>
 

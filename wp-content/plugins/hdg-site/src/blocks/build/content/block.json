@@ -1,5 +1,5 @@
 {
-  "name": "acf/sigur-content",
+  "name": "acf/hdg-content",
   "title": "Sigur Rós Content block",
   "description": "Content block",
   "style": "file:./content.css",

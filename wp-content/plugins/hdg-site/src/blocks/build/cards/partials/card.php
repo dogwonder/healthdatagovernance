@@ -21,14 +21,14 @@ $image_alt = get_post_meta(
 $has_image = has_post_thumbnail($card) ? true : false;
 $is_featured = ( $featured == $card ) ? true : false;
 ?>
-<div class="sigur-card <?php echo has_post_thumbnail( $card )
+<div class="hdg-card <?php echo has_post_thumbnail( $card )
     ? " has-post-thumbnail"
     : ""; ?> card-<?php echo $card_index; ?><?php echo ( $is_featured ) ? ' is-featured' : ''; ?>"> 
-	<div class="sigur-card__inner">
+	<div class="hdg-card__inner">
 
 	<?php if ($has_image): ?>
 			<?php if (!empty($image)): ?>
-			<figure class="sigur-card__image">
+			<figure class="hdg-card__image">
 			<picture>
 				<?php if (has_post_thumbnail($card)) { ?>
 				<img src="<?php echo $image; ?>" alt="<?php echo $image_alt
@@ -39,26 +39,26 @@ $is_featured = ( $featured == $card ) ? true : false;
 			</figure>
 			<?php endif; ?>
 	<?php else : ?>
-			<div class="sigur-card__image sigur-card__image-placeholder"></div>
+			<div class="hdg-card__image hdg-card__image-placeholder"></div>
 	<?php endif; ?>
 		
-		<div class="sigur-card__content">
+		<div class="hdg-card__content">
 
 			<?php if ($has_kicker) { ?>
-				<?php require SIGUR_SITE_PLUGIN_BLOCKS . 'build/cards/partials/taxonomy.php'; ?>
+				<?php require HDG_SITE_PLUGIN_BLOCKS . 'build/cards/partials/taxonomy.php'; ?>
 			<?php } ?>
 
-			<<?php echo $heading_level ?> class="sigur-card__heading">
+			<<?php echo $heading_level ?> class="hdg-card__heading">
 
-				<a class="sigur-card__link" href="<?php echo esc_url(get_permalink($card)); ?>">
+				<a class="hdg-card__link" href="<?php echo esc_url(get_permalink($card)); ?>">
 					<?php echo esc_html(get_the_title($card)); ?>
             	</a>
 
 			</<?php echo $heading_level ?>>
 
 			<?php if($has_meta) : ?>
-				<div class="sigur-card__meta">
-					<?php sigur_posted_on(); ?>
+				<div class="hdg-card__meta">
+					<?php hdg_posted_on(); ?>
 				</div>
 			<?php endif; ?>
 
@@ -71,7 +71,7 @@ $is_featured = ( $featured == $card ) ? true : false;
 				$start_date = $start_date->format('j F Y');
 				$end_date = get_field('event_end_date', $card) ?? '';
 				?>
-				<span class="sigur-card__date">
+				<span class="hdg-card__date">
 				<?php 
 				//Echo start date and end date but only end date if it exists
 				echo $start_date;
@@ -87,19 +87,19 @@ $is_featured = ( $featured == $card ) ? true : false;
 			<?php endif; ?>
 
    			<?php if($has_description) : ?>
-				<div class="sigur-card__excerpt">
+				<div class="hdg-card__excerpt">
 				<?php 
 				if (has_excerpt($card)) {
 					echo esc_html(get_the_excerpt($card));
 				} else {
-					echo esc_html(sigur_standfirst(30, $card));
+					echo esc_html(hdg_standfirst(30, $card));
 				}
 				?> 
 				</div>
 			<?php endif; ?>
 
 			<?php if($has_author) : ?>
-				<?php sigur_posted_by(); ?>
+				<?php hdg_posted_by(); ?>
 			<?php endif; ?>
 			
 		</div>

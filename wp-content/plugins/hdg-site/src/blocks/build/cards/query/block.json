@@ -1,7 +1,7 @@
 {
-  "name": "acf/sigur-cards-query",
+  "name": "acf/hdg-cards-query",
   "parent": [
-    "acf/sigur-cards"
+    "acf/hdg-cards"
   ],
   "title": "Sigur Rós - Query",
   "description": "Feature specific types of content in a grid",

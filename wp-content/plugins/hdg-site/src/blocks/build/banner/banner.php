@@ -12,13 +12,13 @@ if ( ! empty( $block['anchor'] ) ) {
 	$block_id = $block['anchor'];
 }
 // Create class attribute allowing for custom "className" and "align" values. and "align" values.
-$class_name = 'sigur-block sigur-banner';
+$class_name = 'hdg-block hdg-banner';
 if ( ! empty( $block['className'] ) ) {
 	$class_name .= ' ' . $block['className'];
 }
 
 // Block attributes (set in native block editor)
-$block_attrs  = Sigur_Site_Public::sigur_get_block_attrs( $block ) ? : '';
+$block_attrs  = HDG_Site_Public::hdg_get_block_attrs( $block ) ? : '';
 $block_classes = $block_attrs['class'] ? $block_attrs['class'] : '';
 $block_styles = $block_attrs['style'] ? $block_attrs['style'] : '';
 
@@ -69,17 +69,17 @@ $block_template = array(
 
 			<?php if ( ! empty( $image ) ) : ?>  
 				<?php
-				$image_tiny        = $image['sizes']['sigur-tiny'];
+				$image_tiny        = $image['sizes']['hdg-tiny'];
 				if($image_mobile) {
-					$image_small = $image_mobile['sizes']['sigur-medium'];	
-					$image_small_width  = esc_attr( $image_mobile['sizes']['sigur-medium-width'] );
-					$image_small_height = esc_attr( $image_mobile['sizes']['sigur-medium-height'] );
+					$image_small = $image_mobile['sizes']['hdg-medium'];	
+					$image_small_width  = esc_attr( $image_mobile['sizes']['hdg-medium-width'] );
+					$image_small_height = esc_attr( $image_mobile['sizes']['hdg-medium-height'] );
 				} else {
-					$image_small = $image['sizes']['sigur-medium'];
-					$image_small_width  = esc_attr( $image['sizes']['sigur-medium-width'] );
-					$image_small_height = esc_attr( $image['sizes']['sigur-medium-height'] );
+					$image_small = $image['sizes']['hdg-medium'];
+					$image_small_width  = esc_attr( $image['sizes']['hdg-medium-width'] );
+					$image_small_height = esc_attr( $image['sizes']['hdg-medium-height'] );
 				}
-				$image_large       = $image['sizes']['sigur-large'];
+				$image_large       = $image['sizes']['hdg-large'];
 				$image_alt         = esc_attr( $image['alt'] );
 				$image_width       = esc_attr( $image['width'] );
 				$image_height      = esc_attr( $image['height'] );
@@ -90,7 +90,7 @@ $block_template = array(
 				?>
 				<?php if ( $overlay ) : ?>
 				<style>
-					#<?php echo $block_id; ?>.sigur-banner:before {
+					#<?php echo $block_id; ?>.hdg-banner:before {
 						display: block;
 						z-index: 2;
 						content: '';
@@ -121,10 +121,10 @@ $block_template = array(
 					</div>
 			<?php endif; ?>    
 
-			<div class="sigur-banner__wrapper">
-				<div class="sigur-banner__inner">   
+			<div class="hdg-banner__wrapper">
+				<div class="hdg-banner__inner">   
 
-				<div class="sigur-banner__content">
+				<div class="hdg-banner__content">
 					<InnerBlocks allowedBlocks="<?php echo esc_attr( wp_json_encode( $allowed_blocks ) ); ?>" template="<?php echo esc_attr( wp_json_encode( $block_template ) ); ?>" />
 				</div>
 				
