@@ -1,0 +1,10 @@
+
+{
+  "name": "sigur/sigur",
+  "type": "wordpress-theme",
+  "description": "Blocks theme",
+  "license": "MIT", 
+  "require": {
+      "composer/installers": "^1.4",
+  }
+}

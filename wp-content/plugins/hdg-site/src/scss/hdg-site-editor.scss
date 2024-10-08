@@ -1,0 +1,269 @@
+//Utilities
+%full-width {
+  max-width: 100% !important;
+  width: 100% !important;
+  .hdg-block {
+    max-width: var(--wp--custom--width--container);
+    margin-inline: auto;
+  }
+}
+
+/***********************
+Generic styles
+***********************/
+.editor-styles-wrapper {
+  margin-inline: 1rem;
+}
+
+//Becuase we use useRootPaddingAwareAlignments and padding false to allow for full width vblocks with not padding we need to add this again for the editor padding on smaller screens where the container is less than the content contentSize
+.editor-styles-wrapper .has-global-padding, 
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.acf-block-component)) {
+    padding-inline: 1rem  !important;
+}
+
+//Limit the width of the blocks in the editor to allow some breathing space
+.editor-styles-wrapper .editor-editor-canvas__post-title-wrapper > *, 
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > * {
+  width: clamp(16rem,95vw,var(--wp--custom--width--container));
+}
+
+.hdg-button {
+  display: inline-block;
+  color: var(--wp--preset--color--light);
+  background-color: black;
+  box-shadow: 0 2px 0 var(--wp--preset--color--dark);
+  border: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1em;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  &:link,
+  &:visited,
+  &:active {
+    color: var(--wp--preset--color--light);
+  }
+}
+
+/***********************
+Blocks
+***********************/
+[data-type*='acf/hdg-'] {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: clamp(16rem, 95vw, var(--wp--custom--width--container));
+  .acf-innerblocks-container {
+    > h1, 
+    > h2, 
+    > h3, 
+    > h4, 
+    > h5, 
+    > h6 {
+      margin-top: 0;
+      &.has-background {
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+//Hero
+[data-type='acf/hdg-hero'] { 
+  .has-background, 
+  .has-image {
+    .acf-innerblocks-container {
+      padding-block: var(--wp--custom--spacing--xl);
+    }
+  }
+  .has-video {
+    .acf-innerblocks-container {
+      padding-block-end: 0;
+    }
+    .hdg-hero__play {
+      z-index: 3;
+      position: relative;
+      margin: var(--wp--custom--spacing--medium) auto 0;
+      max-width: var(--wp--custom--width--container);
+      .hdg-button {
+        display: inline-flex;
+        justify-content: space-between;
+        background-color: transparent;
+        border: 2px solid var(--wp--preset--color--dark);
+        text-decoration: none;
+        box-shadow: none;
+        svg {
+          width: 1em;
+          height: 1em;
+          margin-left: 1ch;
+          fill: inherit;
+        }
+      }
+    }
+  }
+  .hdg-hero__logo {
+    z-index: 3;
+    img {
+      max-width: 5rem;
+      margin-inline: auto;
+    }
+  }
+  &.has-light-color {
+    .hdg-hero__play .hdg-button {
+      color: var(--wp--preset--color--light);
+      border-color: var(--wp--preset--color--light);
+      svg {
+        fill: var(--wp--preset--color--light);
+      }
+    }
+  }
+  .popup-modal {
+    display: none;
+  }
+}
+
+//Hero & Feature
+[data-type='acf/hdg-hero'], 
+[data-type='acf/hdg-banner'] {
+  > .has-background, 
+  > .has-image {
+    position: relative;
+    padding: var(--wp--custom--spacing--gap);
+    background-size: cover;
+    &:before {
+      content: "";
+      position: absolute;
+      z-index:2;
+      top:0;
+      right:0;
+      bottom:0;
+      left: 0;
+      width:100%;
+      height:100%;
+      background-color: inherit;
+    }
+    .acf-innerblocks-container {
+      z-index:3;
+      position: relative;
+    }
+  }
+  > .has-image {
+    &:before {
+      background-color: white;
+      opacity: 0.5;
+    }
+    .block__background {
+      z-index:1;
+    }
+  }
+}
+//Content
+[data-type='acf/hdg-content'] {
+  
+  .has-image {
+    padding:0;
+    .hdg-content-block__inner {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .hdg-content-block__content {
+      padding-inline-end: var(--wp--custom--spacing--gap);
+      flex-basis: 50%;
+    }
+    .hdg-content-block__image {
+      margin: 0;
+      flex-basis: 50%;
+    }
+    .frame {
+      aspect-ratio: 1 / 1;
+      height: 100%;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+    }
+    
+  }
+
+  [data-state='reversed'] {
+    display: flex;
+    flex-direction: column-reverse;
+    .hdg-content-block__image {
+      order: 1;
+    }
+    .hdg-content-block__content {
+      order: 2;
+      padding-inline-start: var(--wp--custom--spacing--gap);
+      padding-inline-end: 0;
+    }
+  }
+
+}
+
+//Breadcrumbs
+[data-type='acf/hdg-breadcrumbs'] {
+  ol.govuk-breadcrumbs__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.25rem;
+    .govuk-breadcrumbs__list-item {
+      display: none;
+    }
+    &:after {
+      content: "Page 1 > Page 2 > Page 3...";
+    }
+    
+  }
+  .has-home {
+    ol.govuk-breadcrumbs__list {
+      &:before {
+        content: "Home > ";
+      }
+    }   
+  }
+}
+
+
+//Background image
+.block__background {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  figure {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+//Block style varients - styles in block.json
+.is-style-monochrome {
+  .block__background img {
+    filter: grayscale(100%) contrast(200%);
+  }
+  .hdg-content__image img {
+    filter: grayscale(100%) contrast(200%);
+  }
+}

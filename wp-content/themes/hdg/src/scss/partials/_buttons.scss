@@ -1,0 +1,58 @@
+.sigur-button, 
+%sigur-button,
+.wp-block-button__link {
+  appearance: none;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: $bold;
+  font-size: var(--wp--preset--font-size--body);
+  line-height: 1;
+  padding: var(--wp--custom--spacing--md) var(--wp--custom--spacing--lg);
+  margin: var(--wp--custom--spacing--gap) 0;
+  color: var(--wp--preset--color--light);
+  background-color: var(--wp--preset--color--dark);
+  border: 2px solid var(--wp--preset--color--dark);
+  border-radius: 0;
+  box-shadow: none;
+  @include mq($from: md) {
+    margin: 0 0 var(--wp--custom--spacing--gap);
+  }
+  &:hover {
+    cursor: pointer;
+    color: var(--wp--preset--color--dark);
+    border-color: var(--wp--preset--color--dark);
+    background-color: var(--wp--preset--color--light);
+  }
+  &:link,
+  &:visited,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+  &:focus {
+    color: var(--wp--preset--color--dark);
+    border-color: var(--wp--preset--color--dark);
+    background-color: var(--wp--preset--color--light);
+    --box-shadow: none;
+    --outline: none;
+  }
+  &[disabled] {
+    background-color: var(--wp--custom--color--disabled);
+    color: black;
+    border-color: var(--wp--custom--color--disabled);
+    cursor: not-allowed;
+  }
+}
+
+//Remove default outline
+.govuk-button {
+  box-shadow: none;
+}
+
+.sigur-button > a {
+  color: var(--wp--preset--color--light);
+  text-decoration: none;
+  &:hover {
+    color: white;
+  }
+}

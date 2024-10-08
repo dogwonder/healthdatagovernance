@@ -1,0 +1,17 @@
+{
+  "name": "acf/sigur-breadcrumbs",
+  "title": "Sigur Rós Breadcrumbs",
+  "description": "Breadcrumbs listing block",
+  "category": "theme",
+  "icon": "admin-links",
+  "apiVersion": 2,
+  "supports": {
+    "jsx": true,
+    "alignText": false,
+    "color": false
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "breadcrumbs.php"
+  }
+}

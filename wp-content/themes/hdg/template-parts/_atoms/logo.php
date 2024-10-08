@@ -1,0 +1,1 @@
+<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/logo.png" alt="<?php esc_html_e( 'Sigur Rós', 'sigur' ); ?>" class="logo">

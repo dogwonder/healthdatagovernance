@@ -1,0 +1,119 @@
+@charset 'utf-8';
+@use 'sass:math';
+
+////
+/// GOV.UK Frontend - https://frontend.design-system.service.gov.uk/
+////
+
+//Variables - need to be declared here to take effect
+$govuk-include-default-font-face: false;
+$govuk-focus-colour: #FFDD00;
+$govuk-button-background-colour: #3C3C3C;
+$govuk-button-text-colour: #F5F5F5;
+$govuk-font-family: -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans","Helvetica Neue",sans-serif;
+// Custom build
+
+// 'Base' includes everything from settings, tools and helpers. Nothing
+// in the base outputs any CSS.
+@import "../../node_modules/govuk-frontend/dist/govuk/base";
+
+// Basic content styles for typography, links etc. Approximately 10% of
+// the CSS output if you include everything.
+@import "../../node_modules/govuk-frontend/dist/govuk/core/index";
+
+// Objects include things like the page template, grid and form groups.
+// Approximately 5% of the CSS output if you include everything.
+@import "../../node_modules/govuk-frontend/dist/govuk/objects/index";
+
+// The components themselves - try to only include the components you
+// are using in your project. Approximately 70% of the CSS output if
+// you include everything.
+
+@import "../../node_modules/govuk-frontend/dist/govuk/components/accordion/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/breadcrumbs/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/button/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/checkboxes/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/details/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/error-message/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/error-summary/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/fieldset/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/input/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/label/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/notification-banner/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/pagination/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/radios/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/select/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/skip-link/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/summary-list/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/textarea/index";
+@import "../../node_modules/govuk-frontend/dist/govuk/components/warning-text/index";
+
+// Utilities, for example govuk-clearfix or govuk-visually-hidden.
+// Approximately 1% of the CSS output if you include everything.
+@import "../../node_modules/govuk-frontend/dist/govuk/utilities/index";
+
+// Overrides, used to adjust things like the amount of spacing on an
+// element. Override classes always include `-!-` in the class name.
+// Approximately 15% of the CSS output if you include everything.
+@import "../../node_modules/govuk-frontend/dist/govuk/overrides/index";
+
+// RESET
+@import "modules/reset";
+
+// MEDIA QUERIES
+@import "vendor/mq";
+
+// VARIBLES & FUNCTIONS
+@import "modules/vars";
+@import "modules/functions";
+@import "modules/mixins";
+
+// BASE
+@import "partials/base";
+
+// TYPOGRAPHY
+@import "partials/typography";
+
+// FORMS
+@import "partials/forms";
+
+// BUTTONS
+@import "partials/buttons";
+
+// PAGINATION & PAGE NAVIGATION
+@import "site/breadcrumbs";
+@import "site/pagination";
+@import "site/contentslist";
+
+// LAYOUT
+@import "site/layout";
+@import "site/header";
+@import "site/footer";
+
+// PAGE & POST CONTENT
+@import "site/content";
+
+// PAGES
+@import "site/page";
+
+// LIST
+@import "site/list";
+
+// CARDS
+@import "site/cards";
+
+// CSS GRID
+@import "site/grid";
+
+// BLOCKS
+@import "blocks/blocks";
+@import "blocks/banner";
+@import "blocks/content";
+@import "blocks/embed";
+@import "blocks/hero";
+
+// PATTERNS
+@import "site/patterns";
+
+// UTILITIES
+@import "modules/utilities";

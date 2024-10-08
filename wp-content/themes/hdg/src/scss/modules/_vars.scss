@@ -1,0 +1,56 @@
+////
+/// SASS Variables
+////
+
+//Z-indexes
+$z-lowest: 1;
+$z-low-1: 2;
+$z-low: 3; //Move above hero
+$z-high: 10;
+$z-higher: 11;
+$z-highest-1: 998;
+$z-highest: 999;
+$z-important: 2147483647;
+
+//Spacing
+$scale: ( 'xs', 'sm', 'md', 'lg', 'xl');
+
+//Gaps
+$gap: 0.9375rem;
+
+//Fluid container for grid layout
+$fluid-container: minmax(var(--wp--custom--spacing--md), 1fr) minmax(min-content, calc(var(--wp--custom--width--container))) minmax(var(--wp--custom--spacing--md), 1fr);
+
+//Typography
+$bold: 700;
+
+//Redeclare from vendor/_mq.scss -- https://github.com/sass-mq/sass-mq
+$mq-breakpoints: (
+  sm: 320px,
+  md: 768px,
+  lg: 1024px, 
+  xl: 1440px, 
+  xxl: 1920px
+);
+
+//CSS Variables
+:root {
+
+  --baseline: calc(var(--wp--preset--font-size--body) * var(--wp--custom--typography--line-height--body));
+  --baseline-multiplier: 1;
+
+  //System font as default
+  --body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  //Menu height
+  --submenu-offset: 0;
+
+  //Border radius
+  --radius: 0.25rem;
+  --radius-outer: 0.5rem;
+
+  //Typography
+  --opentype-case: "case" off;
+  --opentype-sinf: "sinf" off;
+
+}

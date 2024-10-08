@@ -1,0 +1,82 @@
+///
+/// Functions
+/// 
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function responsive-spacing($min-key: 1, $max-key: 9, $min-width: sm, $max-width: xl, $use-unit: false) {
+
+//Based on https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/#for-those-who-dont-mind-that-edge-case
+// slope = (max-value - min-value) / (max-width - min-width) 
+// yAxisIntersection = (-1 * min-width) * slope + min-value 
+// preferredValue = yAxisIntersection[rem] + (slope * 100)[vw] 
+
+// padding: responsive-spacing(1, 3, sm, lg); //fluid padding between space-1 and space-3 between small and large screens
+// padding: responsive-spacing(1, 2, md, xl, true); //fluid padding between 1rem and 2rem between medium and extra large screens
+
+$min-value: strip-unit(map-get($space-scale, $min-key));
+$max-value: strip-unit(map-get($space-scale, $max-key));
+
+@if $use-unit {
+  $min-value: $min-key;
+  $max-value: $max-key;
+}
+
+$minViewport: null;
+$maxViewport: null;
+
+//Reuse $mq-breakpoints from _vars.scss and convert into unitless rems
+$breakpoints: ();
+@each $breakpoint, $value in $mq-breakpoints {
+  $value-in-rem: math.div(strip-unit($value), 16);
+  $breakpoints: map-merge($breakpoints, ($breakpoint: $value-in-rem));
+}
+
+//Print the breakpoints map
+// @debug($breakpoints);
+
+
+// Loop through the map and find the closest breakpoint to the provided value
+@each $breakpoint, $value in $breakpoints {
+  @if $min-width == $breakpoint {
+    $minViewport: $value;
+  }
+  @if $max-width == $breakpoint {
+    $maxViewport: $value;
+  }
+}
+
+$slope: math.div(($max-value - $min-value), ($maxViewport - $minViewport));
+$yAxisIntersection: -1 * $minViewport * $slope + $min-value;
+
+// @debug('min-value: ' + $min-value);
+// @debug('max-value: ' + $max-value);
+// @debug('minViewport: ' + $minViewport);
+// @debug('maxViewport: ' + $maxViewport);
+// @debug('slope: ' + $slope);
+// @debug('yAxisIntersection: ' + $yAxisIntersection);
+
+@return clamp( ($min-value * 1rem), ($yAxisIntersection * 1rem) + (($slope * 100) * 1vw), ($max-value * 1rem) );
+
+}
+
+// Convert px to rem
+@function toRem($value) {
+$remValue: math.div($value, 16) + rem; 
+@return $remValue;
+}
+
+// Convert px to em
+@function toEm($value) {
+$emValue: math.div($value, 16) + em; 
+@return $emValue;
+}

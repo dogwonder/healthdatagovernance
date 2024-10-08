@@ -1,0 +1,147 @@
+html { font-family: var(--wp--preset--font-family--body), Helvetica, Arial, sans-serif; }
+
+//Global
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--wp--preset--font-family--body);
+  font-weight: normal;
+  font-size: var(--wp--preset--font-size--body); 
+  line-height: var(--wp--custom--typography--line-height--body);
+  letter-spacing: 1rem * 0.02;
+  word-spacing: 1rem * 0.04;
+  text-align: left;
+  background-color: var(--wp--preset--color--light);
+  color: var(--wp--preset--color--dark);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  font-variant-ligatures: common-ligatures no-discretionary-ligatures no-historical-ligatures contextual;
+  font-kerning: normal;
+}
+
+//Note some of the typographic defaults have originated from here https://github.com/clagnut/TODS
+
+//Reset all the margins
+body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div, table, caption, form, fieldset {
+  margin: 0;
+}
+
+//Margin-block-start approach
+:is( h1, h2, h3, h4, h5, h6 ) {
+  //Reset browser defaults - we avoid reseting the top margin as this is coverted by template literals
+  margin-block: 0;
+  font-variant-numeric: lining-nums;
+  + p {
+    margin-block-start: var(--wp--custom--spacing--gap);
+  }
+}
+
+
+//For H1, H2, H3, we use 2-up pairs for responsive typography 
+//H1 >> extra-large - massive
+//H2 >> large - huge
+//H3 >> medium - extra-large
+
+//Line heights are unitless, e.g. 1.5
+
+// H1
+.sigur-heading-xl, 
+%sigur-heading-xl {
+  font-size: var(--wp--preset--font-size--xl);
+  font-variant-ligatures: discretionary-ligatures; 
+  font-size-adjust: 0.521;
+  line-height: var(--wp--custom--typography--line-height--heading);
+  letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
+  margin: 0;
+}
+
+// H2
+.sigur-heading-lg, 
+%sigur-heading-lg {
+  font-size: var(--wp--preset--font-size--lg);
+  line-height: var(--wp--custom--typography--line-height--heading);
+  letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
+  margin: 0;
+}
+
+// H3
+.sigur-heading-md, 
+%sigur-heading-md {
+  font-size: var(--wp--preset--font-size--lg);
+  line-height: var(--wp--custom--typography--line-height--heading);
+  letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
+  margin: 0;
+}
+
+// H4
+.sigur-heading-sm, 
+%sigur-heading-sm {
+  font-size: var(--wp--preset--font-size--lg);
+  line-height: var(--wp--custom--typography--line-height--heading--sm);
+  letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
+  margin: 0;
+}
+
+// H5 / H6
+%sigur-heading-xs,
+.sigur-heading-xs {
+  font-size: var(--wp--preset--font-size--md);
+  line-height: var(--wp--custom--typography--line-height--body);
+  letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
+  margin: 0;
+}
+
+.sigur-body, 
+%sigur-body,
+.govuk-body {
+  font-weight: normal;
+  font-size: var(--wp--preset--font-size--body); 
+  line-height: var(--wp--custom--typography--line-height--body);
+}
+
+.sigur-body-lg, 
+%sigur-body-lg {
+  font-size: var(--wp--preset--font-size--lg);
+  line-height: var(--wp--custom--typography--line-height--heading);
+}
+
+.sigur-body-md, 
+%sigur-body-md {
+  font-size: var(--wp--preset--font-size--md);
+  line-height: var(--wp--custom--typography--line-height--body);
+}
+
+.sigur-body-sm, 
+%sigur-body-sm {
+  font-size: var(--wp--preset--font-size--sm);
+  line-height: var(--wp--custom--typography--line-height--body);
+}
+
+
+.sigur-navigation, 
+%sigur-navigation {
+  font-size: var(--wp--preset--font-size--lg);
+  line-height: 1;
+} 
+
+ul,
+ol {
+  padding-left: 0;
+  list-style-position: outside;
+}
+
+blockquote p {
+  hanging-punctuation: first;
+  text-indent: -5px;
+}
+
+strong, b, th { 
+  font-weight: $bold;
+  font-size-adjust: 0.514; 
+}

@@ -1,0 +1,18 @@
+{
+    "name": "acf/hdg-cards-query",
+    "parent": [ "acf/hdg-cards" ], 
+    "title": "Sigur Rós - Query",
+    "description": "Feature specific types of content in a grid",
+    "category": "theme",
+    "icon": "menu",
+    "apiVersion": 2,
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "query.php"
+    }, 
+    "supports": {
+        "jsx": true, 
+        "align": [ "none" ],
+        "anchor": true
+    }
+}

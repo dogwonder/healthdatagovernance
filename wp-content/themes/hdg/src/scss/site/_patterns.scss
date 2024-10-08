@@ -1,0 +1,43 @@
+.sigur-album {
+    .wp-block-columns {
+        @include mq($from: lg) {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 0.5fr 0.4fr 1fr;
+            gap: var(--wp--custom--spacing--gap);
+        }
+    }
+    
+    &__art {
+        
+    }
+    &__title {
+        
+    }
+    &__meta {
+        
+    }
+    &__about {
+        
+    }
+    &__links {
+        margin-block-start: var(--wp--custom--spacing--2-xl) !important;
+        .wp-block-button {
+            > a {
+                background-color: transparent;
+                border: 0;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+    &__link--buy {
+        
+    }
+    &__link--stream {
+
+    }
+    &__link--watch {
+
+    }
+}
