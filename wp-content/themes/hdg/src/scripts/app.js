@@ -54,7 +54,7 @@
     const scrollWrapper = ()=>{
 
         //On scroll add class to header
-        const header = document.querySelector('.sigur-masthead');
+        const header = document.querySelector('.hdg-masthead');
         
         //If header is not present bail
         if(!header) { return; }
@@ -286,7 +286,7 @@
         smoothScroll();
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
-        cardClick('.sigur-card');
+        cardClick('.hdg-card');
         new TextareaHandler('textarea');
      });
     

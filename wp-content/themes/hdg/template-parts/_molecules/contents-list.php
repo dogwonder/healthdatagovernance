@@ -58,10 +58,10 @@ endif;
 
 if ( $children_ids ) : ?>
 
-	<aside class="sigur-navigation-container" role="complementary">
-	<nav class="sigur-contents-list sigur-contents-list--pages" aria-label="Pages in this section" role="navigation">
-		<h2 class="sigur-contents-list__title"><?php esc_html_e( 'Contents', 'sigur' ); ?></h2>
-		<ol class="sigur-contents-list__list">
+	<aside class="hdg-navigation-container" role="complementary">
+	<nav class="hdg-contents-list hdg-contents-list--pages" aria-label="Pages in this section" role="navigation">
+		<h2 class="hdg-contents-list__title"><?php esc_html_e( 'Contents', 'hdg' ); ?></h2>
+		<ol class="hdg-contents-list__list">
 
 			<?php // First get the parent title if it exists and if parent remove link ?>
 			<li class="page_item<?php echo ( $parent_id === 0 || $parent_id === $post->ID ? ' current_page_item' : '' ); ?>"<?php echo ( $post->ID === $currentpost_id ? ' aria-current="page"' : '' ); ?>><?php if ( $parent_id === $currentpost_id ) : 

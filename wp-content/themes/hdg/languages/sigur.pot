@@ -1,7 +1,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sigur Rós\n"
+"Project-Id-Version: hdg Rós\n"
 "POT-Creation-Date: 2022-08-23 11:53+0100\n"
 "PO-Revision-Date: 2022-08-23 11:52+0100\n"
 "Last-Translator: \n"
@@ -51,21 +51,21 @@ msgid "Add widgets here."
 msgstr ""
 
 #. translators: %s: post date.
-#: inc/sigur-template-tags.php:28
+#: inc/hdg-template-tags.php:28
 #, php-format
 msgctxt "post date"
 msgid "%s"
 msgstr ""
 
 #. translators: %s: post author.
-#: inc/sigur-template-tags.php:46
+#: inc/hdg-template-tags.php:46
 #, php-format
 msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
 #. translators: 1: list of categories.
-#: inc/sigur-template-tags.php:98
+#: inc/hdg-template-tags.php:98
 #: template-parts/_templates/content-list.php:34
 #: template-parts/_templates/content.php:37
 #, php-format
@@ -106,7 +106,7 @@ msgstr ""
 
 #. Theme Name of the plugin/theme
 #: template-parts/_layout/masthead.php:12
-msgid "Sigur Rós"
+msgid "hdg Rós"
 msgstr ""
 
 #: template-parts/_layout/masthead.php:21
@@ -178,7 +178,7 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 #. Author URI of the plugin/theme
-msgid "https://Sigur Rós"
+msgid "https://hdg Rós"
 msgstr ""
 
 #. Description of the plugin/theme

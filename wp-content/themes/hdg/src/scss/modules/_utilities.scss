@@ -57,8 +57,8 @@
 //Container
 //Wrapper utility https://piccalil.li/quick-tip/use-css-clamp-to-create-a-more-flexible-wrapper-utility
 //We reset the vertical padding on this for umbgrid and block--table components
-%sigur-container, 
-.sigur-container {
+%hdg-container, 
+.hdg-container {
   position: relative;
   width: 100%;
   //Include the padding here so we always have that buffer

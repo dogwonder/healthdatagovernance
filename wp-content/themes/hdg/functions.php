@@ -1,28 +1,28 @@
 <?php
 /**
- * sigur functions and definitions
+ * hdg functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package sigur
+ * @package hdg
  */
 
  /*********************
 SCRIPTS & ENQUEUEING
 *********************/
 $envs = array(
-	'development' => 'http://dev.sigurros.test',
-	'production'  => 'https://sigurros.com'
+	'development' => 'http://dev.hdgros.test',
+	'production'  => 'https://hdgros.com'
   );
 
   define('ENVIRONMENTS', serialize($envs));
   
-  if ( ! function_exists( 'sigur_env' ) ) :
-	function sigur_env($env) {
+  if ( ! function_exists( 'hdg_env' ) ) :
+	function hdg_env($env) {
 		$site_url = site_url();
 		switch ($env) {
 		case 'dev':
-				if(strpos($site_url, 'dev.sigurros.test') !== FALSE) {
+				if(strpos($site_url, 'dev.hdgros.test') !== FALSE) {
 					return true;
 				}
 		break;
@@ -33,7 +33,7 @@ $envs = array(
 	}
 endif;
 
-if ( ! function_exists( 'sigur_setup' ) ) :
+if ( ! function_exists( 'hdg_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -41,14 +41,14 @@ if ( ! function_exists( 'sigur_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function sigur_setup() {
+	function hdg_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on sigur, use a find and replace
-		 * to change 'sigur' to the name of your theme in all the template files.
+		 * If you're building a theme based on hdg, use a find and replace
+		 * to change 'hdg' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'sigur', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'hdg', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -61,19 +61,19 @@ if ( ! function_exists( 'sigur_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// Image sizes;
-		add_image_size( 'sigur-tiny', 16, 0, false ); // For Low quality image placeholders (LQIP)
-		add_image_size( 'sigur-small', 320, 0, false );
-		add_image_size( 'sigur-medium', 640, 0, false );
-		add_image_size( 'sigur-medium-crop', 640, 640, array( 'center', 'center' ) );
-		add_image_size( 'sigur-large', 1536, 0, false );
-		add_image_size( 'sigur-social-image', 1200, 630 );
+		add_image_size( 'hdg-tiny', 16, 0, false ); // For Low quality image placeholders (LQIP)
+		add_image_size( 'hdg-small', 320, 0, false );
+		add_image_size( 'hdg-medium', 640, 0, false );
+		add_image_size( 'hdg-medium-crop', 640, 640, array( 'center', 'center' ) );
+		add_image_size( 'hdg-large', 1536, 0, false );
+		add_image_size( 'hdg-social-image', 1200, 630 );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary', 'sigur' ),
-				'footer-links' => __( 'Footer', 'sigur' ), 
-				'legal'   => esc_html__( 'Legal', 'sigur' )
+				'primary' => esc_html__( 'Primary', 'hdg' ),
+				'footer-links' => __( 'Footer', 'hdg' ), 
+				'legal'   => esc_html__( 'Legal', 'hdg' )
 			)
 		);
 
@@ -117,7 +117,7 @@ if ( ! function_exists( 'sigur_setup' ) ) :
 
 	}
 
-	add_action( 'after_setup_theme', 'sigur_setup' );
+	add_action( 'after_setup_theme', 'hdg_setup' );
 endif;
 
 
@@ -128,27 +128,27 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 // Disable all XML-RPC functionality
-if (!function_exists("sigur_disable_x_pingback")) :
-    function sigur_disable_x_pingback($headers) {
+if (!function_exists("hdg_disable_x_pingback")) :
+    function hdg_disable_x_pingback($headers) {
         unset ($headers['X-Pingback']);
 	    return $headers;
     }
-    add_filter('wp_headers', 'sigur_disable_x_pingback');
+    add_filter('wp_headers', 'hdg_disable_x_pingback');
 endif;
 
 /**
  * Enqueue scripts and styles.
  */
-if ( ! function_exists( 'sigur_scripts_styles' ) ) :
+if ( ! function_exists( 'hdg_scripts_styles' ) ) :
 	
-function sigur_scripts_styles() {
+function hdg_scripts_styles() {
 
 	// Register theme stylesheet.
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	$version_string = is_string( $theme_version ) ? $theme_version : false;
 	wp_register_style(
-		'sigur-style',
+		'hdg-style',
 		get_template_directory_uri() . '/style.css',
 		array(),
 		$version_string
@@ -157,7 +157,7 @@ function sigur_scripts_styles() {
 	// Add styles inline.
 
 	// Enqueue theme stylesheet.
-	wp_enqueue_style( 'sigur-style' );
+	wp_enqueue_style( 'hdg-style' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -165,13 +165,13 @@ function sigur_scripts_styles() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'sigur_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'hdg_scripts_styles' );
 
 endif;
 
 
 
-if ( ! function_exists( 'sigur_editor_styles' ) ) :
+if ( ! function_exists( 'hdg_editor_styles' ) ) :
 
 	/**
 	 * Enqueue editor styles.
@@ -181,30 +181,30 @@ if ( ! function_exists( 'sigur_editor_styles' ) ) :
 	 * @return void
 	 */
 	
-	function sigur_editor_styles() {
+	function hdg_editor_styles() {
 
 	}
 	
-	// add_action( 'admin_init', 'sigur_editor_styles' );
+	// add_action( 'admin_init', 'hdg_editor_styles' );
 endif;
 
 
 /**
  * Custom template tags for this theme.
  */
-require_once get_template_directory() . '/inc/sigur-template-tags.php';
+require_once get_template_directory() . '/inc/hdg-template-tags.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require_once get_template_directory() . '/inc/sigur-functions.php';
+require_once get_template_directory() . '/inc/hdg-functions.php';
 
 /**
  * Functions for Advanced Custom Fields
  */
-require_once get_template_directory() . '/inc/sigur-acf.php';
+require_once get_template_directory() . '/inc/hdg-acf.php';
 
 /**
  * Functions for forms
  */
-require_once get_template_directory() . '/inc/sigur-forms.php';
+require_once get_template_directory() . '/inc/hdg-forms.php';

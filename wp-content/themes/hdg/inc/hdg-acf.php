@@ -2,7 +2,7 @@
 /**
  * ACF functionality
  *
- * @package sigur
+ * @package hdg
  */
 if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_page(
@@ -18,8 +18,8 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 
 
-if ( ! function_exists( 'sigur_acf_color_palette' ) ) :
-	function sigur_acf_color_palette() {
+if ( ! function_exists( 'hdg_acf_color_palette' ) ) :
+	function hdg_acf_color_palette() {
 	
 		// create color palette array
 		$color_palette = [];
@@ -51,5 +51,5 @@ if ( ! function_exists( 'sigur_acf_color_palette' ) ) :
 	<?php 
 		}
 	}
-	add_action('acf/input/admin_footer', 'sigur_acf_color_palette');
+	add_action('acf/input/admin_footer', 'hdg_acf_color_palette');
 	endif;

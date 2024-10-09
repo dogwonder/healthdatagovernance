@@ -26,7 +26,7 @@ else :
     // no rows found
 endif;
 ?>
-<ul class="sigur-footer__social-links sigur-footer__inline-list">
+<ul class="hdg-footer__social-links hdg-footer__inline-list">
 
     <?php if($facebook) : ?>
     <li>

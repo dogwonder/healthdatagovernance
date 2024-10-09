@@ -2,7 +2,7 @@
 /**
  * Custom functions for this theme
  *
- * @package sigur
+ * @package hdg
  */
 
 /**
@@ -11,14 +11,14 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-if ( ! function_exists( 'sigur_body_classes' ) ) :
-	function sigur_body_classes( $classes ) {
+if ( ! function_exists( 'hdg_body_classes' ) ) :
+	function hdg_body_classes( $classes ) {
 		// Adds a class of hfeed to non-singular pages.
 
 		global $post;
 
 		//Add root namespace class to all pages
-		$classes[] = 'sigur';
+		$classes[] = 'hdg';
 
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
@@ -78,7 +78,7 @@ if ( ! function_exists( 'sigur_body_classes' ) ) :
 
 		return $classes;
 	}
-	add_filter( 'body_class', 'sigur_body_classes' );
+	add_filter( 'body_class', 'hdg_body_classes' );
 endif;
 
 /**
@@ -109,7 +109,7 @@ endif;
  *
  * @access public
  */
-function sigur_the_category_filter( $thelist, $separator = ' ' ) {
+function hdg_the_category_filter( $thelist, $separator = ' ' ) {
 	if ( ! defined( 'WP_ADMIN' ) ) {
 		$exclude = array( 1 );
 
@@ -131,11 +131,11 @@ function sigur_the_category_filter( $thelist, $separator = ' ' ) {
 		return $thelist;
 	}
 }
-add_filter( 'the_category', 'sigur_the_category_filter', 10, 2 );
+add_filter( 'the_category', 'hdg_the_category_filter', 10, 2 );
 
 // Callable for usort. Sorts the array based on the 'date' array value - using spaceship operator <=> PHP 7+
-if ( ! function_exists( 'sigur_sort_dates' ) ) :
-	function sigur_sort_dates( $a, $b ) {
+if ( ! function_exists( 'hdg_sort_dates' ) ) :
+	function hdg_sort_dates( $a, $b ) {
 
 		// order by date (closest first) - php 7
 		return new DateTime( $a['start'] ) <=> new DateTime( $b['start'] );

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package sigur
+ * @package hdg
  */
 
 get_header();
@@ -109,7 +109,7 @@ code.language-html {
 	gap: var(--wp--custom--spacing--s);
 }
 </style>
-<div id="primary" class="sigur-content-wrapper">
+<div id="primary" class="hdg-content-wrapper">
 
 		<div class="entry-header">
             <div class="stack">
@@ -122,12 +122,12 @@ code.language-html {
         // End of the loop.
         ?>
 
-			<nav class="sigur-contents-list" aria-label="Sections in this page" role="navigation">
-				<h2 class="sigur-contents-list__title"><?php esc_html_e(
+			<nav class="hdg-contents-list" aria-label="Sections in this page" role="navigation">
+				<h2 class="hdg-contents-list__title"><?php esc_html_e(
         "Contents",
         "cfc"
     ); ?></h2>
-				<ol class="sigur-contents-list__list"></ol>
+				<ol class="hdg-contents-list__list"></ol>
 			</nav>
             </div>
 		</div>
@@ -198,7 +198,7 @@ code.language-html {
   foreach ($font_families as $family) {
       //If the font has the fontFace property, use it
       if (isset($family["fontFace"])) {
-          echo '<div class="sigur-text-l" style="font-family:' .
+          echo '<div class="hdg-text-l" style="font-family:' .
               $family["fontFace"]["0"]["fontFamily"] .
               ";font-weight:" .
               $family["fontFace"]["0"]["fontWeight"] .
@@ -206,7 +206,7 @@ code.language-html {
               $family["name"] .
               "</div>";
       } else {
-          echo '<div class="sigur-text-l" style="font-family:' .
+          echo '<div class="hdg-text-l" style="font-family:' .
               $family["fontFamily"] .
               ';">' .
               $family["name"] .
@@ -294,9 +294,9 @@ code.language-html {
 		<h3>Default buttons</h3>
 		<div class="grid" style="--grid-min-item-size: 16rem;">
 			<div class="button">
-				<button class="sigur-button">Click me!</button>
+				<button class="hdg-button">Click me!</button>
 				<code class="language-html mt-3">
-					&lt;button class="sigur-button"&gt;<?php echo htmlentities("Click me!"); ?>&lt;/button&gt;
+					&lt;button class="hdg-button"&gt;<?php echo htmlentities("Click me!"); ?>&lt;/button&gt;
 				</code>
 			</div>
 		</div>
@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	//Get all H2 elements in the content
 	const headings = document.querySelectorAll('.section > h2');
-	//Loop through the headings and add to ol.sigur-contents-list__list
+	//Loop through the headings and add to ol.hdg-contents-list__list
 	headings.forEach(heading => {
 		//Create a new li element
 		const li = document.createElement('li');
@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		//Append the a element to the li element
 		li.appendChild(a);
 		//Append the li element to the ol element
-		document.querySelector('.sigur-contents-list__list').appendChild(li);
+		document.querySelector('.hdg-contents-list__list').appendChild(li);
 	});
 
 });

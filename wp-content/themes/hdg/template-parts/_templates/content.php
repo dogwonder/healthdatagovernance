@@ -4,11 +4,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package sigur
+ * @package hdg
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'sigur-post stack' ); ?> itemscope itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'hdg-post stack' ); ?> itemscope itemtype="http://schema.org/BlogPosting">
 
 	<div class="entry-header">
 		<?php
@@ -21,7 +21,7 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-				<?php sigur_posted_on(); ?>
+				<?php hdg_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -32,10 +32,10 @@
 
 	<div class="entry-footer">
 	<?php
-	$categories_list = get_the_category_list( esc_html__( ', ', 'sigur' ) );
+	$categories_list = get_the_category_list( esc_html__( ', ', 'hdg' ) );
 	if ( $categories_list ) {
 		/* translators: 1: list of categories. */
-		printf( '<span class="cat-links">' . esc_html__( '%1$s', 'sigur' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		printf( '<span class="cat-links">' . esc_html__( '%1$s', 'hdg' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 	}
 	?>
 	</div><!-- .entry-content -->

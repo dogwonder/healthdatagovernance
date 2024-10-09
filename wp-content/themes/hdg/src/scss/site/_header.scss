@@ -1,5 +1,5 @@
 //Vars
-$nav-height: toRem(60);
+$nav-height: toRem(100);
 
 //Skip link
 .govuk-skip-link:link, 
@@ -9,14 +9,14 @@ $nav-height: toRem(60);
 }
 
 //Masthead
-.sigur-masthead {
+.hdg-masthead {
   margin: 0;
   padding: 0;
   z-index: 9999;
 }
 
 //Overlay
-.sigur-wrapper {
+.hdg-wrapper {
   height: 100vh;
   &:before {
     content: "";
@@ -35,12 +35,12 @@ $nav-height: toRem(60);
   }
 }
 
-.sigur-masthead-container {
+.hdg-masthead-container {
 
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   //Align full
@@ -49,14 +49,10 @@ $nav-height: toRem(60);
   padding: var(--wp--custom--spacing--gap);
 
   //Logo
-  .sigur-masthead__logo {
+  .hdg-masthead__logo {
     line-height: 1;
     @include mq($until: lg) {
       flex: 1;
-    }
-    @include mq($from: lg) {
-      position: absolute;
-      left: var(--wp--custom--spacing--gap);
     }
     > a {
       display: flex;
@@ -75,7 +71,7 @@ $nav-height: toRem(60);
       }
     }
 
-    img {
+    .logo {
       width: $nav-height;
       height: auto;
       margin:0 var(--wp--custom--spacing--gap) 0 0;
@@ -85,11 +81,11 @@ $nav-height: toRem(60);
 
 }
 
-.sigur-nav {
+.hdg-nav {
   z-index: $z-low;
   display: flex;
   
-  .sigur-menu {
+  .hdg-menu {
     margin:0;
     padding: 0;
     display: flex;
@@ -102,7 +98,7 @@ $nav-height: toRem(60);
     }
     .menu-item {
       list-style-type: none;
-      @extend %sigur-navigation;
+      @extend %hdg-navigation;
       line-height: 1;
       text-align: left;
       position: relative;
@@ -385,7 +381,7 @@ $nav-height: toRem(60);
 //Attempt at fixing Cumulative Layout Shift issue with menu before JS kicks in
 .no-js {
 
-  .sigur-masthead {
+  .hdg-masthead {
     /* browser decide if x is ok to scroll and show bars on, y hidden */
     overflow: visible;
     /* prevent scroll chaining on x scroll */
@@ -402,14 +398,14 @@ $nav-height: toRem(60);
       }
     }
   
-    .sigur-nav {
+    .hdg-nav {
       display: flex;
       /* defend against <main> needing 100% */
       flex-shrink: 0;
       /* fixes cross browser quarks */
       min-block-size: fit-content;
 
-      .sigur-menu {
+      .hdg-menu {
         .menu-item > a {
             color: var(--wp--preset--color--dark);
         }
@@ -425,7 +421,7 @@ $nav-height: toRem(60);
 
   //Desktop menu is open
   &.masthead-expanded {
-    .sigur-wrapper {
+    .hdg-wrapper {
       position: relative;
       &:before {
         visibility: visible;
@@ -439,7 +435,7 @@ $nav-height: toRem(60);
 
   //Mobile menu is open
   &.nav-open {
-    .sigur-wrapper {
+    .hdg-wrapper {
       position: relative;
       &:before {
         visibility: visible;
@@ -449,7 +445,7 @@ $nav-height: toRem(60);
   }
 
 
-  .sigur-nav__wrapper { 
+  .hdg-nav__wrapper { 
     //Cumulative Layout Shift fix - hide the menu if JS is enabled to avoid layout shift, maybe becuase ResizeObserver is too slow? 🤷
     display: none;  
     @include mq($from: lg) {
@@ -458,12 +454,12 @@ $nav-height: toRem(60);
     }
   }
 
-  .sigur-masthead {
+  .hdg-masthead {
   
     //If we are in the mobile view (<769px), we need to show the burger menu
     &[data-enabled="true"] {
 
-      .sigur-nav {
+      .hdg-nav {
         align-items: center;
       }
 
@@ -473,7 +469,7 @@ $nav-height: toRem(60);
         .close {display: none;}
       }    
 
-      .sigur-nav__wrapper { 
+      .hdg-nav__wrapper { 
         display: none;  
         content-visibility: hidden;
         position: absolute;
@@ -489,10 +485,10 @@ $nav-height: toRem(60);
       z-index: $z-highest;
       position: relative;
       background-color: var(--wp--preset--color--dark);
-      .sigur-nav__wrapper {
+      .hdg-nav__wrapper {
         content-visibility: visible;
         display: block;
-        .sigur-menu {
+        .hdg-menu {
           display: flex;
         }
       }

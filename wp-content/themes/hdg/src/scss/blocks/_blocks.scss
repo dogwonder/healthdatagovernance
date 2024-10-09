@@ -1,6 +1,6 @@
 //Add some space around blocks
-:where(body .is-layout-flow) > [class^="sigur-block"], 
-:where(body .is-layout-flow) > [class^="sigur-pattern"] {
+:where(body .is-layout-flow) > [class^="hdg-block"], 
+:where(body .is-layout-flow) > [class^="hdg-pattern"] {
   margin-block-start: var(--wp--custom--spacing--gap);
   margin-block-end: 0;
 }

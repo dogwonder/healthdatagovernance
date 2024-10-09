@@ -1,4 +1,4 @@
-# Sigur Rós Wordpress theme
+# hdg Rós Wordpress theme
 
 ## Requirements
 
@@ -15,7 +15,7 @@
 
 ## Config
 
-- sigur_env() - URL of current site
+- hdg_env() - URL of current site
 - Math div warning: `$ npm install -g sass-migrator` `$ sass-migrator division **/*.scss`
 
 ## Overrides for Framework
@@ -41,32 +41,32 @@ For the Javascript we need to [manually download](https://frontend.design-system
 
 ## Custom typeface (optional)
 
-This theme uses the [Söhne typeface](https://klim.co.nz/collections/soehne/) by Klim Type Foundry, this is a licensed font for use on my own url (Sigur Rós). If you wish to use this on your own website then you will need to [purchase a license](https://klim.co.nz/buy/soehne/). You can remove these form fontFamilies[] in theme.json, functions.php and typography.scss. These fonts are not included in the repo. 
+This theme uses the [Söhne typeface](https://klim.co.nz/collections/soehne/) by Klim Type Foundry, this is a licensed font for use on my own url (hdg Rós). If you wish to use this on your own website then you will need to [purchase a license](https://klim.co.nz/buy/soehne/). You can remove these form fontFamilies[] in theme.json, functions.php and typography.scss. These fonts are not included in the repo. 
 
 ***NOTE*** I've added the `dist/fonts` folder to gitignore so the commerical fonts don't accidentally get committed to this public repo.
 
 ## Custom blocks (optional)
 
-These are actived via a custom plugin [sigur: Blocks](https://github.com/dogwonder/sigur-plugin)
+These are actived via a custom plugin [hdg: Blocks](https://github.com/dogwonder/hdg-plugin)
 
 This requires [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/). $$ - but it really is the greatest plugin ever made. 
 
-These are saved in `wp-plugins\sigur-blocks\src\acf-json`
+These are saved in `wp-plugins\hdg-blocks\src\acf-json`
 
-- Sigur Rós Accordion - based on GOV.UK's [accordion pattern](https://design-system.service.gov.uk/components/accordion/)
-- Sigur Rós Banner - text and background image similar to hero but less showy
-- Sigur Rós Breadcrumbs - based on GOV.UK's [breadcrumbs pattern](https://design-system.service.gov.uk/components/breadcrumbs/) 
-- Sigur Rós Content - text and image with button (reversible)
-- Sigur Rós Cards - grid of cards linking to other pages, title, excerpt and featured image
-- Sigur Rós Embed - lite embed custom element for [Youtube](https://github.com/paulirish/lite-youtube-embed) and [Vimeo](https://github.com/slightlyoff/lite-vimeo)
-- Sigur Rós Promo card - offset image and content block
-- Sigur Rós Hero Section - hero with big image / video as background
-- Sigur Rós Related pages - list of related links
-- Sigur Rós Summary list - based on GOV.UK's [summary list pattern](https://design-system.service.gov.uk/components/summary-list/) 
+- hdg Rós Accordion - based on GOV.UK's [accordion pattern](https://design-system.service.gov.uk/components/accordion/)
+- hdg Rós Banner - text and background image similar to hero but less showy
+- hdg Rós Breadcrumbs - based on GOV.UK's [breadcrumbs pattern](https://design-system.service.gov.uk/components/breadcrumbs/) 
+- hdg Rós Content - text and image with button (reversible)
+- hdg Rós Cards - grid of cards linking to other pages, title, excerpt and featured image
+- hdg Rós Embed - lite embed custom element for [Youtube](https://github.com/paulirish/lite-youtube-embed) and [Vimeo](https://github.com/slightlyoff/lite-vimeo)
+- hdg Rós Promo card - offset image and content block
+- hdg Rós Hero Section - hero with big image / video as background
+- hdg Rós Related pages - list of related links
+- hdg Rós Summary list - based on GOV.UK's [summary list pattern](https://design-system.service.gov.uk/components/summary-list/) 
 
 ## Custom block patterns (experimental / in progress)
 
-Included in the plugin *sigur: Blocks* alongside the custom blocks this allows for pre-made collections of blocks, accessible under the 'Sigur Rós' in patterns dropdown
+Included in the plugin *hdg: Blocks* alongside the custom blocks this allows for pre-made collections of blocks, accessible under the 'hdg Rós' in patterns dropdown
 
 - Layout page
 - Lockable content
@@ -80,7 +80,7 @@ Included in the plugin *sigur: Blocks* alongside the custom blocks this allows f
 
 `template-layout.php` 
 
-For home and gateway pages, allows for full width blocks (e.g. Sigur Rós Hero / Sigur Rós Feature) these can be used in any post or page but would be restricted to a fixed width and look weird. This also removes the page title (can be re-added via a heading block)
+For home and gateway pages, allows for full width blocks (e.g. hdg Rós Hero / hdg Rós Feature) these can be used in any post or page but would be restricted to a fixed width and look weird. This also removes the page title (can be re-added via a heading block)
 
 ### Guide template
 

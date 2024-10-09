@@ -15,20 +15,20 @@
     {% include "dist/css/main.css" %}
     {% endcss %}
   </head>
-  <body class="sigur {{ class if class }}">
-    <div id="page" class="sigur-wrapper">
+  <body class="hdg {{ class if class }}">
+    <div id="page" class="hdg-wrapper">
         <div id="skiplink-container">
             <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
         </div>
-        <header id="masthead" class="sigur-masthead">
+        <header id="masthead" class="hdg-masthead">
           
         </header>
-        <main id="content" class="sigur-container" tabindex="-1">
-            <div id="primary" class="sigur-content-wrapper">
+        <main id="content" class="hdg-container" tabindex="-1">
+            <div id="primary" class="hdg-content-wrapper">
                 {{ content | safe }}
             </div>
         </main>
-        <footer class="sigur-footer">
+        <footer class="hdg-footer">
         </footer>
     </div>
     {% block scripts %}{% endblock %}

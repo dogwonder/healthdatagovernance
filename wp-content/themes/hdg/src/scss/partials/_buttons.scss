@@ -1,5 +1,5 @@
-.sigur-button, 
-%sigur-button,
+.hdg-button, 
+%hdg-button,
 .wp-block-button__link {
   appearance: none;
   text-decoration: none;
@@ -49,7 +49,7 @@
   box-shadow: none;
 }
 
-.sigur-button > a {
+.hdg-button > a {
   color: var(--wp--preset--color--light);
   text-decoration: none;
   &:hover {

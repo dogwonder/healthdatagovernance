@@ -80,23 +80,23 @@ else :
 	$next_id = ( isset( $page_ids[ $current ] ) ) ? $page_ids[ $current ] : '';
 endif;
 ?>
-<nav class="sigur-pagination sigur-pagination--pages<?php echo ( empty( $prev_id ) ? ' sigur-pagination--noprev' : '' ); ?><?php echo ( empty( $next_id ) ? ' sigur-pagination--nonext' : '' ); ?>" aria-label="Pagination">
-	<ul class="sigur-pagination__list">
+<nav class="hdg-pagination hdg-pagination--pages<?php echo ( empty( $prev_id ) ? ' hdg-pagination--noprev' : '' ); ?><?php echo ( empty( $next_id ) ? ' hdg-pagination--nonext' : '' ); ?>" aria-label="Pagination">
+	<ul class="hdg-pagination__list">
 
 	<?php if ( ! empty( $prev_id ) ) : ?>
-		<li class="sigur-pagination__item sigur-pagination__item--previous">
-		<a href="<?php echo esc_url( get_permalink( $prev_id ) ); ?>" class="sigur-pagination__link" rel="prev">
-			<span class="sigur-pagination__link-title">
-			<svg class="sigur-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+		<li class="hdg-pagination__item hdg-pagination__item--previous">
+		<a href="<?php echo esc_url( get_permalink( $prev_id ) ); ?>" class="hdg-pagination__link" rel="prev">
+			<span class="hdg-pagination__link-title">
+			<svg class="hdg-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
 			  <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
 			</svg>
-			<span class="sigur-pagination__link-text">
-			<?php esc_html_e( 'Previous page', 'sigur' ); ?>
+			<span class="hdg-pagination__link-text">
+			<?php esc_html_e( 'Previous page', 'hdg' ); ?>
 			</span>
 			</span>
 			<span class="visually-hidden">:</span>
 			<?php if ( $parent ) : ?>
-			<span class="sigur-pagination__link-label">
+			<span class="hdg-pagination__link-label">
 				<?php echo esc_html( get_the_title( $prev_id ) ); ?>
 			</span>
 			<?php endif; ?>
@@ -105,18 +105,18 @@ endif;
 	<?php endif; ?>
    
 	<?php if ( ! empty( $next_id ) ) : ?>
-		<li class="sigur-pagination__item sigur-pagination__item--next" rel="next">
-		<a href="<?php echo esc_url( get_permalink( $next_id ) ); ?>" class="sigur-pagination__link">
-			<span class="sigur-pagination__link-title">
-			<svg class="sigur-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+		<li class="hdg-pagination__item hdg-pagination__item--next" rel="next">
+		<a href="<?php echo esc_url( get_permalink( $next_id ) ); ?>" class="hdg-pagination__link">
+			<span class="hdg-pagination__link-title">
+			<svg class="hdg-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
 			  <path d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
 			</svg>
-			<span class="sigur-pagination__link-text">
-			<?php esc_html_e( 'Next page', 'sigur' ); ?>
+			<span class="hdg-pagination__link-text">
+			<?php esc_html_e( 'Next page', 'hdg' ); ?>
 			</span>
 			</span>
 			 <span class="visually-hidden">:</span>
-			 <span class="sigur-pagination__link-label">
+			 <span class="hdg-pagination__link-label">
 				<?php echo esc_html( get_the_title( $next_id ) ); ?>
 			 </span>
 		</a>

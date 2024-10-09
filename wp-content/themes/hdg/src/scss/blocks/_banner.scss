@@ -1,5 +1,5 @@
 //Banner block
-.sigur-banner {
+.hdg-banner {
 
     //Align full
     max-width: 100%;
@@ -21,20 +21,20 @@
       grid-column: 2 / span 1;
 
       h2 {
-        @extend %sigur-heading-lg;
+        @extend %hdg-heading-lg;
       }
 
       h2, h3, p {
         color:inherit;
       }
 
-      .sigur-banner__wrapper {
+      .hdg-banner__wrapper {
         position: relative;
         z-index:2;
         display: grid;
         //Then create a subgrid
         grid-template-columns: 1fr minmax(min-content, var(--wp--custom--width--container)) 1fr;
-        .sigur-banner__inner {
+        .hdg-banner__inner {
           //Snap back to our container
           grid-column: 2 / span 1;
           padding-block:var(--wp--custom--spacing--gap);

@@ -1,7 +1,7 @@
 //Content block
 @use "sass:list";
 
-.sigur-content-block {
+.hdg-content-block {
 
     &__content {
 
@@ -25,12 +25,12 @@
       }
     }
 
-    .sigur-content-block__inner {
+    .hdg-content-block__inner {
       padding-block-start: var(--wp--custom--spacing--xl);
     }
 
     &.has-image {
-      .sigur-content-block__inner {
+      .hdg-content-block__inner {
         display: flex;
         flex-direction: column;
         @include mq($from: md) {
@@ -38,7 +38,7 @@
           justify-content: space-between;
         }
       }
-      .sigur-content-block__image {
+      .hdg-content-block__image {
         order: 1;
         @include mq($from: md) {
           flex-basis: 50%;
@@ -64,7 +64,7 @@
           background-size: cover;
         }
       }
-      .sigur-content-block__content {
+      .hdg-content-block__content {
         order: 2;
         @include mq($from: md) {
           order: 1;
@@ -83,13 +83,13 @@
     &.has-background {
       padding: 0;
       margin-inline: var(--wp--custom--spacing--gap);
-      .sigur-content-block__content {
+      .hdg-content-block__content {
         padding: var(--wp--custom--spacing--gap); 
       }
     }
 
     &.is-illustrative {
-      .sigur-content-block__image {
+      .hdg-content-block__image {
         .frame {
           aspect-ratio: auto;
         }
@@ -97,7 +97,7 @@
     }
 
     &.has-image.is-photographic {
-      .sigur-content-block__image {
+      .hdg-content-block__image {
         .frame {
           @include mq($from: md, $until: lg) {
             aspect-ratio: 5 / 6;
@@ -117,12 +117,12 @@
 
     //Reversed
     &[data-state='reversed'] {
-      .sigur-content-block__inner {
+      .hdg-content-block__inner {
         @include mq($from: md) {
           flex-direction: row-reverse;
         }
       }
-      .sigur-content-block__content {
+      .hdg-content-block__content {
         @include mq($from: md) {
           padding-inline-start: var(--wp--custom--spacing--lg);
           padding-inline-end: 0;
@@ -136,24 +136,24 @@
     }
 
     &[data-state='grid'] {
-      .sigur-content-block__inner {
+      .hdg-content-block__inner {
         @include container-content('md');
         padding: 0 !important;
         @include mq($from: md) {
-          .sigur-content-block__content {
+          .hdg-content-block__content {
             order: 1;
             grid-column: 1 / span 5; 
           }
-          .sigur-content-block__image {
+          .hdg-content-block__image {
             order: 2;
             grid-column: list.slash(6, span) - 1;  
           }
         }
         @include mq($from: xl) {
-          .sigur-content-block__content {
+          .hdg-content-block__content {
             grid-column: 2 / span 3; 
           }
-          .sigur-content-block__image {
+          .hdg-content-block__image {
             grid-column: 6 / span -1; 
           }
         }
@@ -162,7 +162,7 @@
 }
 
 //To catch some edge cases
-.sigur-content-block__image {
+.hdg-content-block__image {
   img {
     background-repeat: no-repeat;
   }

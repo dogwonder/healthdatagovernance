@@ -1,6 +1,6 @@
 
 //Hero block
-.sigur-hero {
+.hdg-hero {
 
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@
     }
 
     h1, h2 {
-      @extend %sigur-heading-xl;
+      @extend %hdg-heading-xl;
     }
 
     h1, h2, p {
@@ -35,7 +35,7 @@
 
     &__wrapper {
       z-index:2;
-      @extend %sigur-container;
+      @extend %hdg-container;
       padding: var(--wp--custom--spacing--lg) var(--wp--custom--spacing--md);
       //Offset the menu as this is a fixed position
       margin-block-start: 6.25rem; //100px

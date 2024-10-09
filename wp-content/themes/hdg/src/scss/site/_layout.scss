@@ -1,12 +1,48 @@
-//Sticky footer
-.sigur-wrapper {
+$animation-duration: 20s;
+
+@function random-color() {
+  $colors: (
+    #ddc0f0,
+    #bef4b5,
+    #c6eef0
+  );
+  $index: random(length($colors)); // Get a random index (1-based)
+  @return nth($colors, $index); // Return the color at that index
+}
+
+// Predefined random positions for keyframes
+$positions: (
+  (50%, 0%),       // 0%
+  (30%, 70%),     // 15%
+  (80%, 30%),     // 30%
+  (10%, 90%),     // 45%
+  (90%, 20%),     // 60%
+  (20%, 80%),     // 75%
+  (50%, 0%)       // 100%
+);
+
+
+.hdg-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: radial-gradient(circle, #ddc0f0, #bef4b5, #c6eef0);
+  background-size: 300% 300%; /* Adjust size for smooth transition */
+
+  animation: GradientFlow $animation-duration ease-in-out infinite;
+}
+
+
+@keyframes GradientFlow {
+  @for $i from 1 through length($positions) {
+    #{(15 * ($i - 1))}% {
+      background-position: nth($positions, $i);
+    }
+  }
 }
 
 //Anchor the footer to the bottom of the page
-.sigur-body {
+.hdg-body {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -14,7 +50,7 @@
 }
 
 //Page layout
-.sigur-masthead, 
+.hdg-masthead, 
 .entry-header, 
 .entry-content, 
 .entry-footer, 
@@ -29,10 +65,10 @@
 }
 
 //Page layout
-.sigur-content-wrapper {
+.hdg-content-wrapper {
   .entry-header, 
   .entry-content {
-    > *:where(:not(.sigur-block)) {
+    > *:where(:not(.hdg-block)) {
       max-width: var(--wp--custom--width--content);
       width: 100%;
       margin-inline: auto;
@@ -47,23 +83,23 @@
 
 //Hero followed by Featured block
 .wp-block-post-content {
-  .sigur-hero + .sigur-feature {
+  .hdg-hero + .hdg-feature {
     --buffer: 0;
   }
 }
 
-.sigur-wrapper:has(.sigur-hero) {
-  .sigur-masthead {
+.hdg-wrapper:has(.hdg-hero) {
+  .hdg-masthead {
     position: fixed;
     width: 100%;
     &.is-scrolled {
       position: relative;
     }
-    .sigur-nav {
+    .hdg-nav {
       svg {
         fill: var(--wp--preset--color--light);
       }
-      .sigur-menu {
+      .hdg-menu {
         .menu-item > a {
           color: var(--wp--preset--color--light);
           &:hover {
@@ -72,13 +108,13 @@
         }
       }
     }
-    .sigur-masthead__logo {
+    .hdg-masthead__logo {
       img {
         filter: invert(1);
       }
     }
   }
-  .sigur-hero {
+  .hdg-hero {
     margin-block-end: var(--wp--custom--spacing--gap);
   }
   .entry-content {

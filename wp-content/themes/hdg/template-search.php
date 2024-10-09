@@ -6,12 +6,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package sigur
+ * @package hdg
  */
 
 get_header();
 ?>
-<div id="primary" class="sigur-content-wrapper">
+<div id="primary" class="hdg-content-wrapper">
 	<article class="entry-content wp-block-post-content is-layout-flow">
 		<?php //the_title( '<h1 class="wp-block-post-title" itemprop="headline">', '</h1>' ); ?>
 		<?php echo do_blocks( '<!-- wp:post-title {"level":1,"className":"wp-block-post-title"} /-->' ); ?>

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package sigur
+ * @package hdg
  */
 //Create object to avoid errors
 $post = new stdClass();
@@ -14,20 +14,20 @@ $post->ID = 0;
 $post->post_title = '404';
 get_header();
 ?>
-<div id="primary" class="sigur-content-wrapper">
+<div id="primary" class="hdg-content-wrapper">
 
 	<div class="entry-header">
-		<h1 class="wp-block-post-title"><?php esc_html_e( '404, page not found', 'sigur' ); ?></h1>
+		<h1 class="wp-block-post-title"><?php esc_html_e( '404, page not found', 'hdg' ); ?></h1>
 	</div>
 
 	<div class="entry-content error-404 not-found">
-		<p><?php esc_html_e( 'There may be an error in the link you followed to get here. ', 'sigur' ); ?></p>
+		<p><?php esc_html_e( 'There may be an error in the link you followed to get here. ', 'hdg' ); ?></p>
 		<?php
 		wp_nav_menu(
 			array(
 				'theme_location' => 'primary',
 				'menu_id'        => 'primary-nav',
-				'menu_class'     => 'sigur-menu-404',
+				'menu_class'     => 'hdg-menu-404',
 				'container'      => false,
 			)
 		);

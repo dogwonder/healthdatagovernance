@@ -2,9 +2,9 @@
 permalink: '../../../../sw.js'
 ---
 
-const CACHE_NAME = "sigur-{% timestamp %}";
+const CACHE_NAME = "hdg-{% timestamp %}";
 const MAX_CACHE_SIZE = 50; // Maximum cache size in entries
-const THEME_PATH = 'wp-content/themes/sigur/';
+const THEME_PATH = 'wp-content/themes/hdg/';
 
 // This is the service worker with the Cache-first network
 const precacheFiles = [
@@ -50,7 +50,7 @@ self.addEventListener("activate", function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
-          if (CACHE_NAME !== cacheName && cacheName.startsWith("sigur")) {
+          if (CACHE_NAME !== cacheName && cacheName.startsWith("hdg")) {
             return caches.delete(cacheName);
           }
         })

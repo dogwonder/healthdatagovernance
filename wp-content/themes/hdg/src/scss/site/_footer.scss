@@ -1,12 +1,12 @@
 //Footer
-.sigur-footer {
+.hdg-footer {
   padding: 0;
   margin: 0;
   border: 0;
   text-align: left;
   content-visibility: auto; //We only place this here as otherwise we might affect screenreaders. 
 
-  .sigur-container {
+  .hdg-container {
     padding-block: var(--wp--custom--spacing--2-xl) var(--wp--custom--spacing--gap);
   }
 
@@ -112,12 +112,12 @@
     @include mq($from: lg) {
       flex-direction: row;
     }
-    .sigur-footer__copyright {
+    .hdg-footer__copyright {
       display: flex;
       align-items: center;
       margin: 0 var(--wp--custom--spacing--gap) 0 0;
     }
-    .sigur-footer__list {
+    .hdg-footer__list {
       margin: 0;
       display: flex;
       .menu-item {

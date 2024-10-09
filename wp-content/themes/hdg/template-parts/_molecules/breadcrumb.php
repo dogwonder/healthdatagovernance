@@ -9,11 +9,11 @@ $ancestors = get_post_ancestors( $post->ID );
 $parent = wp_get_post_parent_id( $currentpost_id );
 ?>
 
-<div class="govuk-breadcrumbs sigur-container">
+<div class="govuk-breadcrumbs hdg-container">
 	<ol class="govuk-breadcrumbs__list">
 
 		<li class="govuk-breadcrumbs__list-item">
-			<a class="govuk-breadcrumbs__link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'sigur' ); ?></a>
+			<a class="govuk-breadcrumbs__link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'hdg' ); ?></a>
 		</li>
 
 		<?php if ( is_page() && $parent > 0 ) : ?>
@@ -35,9 +35,9 @@ $parent = wp_get_post_parent_id( $currentpost_id );
 		<?php if ( ! is_front_page() ) : ?>
 			<li class="govuk-breadcrumbs__list-item" aria-current="page">
 			<?php if ( is_search() ) : ?>
-				<?php esc_html_e( 'Search results', 'sigur' ); ?>    
+				<?php esc_html_e( 'Search results', 'hdg' ); ?>    
 			<?php elseif ( is_404() ) : ?>
-				<?php esc_html_e( '404, page not found', 'sigur' ); ?>
+				<?php esc_html_e( '404, page not found', 'hdg' ); ?>
 			<?php elseif ( is_category() ) : ?>
 				<?php single_cat_title(); ?>
 			<?php elseif ( is_tag() ) : ?>

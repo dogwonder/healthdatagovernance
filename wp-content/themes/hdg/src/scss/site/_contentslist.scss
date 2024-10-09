@@ -1,10 +1,10 @@
 //Page list
-.sigur-contents-list {
+.hdg-contents-list {
   &__title {
     margin: 0;
     font-weight: normal;
   }
-  ol.sigur-contents-list__list {
+  ol.hdg-contents-list__list {
     list-style-type: none;
     margin: var(--wp--custom--spacing--gap) 0 0;
     padding: 0;
@@ -30,6 +30,6 @@
 }
 
 //Content
-.sigur-content-wrapper .entry-content > .entry-content > * {
+.hdg-content-wrapper .entry-content > .entry-content > * {
   padding: 0;
 }

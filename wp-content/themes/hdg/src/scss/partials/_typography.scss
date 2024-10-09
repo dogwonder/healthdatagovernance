@@ -51,8 +51,8 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
 //Line heights are unitless, e.g. 1.5
 
 // H1
-.sigur-heading-xl, 
-%sigur-heading-xl {
+.hdg-heading-xl, 
+%hdg-heading-xl {
   font-size: var(--wp--preset--font-size--xl);
   font-variant-ligatures: discretionary-ligatures; 
   font-size-adjust: 0.521;
@@ -62,8 +62,8 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
 }
 
 // H2
-.sigur-heading-lg, 
-%sigur-heading-lg {
+.hdg-heading-lg, 
+%hdg-heading-lg {
   font-size: var(--wp--preset--font-size--lg);
   line-height: var(--wp--custom--typography--line-height--heading);
   letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
@@ -71,8 +71,8 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
 }
 
 // H3
-.sigur-heading-md, 
-%sigur-heading-md {
+.hdg-heading-md, 
+%hdg-heading-md {
   font-size: var(--wp--preset--font-size--lg);
   line-height: var(--wp--custom--typography--line-height--heading);
   letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
@@ -80,8 +80,8 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
 }
 
 // H4
-.sigur-heading-sm, 
-%sigur-heading-sm {
+.hdg-heading-sm, 
+%hdg-heading-sm {
   font-size: var(--wp--preset--font-size--lg);
   line-height: var(--wp--custom--typography--line-height--heading--sm);
   letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
@@ -89,44 +89,46 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
 }
 
 // H5 / H6
-%sigur-heading-xs,
-.sigur-heading-xs {
+%hdg-heading-xs,
+.hdg-heading-xs {
   font-size: var(--wp--preset--font-size--md);
   line-height: var(--wp--custom--typography--line-height--body);
   letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
   margin: 0;
 }
 
-.sigur-body, 
-%sigur-body,
+.hdg-body, 
+%hdg-body,
 .govuk-body {
   font-weight: normal;
   font-size: var(--wp--preset--font-size--body); 
   line-height: var(--wp--custom--typography--line-height--body);
 }
 
-.sigur-body-lg, 
-%sigur-body-lg {
+.hdg-body-lg, 
+%hdg-body-lg {
   font-size: var(--wp--preset--font-size--lg);
   line-height: var(--wp--custom--typography--line-height--heading);
 }
 
-.sigur-body-md, 
-%sigur-body-md {
+.hdg-body-md, 
+%hdg-body-md {
   font-size: var(--wp--preset--font-size--md);
   line-height: var(--wp--custom--typography--line-height--body);
 }
 
-.sigur-body-sm, 
-%sigur-body-sm {
+.hdg-body-sm, 
+%hdg-body-sm {
   font-size: var(--wp--preset--font-size--sm);
   line-height: var(--wp--custom--typography--line-height--body);
 }
 
 
-.sigur-navigation, 
-%sigur-navigation {
-  font-size: var(--wp--preset--font-size--lg);
+.hdg-navigation, 
+%hdg-navigation {
+  font-size: var(--wp--preset--font-size--md);
+  font-weight: 500;
+  text-transform: uppercase;
   line-height: 1;
 } 
 

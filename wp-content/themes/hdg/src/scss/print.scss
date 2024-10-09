@@ -43,29 +43,29 @@ body footer,
 #site-navigation,
 #skiplink-container,
 #skipnav-container,
-.sigur-masthead__content,
+.hdg-masthead__content,
 .govuk-breadcrumbs,
 .entry-footer,
 .nav-search__toggle,
 .govuk-phase-banner,
 .govuk-back-link,
-.sigur-block--button {
+.hdg-block--button {
   display: none !important;
 }
 
-.sigur-card {
-  .sigur-card__link-wrapper {
+.hdg-card {
+  .hdg-card__link-wrapper {
     border: 0;
     background-color: transparent;
     box-shadow: none;
   }
-  .sigur-card__content {
+  .hdg-card__content {
     padding: 0;
   }
 }
 
 .button,
-.sigur-button {
+.hdg-button {
   padding: var(--wp--custom--spacing--md) var(--wp--custom--spacing--lg);
   border: 2px solid var(--wp--preset--color--dark);
   border-radius: 2px;

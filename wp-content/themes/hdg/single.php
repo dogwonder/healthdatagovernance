@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package sigur
+ * @package hdg
  */
 
 get_header();
 ?>
 
-	<div id="primary" class="sigur-content-wrapper">
+	<div id="primary" class="hdg-content-wrapper">
 
 		<?php
 		while ( have_posts() ) :

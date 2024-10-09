@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package sigur
+ * @package hdg
  */
 
 get_header();
@@ -24,7 +24,7 @@ $post_args = array(
 
 $blog_query = new WP_Query( $post_args );
 ?>
-<div id="primary" class="sigur-content-wrapper">
+<div id="primary" class="hdg-content-wrapper">
 	<?php
 	while ( have_posts() ) :
 		the_post();
@@ -33,7 +33,7 @@ $blog_query = new WP_Query( $post_args );
 	?>
 	<hr />
 	<?php if ( $blog_query->have_posts() ) : ?>
-		<div class="sigur-list">
+		<div class="hdg-list">
 		<?php
 		while ( $blog_query->have_posts() ) :
 			$blog_query->the_post();

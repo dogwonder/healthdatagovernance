@@ -22,8 +22,7 @@ $pkgVersion = $package['version'];
 <link rel="preconnect" href="<?php echo esc_url( site_url() ); ?>" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
-<link rel="preload" href="<?php echo get_template_directory_uri() ?>/dist/fonts/neue-haas-unica-pro-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="profile" href="https://gmpg.org/xfn/11">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/css/main.css<?php echo wp_get_environment_type() !== "development"
     ? '?v=' . $pkgVersion
@@ -40,6 +39,6 @@ $pkgVersion = $package['version'];
 </head>
 <body <?php body_class( 'no-js govuk-frontend-supported' ); ?>>
 <script>document.body.className = document.body.className.replace('no-js', 'js-enabled');</script>
-<div id="page" class="sigur-wrapper">
+<div id="page" class="hdg-wrapper">
 	<?php include(locate_template( 'template-parts/_layout/masthead.php' )) ; ?>
-	<main id="content" class="sigur-body">
+	<main id="content" class="hdg-body">

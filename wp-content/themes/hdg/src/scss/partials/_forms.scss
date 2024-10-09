@@ -60,7 +60,7 @@ textarea {
 }
 
 input[type="submit"] {
-  @extend %sigur-button;
+  @extend %hdg-button;
   cursor: pointer;
   -webkit-appearance: none;
   &:hover {
@@ -104,7 +104,7 @@ input[type="submit"] {
   .gfield_label {
     display: inline-block;
     margin-block-end: var(--wp--custom--spacing--gap);
-    @extend %sigur-body;
+    @extend %hdg-body;
     font-weight: $bold;
   }
 
@@ -238,7 +238,7 @@ input[type="submit"] {
 
   //Buttons
   .gform_button {
-    @extend %sigur-button;
+    @extend %hdg-button;
     background-color: var(--wp--preset--color--primary);
     line-height: 1 !important; //Overrule theme
     &:hover {

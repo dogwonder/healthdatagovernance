@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package sigur
+ * @package hdg
  */
 
 get_header();
 ?>
 
-	<div id="primary" class="sigur-content-wrapper">
+	<div id="primary" class="hdg-content-wrapper">
 
 				<?php if ( have_posts() ) : ?>
 
@@ -23,7 +23,7 @@ get_header();
 
 					<hr />
 
-					<div class="sigur-list">
+					<div class="hdg-list">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) :
@@ -38,7 +38,7 @@ get_header();
 
 					endwhile;
 					?>
-					</div><!-- .sigur-list -->
+					</div><!-- .hdg-list -->
 					<?php
 						get_template_part( 'template-parts/_molecules/pagination' );
 					else :

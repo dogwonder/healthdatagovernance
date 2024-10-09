@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package sigur
+ * @package hdg
  */
 
 ?>
@@ -15,7 +15,7 @@ if ( class_exists( 'acf' ) ) {
 	$accent_colour  = get_field( 'accent_colour' ) ? : '';
 }
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('sigur-page stack'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('hdg-page stack'); ?>>
 
 	<?php if ( ! $hidden_title ) : ?>
 	<div class="entry-header">

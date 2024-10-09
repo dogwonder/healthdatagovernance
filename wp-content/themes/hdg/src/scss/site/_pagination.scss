@@ -1,7 +1,7 @@
-.sigur-pagination {
+.hdg-pagination {
   margin: var(--wp--custom--spacing--gap) 0;
   
-  .sigur-pagination__list {
+  .hdg-pagination__list {
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -26,7 +26,7 @@
       > * {
         color: var(--wp--preset--color--primary);
       }
-      .sigur-pagination__link-icon {
+      .hdg-pagination__link-icon {
         fill: var(--wp--preset--color--primary);
       }
     }
@@ -35,14 +35,14 @@
     &:focus-visible {
       outline: none;
       background-color: var(--wp--preset--color--focus);
-      .sigur-pagination__item {
+      .hdg-pagination__item {
         border-top: 1px solid var(--wp--preset--color--dark);
       }
-      .sigur-pagination__link-title, 
-      .sigur-pagination__link-label {
+      .hdg-pagination__link-title, 
+      .hdg-pagination__link-label {
         color: var(--wp--preset--color--dark);
       }
-      .sigur-pagination__link-icon {
+      .hdg-pagination__link-icon {
         fill: var(--wp--preset--color--dark);
       }
     }
@@ -53,7 +53,7 @@
   }
 
   &__link-label {
-    @extend %sigur-body-sm;
+    @extend %hdg-body-sm;
     text-decoration: underline;
     margin: var(--wp--custom--spacing--xs) 0 0 23px;
     display: inline-block;
@@ -67,8 +67,8 @@
     }
   }
   
-  &.sigur-pagination--pages {
-    .sigur-pagination__list {
+  &.hdg-pagination--pages {
+    .hdg-pagination__list {
       @include mq($from: md) {
         display: flex;
         flex-direction: column;
@@ -76,8 +76,8 @@
       }
     }
   }
-  &.sigur-pagination--noprev {
-    .sigur-pagination__list {
+  &.hdg-pagination--noprev {
+    .hdg-pagination__list {
       @include mq($from: md) {
         justify-content: flex-end;
       }

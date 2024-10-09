@@ -110,14 +110,14 @@
       grid-column: 2;
       position: relative;
       z-index: 2;
-      @extend %sigur-body-sm;
+      @extend %hdg-body-sm;
     }
     p {
       grid-column: 2;
       z-index: 2;
       position: relative;
       text-indent: 0;
-      @extend %sigur-body-md;
+      @extend %hdg-body-md;
       &:last-child {
         margin: 0;
       }

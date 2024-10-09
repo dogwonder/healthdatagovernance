@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package sigur
+ * @package hdg
  */
 
 ?>
@@ -13,11 +13,11 @@
 	<h2>
 		<?php
 		/* translators: %s: search query. */
-		printf( esc_html__( 'No results found for %s', 'sigur' ), '<span>' . get_search_query() . '</span>' );
+		printf( esc_html__( 'No results found for %s', 'hdg' ), '<span>' . get_search_query() . '</span>' );
 		?>
 	</h2>
 	<?php else : ?>
-	<h2><?php esc_html_e( 'No results found. Sorry.', 'sigur' ); ?></h2>
+	<h2><?php esc_html_e( 'No results found. Sorry.', 'hdg' ); ?></h2>
 	<?php endif; ?>
 
 	<div id="search-form" class="site-search">

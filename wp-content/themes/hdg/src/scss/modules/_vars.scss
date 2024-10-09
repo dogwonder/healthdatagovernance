@@ -22,7 +22,9 @@ $gap: 0.9375rem;
 $fluid-container: minmax(var(--wp--custom--spacing--md), 1fr) minmax(min-content, calc(var(--wp--custom--width--container))) minmax(var(--wp--custom--spacing--md), 1fr);
 
 //Typography
+$medium: 500;
 $bold: 700;
+$heavy: 900;
 
 //Redeclare from vendor/_mq.scss -- https://github.com/sass-mq/sass-mq
 $mq-breakpoints: (

@@ -1,6 +1,6 @@
 //404
 .error404 {
-  .sigur-menu-404 {
+  .hdg-menu-404 {
     margin-inline-start: var(--wp--custom--spacing--gap);
     ul {
       margin-inline-start: var(--wp--custom--spacing--gap);
@@ -18,7 +18,7 @@
     }
     .govuk-button {
       height: 45px;
-      @extend %sigur-button;
+      @extend %hdg-button;
       line-height: 45px;
       padding-top:0;
       padding-bottom:0;
