@@ -194,6 +194,38 @@
 
     };
 
+    const gradientAnimation = (elem) => {
+        const gradient = document.querySelector(elem);
+        let xPos = Math.random() * 100;
+        let yPos = Math.random() * 100;
+    
+        // Increase speed and range for more noticeable movement
+        let xSpeed = (Math.random() - 0.5) * 1.5; // Random speed between -0.75 and 0.75
+        let ySpeed = (Math.random() - 0.5) * 1.5;
+    
+        const animate = () => {
+            // Update positions
+            xPos = (xPos + xSpeed) % 200;
+            yPos = (yPos + ySpeed) % 200;
+    
+            // Apply the new background position
+            gradient.style.backgroundPosition = `${xPos}% ${yPos}%`;
+    
+            // Randomly adjust speed for natural movement
+            xSpeed += (Math.random() - 0.5) * 0.1;
+            ySpeed += (Math.random() - 0.5) * 0.1;
+    
+            // Keep speeds within a reasonable range
+            xSpeed = Math.max(Math.min(xSpeed, 2), -2);
+            ySpeed = Math.max(Math.min(ySpeed, 2), -2);
+    
+            requestAnimationFrame(animate);
+        };
+    
+        // Start the animation
+        animate();
+    };
+
     const cardClick = (elem)=>{  
 
         const cardLinks = document.querySelectorAll(elem);
@@ -286,6 +318,7 @@
         smoothScroll();
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
+        // gradientAnimation('.hdg-wrapper');
         cardClick('.hdg-card');
         new TextareaHandler('textarea');
      });

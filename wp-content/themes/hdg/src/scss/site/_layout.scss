@@ -1,15 +1,5 @@
 $animation-duration: 20s;
 
-@function random-color() {
-  $colors: (
-    #ddc0f0,
-    #bef4b5,
-    #c6eef0
-  );
-  $index: random(length($colors)); // Get a random index (1-based)
-  @return nth($colors, $index); // Return the color at that index
-}
-
 // Predefined random positions for keyframes
 $positions: (
   (50%, 0%),       // 0%
@@ -21,24 +11,20 @@ $positions: (
   (50%, 0%)       // 100%
 );
 
+:root {
+  --color1: 213, 162, 240; //Purple
+  --color2: 119, 165, 243; //Blue/green
+  --color3: 210, 159, 239; //Pink
+  --color4: 252, 254, 255; //Light
+  --color5: 132, 185, 242; //Blue
+  --circle-size: 80%;
+  --blending: hard-light;
+}
 
 .hdg-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: radial-gradient(circle, #ddc0f0, #bef4b5, #c6eef0);
-  background-size: 300% 300%; /* Adjust size for smooth transition */
-
-  animation: GradientFlow $animation-duration ease-in-out infinite;
-}
-
-
-@keyframes GradientFlow {
-  @for $i from 1 through length($positions) {
-    #{(15 * ($i - 1))}% {
-      background-position: nth($positions, $i);
-    }
-  }
 }
 
 //Anchor the footer to the bottom of the page
@@ -119,5 +105,13 @@ $positions: (
   }
   .entry-content {
     margin-block-start: 0 !important;
+  }
+}
+
+
+//Pages
+.hdg-page {
+  .entry-content {
+    --space: var(--wp--custom--spacing--lg);
   }
 }

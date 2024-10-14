@@ -1,6 +1,6 @@
 <footer class="hdg-footer">
 
-	<div class="hdg-container">   
+	<div class="hdg-footer__inner">   
 
 		<div class="hdg-footer__section">
 			

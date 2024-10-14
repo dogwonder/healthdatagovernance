@@ -1,5 +1,5 @@
 //Vars
-$nav-height: toRem(100);
+$nav-height: toRem(120);
 
 //Skip link
 .govuk-skip-link:link, 
@@ -22,7 +22,7 @@ $nav-height: toRem(100);
     content: "";
     position: absolute;
     z-index: $z-highest-1; 
-    background-color: var(--wp--preset--color--dark);
+    background-color: var(--wp--preset--color--light);
     width: 100%;
     height: 100%;
     top: 0;
@@ -41,7 +41,7 @@ $nav-height: toRem(100);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   //Align full
   max-width: 100%;
@@ -72,7 +72,10 @@ $nav-height: toRem(100);
     }
 
     .logo {
-      width: $nav-height;
+      width: calc($nav-height * 0.8);
+      @include mq($from: lg) {
+        width: $nav-height;
+      }
       height: auto;
       margin:0 var(--wp--custom--spacing--gap) 0 0;
     }
@@ -86,10 +89,11 @@ $nav-height: toRem(100);
   display: flex;
   
   .hdg-menu {
-    margin:0;
+    margin: var(--wp--custom--spacing--gap) 0 0 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    gap: var(--wp--custom--spacing--gap);
     @include mq($from: lg) {
       flex: 1;
       flex-direction: row;
@@ -103,7 +107,7 @@ $nav-height: toRem(100);
       text-align: left;
       position: relative;
       padding: 0;
-      margin: 0 0 var(--wp--custom--spacing--gap);
+      margin: 0;
       @include mq($until: lg) {
 
         font-size: var(--wp--preset--font-size--lg);
@@ -112,89 +116,9 @@ $nav-height: toRem(100);
         &.current-page-ancestor > a {
           width: calc(100% - 80px) !important;
         }
-        .button-show-subnav {
-          position: absolute;
-          height: 50px;
-          width: 80px;
-          right: 0;
-          top: 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          appearance: none;
-          border: 0;
-          background-color: transparent;
-          padding: 0;
-          &:after {
-            //Chevron down
-            content: "";
-            display: block;
-            box-sizing: border-box;
-            width: 0;
-            height: 0;
-            width: 1ex;
-            height: 1ex;
-            border-bottom: 3px solid #fff;
-            border-right: 3px solid #fff;
-            transform: rotate(45deg);
-            margin: 0 auto;
-          }
-          &[aria-expanded="true"] {
-            &:after {
-              border-bottom: transparent;
-              border-right: transparent;
-              border-top: 3px solid #fff;
-              border-left: 3px solid #fff;
-            }
-          }
-          @include mq($until: lg) {
-            justify-content: center;
-            &:before {
-                content: "";
-                display: block;
-                border-radius: 50%;
-                border: 1px solid #fff;
-                width: 40px;
-                height: 40px;
-            }
-            &:after {
-              position: absolute;
-              top: 17px;
-              right: 34px;
-            }
-            &[aria-expanded="true"] {
-              &:after {
-                top: 21px;
-              }
-            }
-          }
-          a {
-
-          }
-          span {
-            display: none;  
-          }
-          
-        }
       }
       @include mq($from: lg) {
-        line-height: $nav-height;
         margin: 0 var(--wp--custom--spacing--gap) 0 0;
-        .button-show-subnav {
-          display: none;
-        }
-         //A11y menu active state
-        .button-show-subnav:focus-visible {
-          position: relative;
-          top: 100%;
-        }
-      }
-      &:first-of-type {
-        @include mq($from: lg) {
-          a {
-            padding-left: 0;
-          }
-        }
       }
       &:last-of-type {
         margin: 0;
@@ -202,13 +126,11 @@ $nav-height: toRem(100);
       a {
         display: inline-block;
         text-decoration: none;
-        padding:var(--wp--custom--spacing--sm) var(--wp--custom--spacing--md);
-        color: white;
+        padding: 0;
+        margin:0;
         width: 100%;
         @include mq($from: lg) {
           color: var(--wp--preset--color--dark);
-          padding:0 var(--wp--custom--spacing--gap);
-          margin:0;
         }
         &:hover {
           text-decoration: underline;
@@ -371,9 +293,6 @@ $nav-height: toRem(100);
   }
   svg {
     height: toRem(44);
-    &.close {
-      fill: var(--wp--preset--color--light);
-    }
   }
 }
 
@@ -484,10 +403,12 @@ $nav-height: toRem(100);
     &.masthead-is-open {
       z-index: $z-highest;
       position: relative;
-      background-color: var(--wp--preset--color--dark);
+      background-color: var(--wp--preset--color--light);
       .hdg-nav__wrapper {
         content-visibility: visible;
         display: block;
+        padding: var(--wp--custom--spacing--gap);
+        margin-block-start: var(--wp--custom--spacing--lg);
         .hdg-menu {
           display: flex;
         }

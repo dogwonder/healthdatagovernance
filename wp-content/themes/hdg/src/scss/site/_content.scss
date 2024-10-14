@@ -1,11 +1,4 @@
 //WP entry-content e.g. posts
-.entry-header {
-  &:has(.entry-meta) {
-    .wp-block-post-title {
-      margin: 0 0 var(--wp--custom--spacing--xs);
-    }
-  }
-}
 .entry-content {
   //Hide empty paragraphs
   p:empty {

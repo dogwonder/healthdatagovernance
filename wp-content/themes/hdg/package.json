@@ -1,6 +1,6 @@
 {
   "name": "hdg",
-  "version": "1.2.78",
+  "version": "1.2.81",
   "description": "",
   "main": "",
   "scripts": {
@@ -16,7 +16,7 @@
     "scripts": "run-s scripts:*",
     "watch:css": "onchange \"./src/**/*.scss\" -- npm run css:sass",
     "watch:eleventy": "npx eleventy --serve",
-    "watch:scripts": "onchange \"./src/**/*.js\" -- npm run scripts:concat",
+    "watch:scripts": "onchange \"./src/scripts/app.js\" -- npm run scripts:concat",
     "watch": "run-p watch:*",
     "favicon": "node ./scripts/favicon.js",
     "build": "NODE_ENV=production npm run clean && NODE_ENV=production npm run-s css scripts && NODE_ENV=production npx eleventy && NODE_ENV=production npm run favicon"

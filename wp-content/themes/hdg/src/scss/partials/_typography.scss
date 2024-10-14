@@ -7,7 +7,7 @@ html {
 
 body {
   font-family: var(--wp--preset--font-family--body);
-  font-weight: normal;
+  font-weight: 600;
   font-size: var(--wp--preset--font-size--body); 
   line-height: var(--wp--custom--typography--line-height--body);
   letter-spacing: 1rem * 0.02;
@@ -37,6 +37,7 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
   //Reset browser defaults - we avoid reseting the top margin as this is coverted by template literals
   margin-block: 0;
   font-variant-numeric: lining-nums;
+  text-transform: uppercase;
   + p {
     margin-block-start: var(--wp--custom--spacing--gap);
   }
@@ -100,7 +101,7 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
 .hdg-body, 
 %hdg-body,
 .govuk-body {
-  font-weight: normal;
+  font-weight: 600;
   font-size: var(--wp--preset--font-size--body); 
   line-height: var(--wp--custom--typography--line-height--body);
 }
@@ -137,6 +138,7 @@ ol {
   padding-left: 0;
   list-style-position: outside;
 }
+
 
 blockquote p {
   hanging-punctuation: first;
