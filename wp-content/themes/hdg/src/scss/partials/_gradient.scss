@@ -1,3 +1,15 @@
+:root {
+  --color1: 213, 162, 240; //Purple
+  --color2: 119, 165, 243; //Blue/green
+  --color3: 210, 159, 239; //Pink
+  --color4: 252, 254, 255; //Light
+  --color5: 252, 243, 254; //Light-2
+  --color-interactive: 143, 65, 217; 
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+//Via https://github.com/baunov/gradients-bg/
 
 .gradient-bg {
     background: linear-gradient(40deg, var(--wp--preset--color--light), var(--wp--preset--color--green));
@@ -12,13 +24,13 @@
       display: none;
     }
     .gradients-container {
-      filter: url(#goo) blur(40px) ;
-      width: 100%;
-      height: 100%;
+      filter: url(#goo) blur(50px);
+      width: 150%;
+      height: 150%;
     }
     .g1 {
       position: absolute;
-      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 70%) no-repeat;
       mix-blend-mode: var(--blending);
   
       width: var(--circle-size);
@@ -92,6 +104,18 @@
   
       opacity: 1;
     }
+    // .interactive {
+    //   position: absolute;
+    //   background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+    //   mix-blend-mode: var(--blending);
+  
+    //   width: 100%;
+    //   height: 100%;
+    //   top: -50%;
+    //   left: -50%;
+  
+    //   opacity: 0.7;
+    // }
   }
   
   

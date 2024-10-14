@@ -309,7 +309,41 @@
         rows(textarea) {
             return textarea.rows || parseInt(textarea.dataset.minRows);
         }
+
+    };
+
+    class GradientInteractive {
+        constructor() {
+            this.interBubble = document.querySelector('.interactive');
+            this.curX = 0;
+            this.curY = 0;
+            this.tgX = 0;
+            this.tgY = 0;
+    
+            this.init();
+        }
+    
+        init() {
+            window.addEventListener('mousemove', (event) => {
+                this.tgX = event.clientX;
+                this.tgY = event.clientY;
+            });
+    
+            this.move();
+        }
+    
+        move() {
+            this.curX += (this.tgX - this.curX) / 20;
+            this.curY += (this.tgY - this.curY) / 20;
+            this.interBubble.style.transform = `translate(${Math.round(this.curX)}px, ${Math.round(this.curY)}px)`;
+    
+            requestAnimationFrame(() => {
+                this.move();
+            });
+        }
     }
+
+    
     
 
     //Init
@@ -321,6 +355,7 @@
         // gradientAnimation('.hdg-wrapper');
         cardClick('.hdg-card');
         new TextareaHandler('textarea');
+        // new GradientInteractive();
      });
     
 })();
