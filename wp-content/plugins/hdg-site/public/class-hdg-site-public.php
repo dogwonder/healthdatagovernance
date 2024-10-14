@@ -48,9 +48,9 @@ class HDG_Site_Public {
 	 * @param      string $HDG_Site       The name of the plugin.
 	 * @param      string $version    The version of this plugin.
 	 */
-	public function __construct( $HDG_Site, $version ) {
+	public function __construct( $hdg_site, $version ) {
 
-		$this->HDG_Site = $HDG_Site;
+		$this->hdg_site = $hdg_site;
 		$this->version       = $version;
 
 	}
@@ -61,19 +61,26 @@ class HDG_Site_Public {
 	 */
 	public function hdg_enqueue_theme_styles() {
 
-		wp_enqueue_style( $this->HDG_Site, plugin_dir_url( __FILE__ ) . 'css/hdg-site-theme.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->hdg_site, plugin_dir_url( __FILE__ ) . 'css/hdg-site-theme.css', array(), $this->version, 'all' );
 	}
 
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
 	 */
-	public function hdg_enqueue_theme_scripts() {
-		
-		// Remove array('jquery') from wp_enqueue_script as we don't want to be dependant on the WP jQuery core
-		wp_enqueue_script( $this->HDG_Site, plugin_dir_url( __FILE__ ) . 'scripts/hdg-site.min.js', array(), $this->version, false );
 
-	}
+	public function hdg_enqueue_theme_scripts()
+    {
+        $asset_file = include plugin_dir_path(__DIR__) .
+            "dist/hdg-site-theme.asset.php";
+        wp_enqueue_script(
+            $this->hdg_site,
+            HDG_SITE_PLUGIN_URL . "dist/hdg-site-theme.js",
+            $asset_file["dependencies"],
+            $asset_file["version"],
+            true
+        );
+    }
 
 	/**
 	 * Add type=module to script tags

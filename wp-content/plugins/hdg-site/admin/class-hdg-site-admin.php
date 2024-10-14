@@ -27,9 +27,9 @@ class HDG_Site_Admin {
 	 *
 
 	 * @access   private
-	 * @var      string    $HDG_Site    The ID of this plugin.
+	 * @var      string    $hdg_site    The ID of this plugin.
 	 */
-	private $HDG_Site;
+	private $hdg_site;
 
 	/**
 	 * The version of this plugin.
@@ -44,12 +44,12 @@ class HDG_Site_Admin {
 	 * Initialize the class and set its properties.
 	 *
 
-	 * @param      string $HDG_Site       The name of this plugin.
+	 * @param      string $hdg_site       The name of this plugin.
 	 * @param      string $version    The version of this plugin.
 	 */
-	public function __construct( $HDG_Site, $version ) {
+	public function __construct( $hdg_site, $version ) {
 
-		$this->HDG_Site = $HDG_Site;
+		$this->hdg_site = $hdg_site;
 		$this->version       = $version;
 
 	}
@@ -71,7 +71,7 @@ class HDG_Site_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->HDG_Site, plugin_dir_url( __FILE__ ) . 'css/hdg-site-editor.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->hdg_site, plugin_dir_url( __FILE__ ) . 'css/hdg-site-editor.css', array(), $this->version, 'all' );
 
 	}
 
@@ -92,7 +92,7 @@ class HDG_Site_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->HDG_Site, plugin_dir_url( __FILE__ ) . 'js/admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->hdg_site, plugin_dir_url( __FILE__ ) . 'js/admin.js', array( 'jquery' ), $this->version, false );
 	}
 
 }
