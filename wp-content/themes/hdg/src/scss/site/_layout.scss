@@ -1,16 +1,3 @@
-$animation-duration: 20s;
-
-// Predefined random positions for keyframes
-$positions: (
-  (50%, 0%),       // 0%
-  (30%, 70%),     // 15%
-  (80%, 30%),     // 30%
-  (10%, 90%),     // 45%
-  (90%, 20%),     // 60%
-  (20%, 80%),     // 75%
-  (50%, 0%)       // 100%
-);
-
 .hdg-wrapper {
   display: flex;
   flex-direction: column;
@@ -61,40 +48,6 @@ $positions: (
 .wp-block-post-content {
   .hdg-hero + .hdg-feature {
     --buffer: 0;
-  }
-}
-
-.hdg-wrapper:has(.hdg-hero) {
-  .hdg-masthead {
-    position: fixed;
-    width: 100%;
-    &.is-scrolled {
-      position: relative;
-    }
-    .hdg-nav {
-      svg {
-        fill: var(--wp--preset--color--light);
-      }
-      .hdg-menu {
-        .menu-item > a {
-          color: var(--wp--preset--color--light);
-          &:hover {
-            text-decoration-color: var(--wp--preset--color--light);
-          }
-        }
-      }
-    }
-    .hdg-masthead__logo {
-      img {
-        filter: invert(1);
-      }
-    }
-  }
-  .hdg-hero {
-    margin-block-end: var(--wp--custom--spacing--gap);
-  }
-  .entry-content {
-    margin-block-start: 0 !important;
   }
 }
 

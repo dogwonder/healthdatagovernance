@@ -343,6 +343,36 @@
         }
     }
 
+    class GradientHeight {
+
+        //Get the heigh of #page and apply it to the gradient data-gradient
+        constructor() {
+            this.page = document.querySelector('#page');
+            this.gradient = document.querySelector('[data-gradient]');
+            this.init();
+        }
+
+        init() {
+            this.setHeight();
+            this.watchResize();
+        }
+
+        setHeight() {
+            this.gradient.style.height = `${this.page.offsetHeight}px`;
+            //If the body has a class of admin-bar add 32px to this value
+            if (document.body.classList.contains('admin-bar')) {
+                this.gradient.style.height = `${this.page.offsetHeight + 32}px`;
+            }
+        }
+
+        watchResize() {
+            window.addEventListener('resize', () => {
+                this.setHeight();
+            });
+        }
+
+    }
+
     
     
 
@@ -356,6 +386,7 @@
         cardClick('.hdg-card');
         new TextareaHandler('textarea');
         // new GradientInteractive();
+        new GradientHeight();
      });
     
 })();

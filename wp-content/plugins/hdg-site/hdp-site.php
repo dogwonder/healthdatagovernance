@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       Health Data Principles: Site
  * Plugin URI:        https://wp.dgw.ltd
- * Description:       Accompanying plugin for the Sigur Rós theme
+ * Description:       Accompanying plugin for the Health Data Principles theme
  * Version:           1.0.1
  * Author:            Dogwonder Ltd
  * Author URI:        https://richholman.com

@@ -41,7 +41,7 @@
 	});
   }
 </script>
-<div class="gradient-bg">
+<div class="gradient-bg" data-gradient>
       <svg xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="goo">
