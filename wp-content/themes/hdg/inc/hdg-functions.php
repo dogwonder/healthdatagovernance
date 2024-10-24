@@ -29,53 +29,6 @@ if ( ! function_exists( 'hdg_body_classes' ) ) :
 			$classes[] = 'no-sidebar';
 		}
 
-		//Accent color
-		$accent_colour  = get_field( 'accent_colour' ) ? : '';
-
-		$settings = WP_Theme_JSON_Resolver::get_theme_data()->get_settings();	
-		if ( isset( $settings['color']['palette']['theme'] ) ) {
-			$color_palette = $settings['color']['palette']['theme'];
-		}
-		// Initialize the class variable
-		$accent_color = '';
-
-		// Normalize the accent colour to lowercase to ensure case-insensitive comparison
-		$normalized_accent = strtolower($accent_colour);
-
-		// Flag to check if a match is found
-		$match_found = false;
-
-		// Iterate through the colors array to find a matching color
-		foreach ($color_palette as $color) {
-			// Normalize the color from the array
-			$normalized_color = strtolower($color['color']);
-			
-			if ($normalized_color === $normalized_accent) {
-				// Match found
-				$accent_color = 'has-background has-' . htmlspecialchars($color['slug'] . '-background-color');
-				$match_found = true;
-				break; // Exit the loop as we found a match
-			}
-		}
-
-		// If no match is found, fall back to the hex color without the '#'
-		if (!$match_found) {
-			// Remove the '#' from the accent colour
-			$stripped_hex = ltrim($accent_colour, '#');
-			
-			// Optionally, validate that the stripped hex is a valid hex code (6 characters, hexadecimal)
-			if (preg_match('/^[A-Fa-f0-9]{6}$/', $stripped_hex)) {
-				$accent_color = 'has-background has-' . htmlspecialchars($stripped_hex) . '-background-color';
-			} else {
-				// Handle invalid hex format
-				$accent_color = 'no-background'; // You can choose to set a default or handle it differently
-			}
-		}
-
-		$classes[] = $accent_color;
-
-
-
 		return $classes;
 	}
 	add_filter( 'body_class', 'hdg_body_classes' );
@@ -142,3 +95,58 @@ if ( ! function_exists( 'hdg_sort_dates' ) ) :
 
 	}
 endif;
+
+/**
+ * Default setup routine
+ *
+ * @return void
+ */
+function setup(): void {
+	add_filter( 'render_block_core/heading', __NAMESPACE__ . '\hdg_filter_the_markup', 10, 2 );
+}
+
+add_action( 'init', __NAMESPACE__ . '\setup' );
+
+
+/**
+ * Add `id` attribute to h2.
+ *
+ * @param string $content Block content.
+ * @param array  $block   Block data.
+ *
+ * @return string
+ */
+function hdg_filter_the_markup( string $content, array $block ) : string {
+	$block_level = $block['attrs']['level'] ?? false;
+	$block_level = $block_level ? intval( $block_level ) : 2;
+	// Only target h2 heading level.
+	if ( 2 !== $block_level ) {
+		return $content;
+	}
+
+	// Parse the HTML.
+	$attributes = new WP_HTML_Tag_Processor( $content );
+
+	$id = $attributes->get_attribute( 'id' ) ?? false;
+	$id = $id ? strval( $id ) : '';
+	// Bail early if we already have an `id` attribute.
+	if ( ! empty( $id ) ) {
+		return $content;
+	}
+
+	// Create a unique ID.
+	$inner_html = $block['innerHTML'] ?? false;
+	$inner_html = $inner_html ? strval( $inner_html ) : '';
+	$inner_html = wp_strip_all_tags( $inner_html );
+	$id_hash    = md5( $inner_html );
+    $title_sanitize = sanitize_title($inner_html);
+
+	// Add the attributes to the markup.
+	if ( $attributes->next_tag( array( 'class' => 'wp-block-heading' ) ) ) {
+        // $attributes->set_attribute( 'id', 'h-' . $id_hash );
+        $attributes->set_attribute( 'id', 'h-' . $title_sanitize );
+		$attributes->add_class( 'cfc-block-heading' );
+	}
+
+	return $attributes->get_updated_html();
+}

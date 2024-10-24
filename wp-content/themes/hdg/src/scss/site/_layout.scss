@@ -35,6 +35,21 @@
       max-width: var(--wp--custom--width--content);
       width: 100%;
       margin-inline: auto;
+      padding-inline: var(--wp--custom--spacing--md);
+    }
+  }
+}
+
+//Page layout w/ sidebar
+.entry-wrapper {
+  &:has(.entry-sidebar) {
+    --wp--custom--width--container: 80rem;
+  }
+  &__inner {
+    display: grid;
+    gap: var(--wp--custom--spacing--xl);
+    @include mq($from: lg) {
+      grid-template-columns: var(--sidebar-width-fluid) 1fr;  
     }
   }
 }
@@ -44,17 +59,28 @@
   padding-block-end: var(--wp--custom--spacing--gap);
 }
 
-//Hero followed by Featured block
-.wp-block-post-content {
-  .hdg-hero + .hdg-feature {
-    --buffer: 0;
+//Pages
+.hdg-page {
+  .entry-content, 
+  .entry-main {
+    .wp-block-heading:not(:first-of-type) {
+      --space: var(--wp--custom--spacing--xl) !important;
+    }
   }
 }
 
 
-//Pages
-.hdg-page {
+//Blocks page - add some extra spacing
+.hdg-wrapper:has(.hdg-hero) {
+  .hdg-masthead {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    .admin-bar & {
+      top: 32px;
+    }
+  }
   .entry-content {
-    --space: var(--wp--custom--spacing--lg);
+    margin: 0 !important;
   }
 }

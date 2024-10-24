@@ -44,6 +44,9 @@ $mq-breakpoints: (
   //System font as default
   --body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
+  //Layouts
+  --sidebar-width-fluid: clamp(18rem, 9.37rem + 16.84vw, 22rem);
+
   //Menu height
   --submenu-offset: 0;
 

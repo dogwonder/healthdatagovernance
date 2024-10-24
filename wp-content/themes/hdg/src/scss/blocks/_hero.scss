@@ -1,0 +1,64 @@
+
+//Hero block
+.hdg-hero {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--wp--preset--color--dark);
+    min-height: 25rem;
+
+    //Align full
+    max-width: 100%;
+    grid-column: 1 / span 3 !important;
+
+    .acf-innerblocks-container {
+      @include stack($gap);
+    }
+
+    h1, h2 {
+      @extend %hdg-heading-xl;
+    }
+
+    h1, h2, p {
+      color:inherit;
+    }
+
+    p {
+      font-size: var(--wp--preset--font-size--md);
+    }
+
+    p, li {
+      max-width: var(--wp--custom--width--character);
+    }
+
+    &__wrapper {
+      z-index:2;
+      padding: var(--wp--custom--spacing--lg) var(--wp--custom--spacing--md);
+      > * {
+        max-width: var(--wp--custom--width--content);
+        width: 100%;
+        margin-inline: auto;
+      }
+    }
+
+    &.has-image {
+      background-size: cover;
+      background-position: 0 50%;
+      //Aspect ratios
+      aspect-ratio: 10 / 16;
+      @include mq($from: xl) {
+        aspect-ratio: initial;
+        height: 65vh;
+      }
+    }
+
+    //Block style varients - styles in block.json
+    &.is-style-monochrome {
+      .block__background img {
+        filter: grayscale(100%) contrast(200%);
+      }
+    }
+     
+}

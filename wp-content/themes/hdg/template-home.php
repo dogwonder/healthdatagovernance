@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home
+ * Template Name: Carousel
  *
  * The template for displaying all blocks
  *

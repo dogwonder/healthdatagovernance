@@ -21,7 +21,7 @@
     cursor: pointer;
     color: var(--wp--preset--color--dark);
     border-color: var(--wp--preset--color--dark);
-    background-color: var(--wp--preset--color--light);
+    background-color: transparent;
   }
   &:link,
   &:visited,
@@ -32,7 +32,7 @@
   &:focus {
     color: var(--wp--preset--color--dark);
     border-color: var(--wp--preset--color--dark);
-    background-color: var(--wp--preset--color--light);
+    background-color: transparent;
     --box-shadow: none;
     --outline: none;
   }

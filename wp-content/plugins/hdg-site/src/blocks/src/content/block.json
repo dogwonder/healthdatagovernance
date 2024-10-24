@@ -1,6 +1,6 @@
 {
     "name": "acf/hdg-content",
-    "title": "Sigur Rós Content block",
+    "title": "HDG Content block",
     "description": "Content block",
     "style": "file:./content.css",
     "category": "theme",
