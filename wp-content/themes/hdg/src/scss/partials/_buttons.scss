@@ -29,6 +29,12 @@
   &:active {
     text-decoration: none;
   }
+  &:visited {
+    color: var(--wp--preset--color--light);
+    &:hover {
+      color: var(--wp--preset--color--dark);
+    }
+  }
   &:focus {
     color: var(--wp--preset--color--dark);
     border-color: var(--wp--preset--color--dark);

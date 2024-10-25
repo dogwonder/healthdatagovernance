@@ -54,6 +54,9 @@ $mq-breakpoints: (
   --radius: 0.25rem;
   --radius-outer: 0.5rem;
 
+  //Modal
+  --modal-min-item-size: 16rem; //256px
+
   //Typography
   --opentype-case: "case" off;
   --opentype-sinf: "sinf" off;

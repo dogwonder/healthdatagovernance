@@ -1,10 +1,13 @@
 // Import necessary AlpineJS core and intersect plugin
 import Alpine from 'alpinejs';
 import intersect from '@alpinejs/intersect';
-import focus from '@alpinejs/focus'
+import focus from '@alpinejs/focus';
+import ui from '@alpinejs/ui';
+
 window.Alpine = Alpine;
 Alpine.plugin(intersect);
 Alpine.plugin(focus);
+Alpine.plugin(ui);
 
 Alpine.data('scrollSpy', function () {
     return {
