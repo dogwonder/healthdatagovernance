@@ -48,6 +48,7 @@ $country_data_json = json_encode($country_data);
 #svg-map {
 	fill: none;
 	width: 100%;
+	height: auto;
 }
 #background {
 	fill: none;

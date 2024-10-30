@@ -123,3 +123,35 @@
 
   }
 }
+
+
+
+// https://toward.studio/latest/making-css-gradients-smooth
+//Usage @include scrimGradient($startColor: #ffffff, $endColor: #000000, $direction: '40deg');
+@mixin scrimGradient(
+  $startColor: var(--wp--preset--color--light), // Starting color of the gradient using a CSS variable
+  $endColor: var(--wp--preset--color--green),   // Ending color of the gradient using a CSS variable
+  $direction: 40deg,                            // Direction of the gradient in degrees
+  $stopsCount: 13                               // Number of gradient stops
+) {
+  // Initialize an empty list for gradient stops
+  $stops: ();
+
+  // Calculate the increment for each stop
+  @for $i from 0 through $stopsCount {
+    // Calculate the position of the current stop as a percentage
+    $position: $i / $stopsCount;
+
+    // Interpolate between the start and end colors
+    $interpolatedColor: mix($startColor, $endColor, $position * 100);
+
+    // Concatenate color and position using interpolation
+    $stop: #{$interpolatedColor} #{percentage($position)};
+
+    // Append the stop to the stops list, separated by commas
+    $stops: append($stops, $stop, comma);
+  }
+
+  // Apply the linear gradient using background-image
+  background-image: linear-gradient(unquote($direction), $stops);
+}

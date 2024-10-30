@@ -80,6 +80,9 @@
       top: 32px;
     }
   }
+  .hdg-hero {
+    margin-block-end: var(--wp--custom--spacing--xl) !important;
+  }
   .entry-content {
     margin: 0 !important;
   }

@@ -26,6 +26,13 @@ $medium: 500;
 $bold: 700;
 $heavy: 900;
 
+//Colors
+$green: #afeba5;
+$pink: #d1bq3e5;
+$blue: #6e99da;
+$dark: #0d0f05;
+$light: #ffffff;
+
 //Redeclare from vendor/_mq.scss -- https://github.com/sass-mq/sass-mq
 $mq-breakpoints: (
   sm: 320px,
@@ -64,5 +71,6 @@ $mq-breakpoints: (
   //Postion
   --gradient-position-x: 50%;
   --gradient-position-y: 0%;
+
 
 }
