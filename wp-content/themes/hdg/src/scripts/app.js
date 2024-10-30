@@ -386,7 +386,11 @@
         cardClick('.hdg-card');
         new TextareaHandler('textarea');
         // new GradientInteractive();
-        new GradientHeight();
      });
+
+     //After window load
+    window.addEventListener('load', function() {
+        new GradientHeight();
+    });
     
 })();
