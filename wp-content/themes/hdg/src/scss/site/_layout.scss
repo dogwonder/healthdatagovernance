@@ -64,7 +64,7 @@
   .entry-content, 
   .entry-main {
     .wp-block-heading:not(:first-of-type) {
-      --space: var(--wp--custom--spacing--xl) !important;
+      margin-block-start: var(--wp--custom--spacing--xl) !important;
     }
   }
 }
