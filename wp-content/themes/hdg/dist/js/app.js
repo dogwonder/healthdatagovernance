@@ -383,7 +383,7 @@
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
         // gradientAnimation('.hdg-wrapper');
-        cardClick('.hdg-card');
+        // cardClick('.hdg-card');
         new TextareaHandler('textarea');
         // new GradientInteractive();
      });

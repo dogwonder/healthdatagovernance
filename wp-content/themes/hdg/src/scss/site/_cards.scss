@@ -34,17 +34,6 @@
     text-decoration: none !important;
     color: var(--wp--preset--color--dark);
     text-align: left;
-    
-    &:hover {
-      cursor: pointer;
-    }
-
-    &:hover,
-    &:active {
-      .hdg-card__heading > a {
-        text-decoration: none;
-      }
-    }
 
     &__image {
       max-width: 100%;
