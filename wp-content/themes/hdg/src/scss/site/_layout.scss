@@ -66,8 +66,8 @@
     .wp-block-heading {
       margin-block-start: var(--wp--custom--spacing--xl) !important;
     }
-    .hdg-page-header__title ~ h2.wp-block-heading {
-      margin-block-start: 0 !important;
+    .hdg-page-header__title + h2.wp-block-heading {
+      margin-block-start: var(--wp--custom--spacing--md) !important;
     }
   }
 }
