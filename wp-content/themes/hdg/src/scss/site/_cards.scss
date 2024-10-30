@@ -65,12 +65,14 @@
       background-color: var(--wp--preset--color--primary);
     }
   
-    &__heading {
+    &__heading  {
       @extend %hdg-heading-sm;
       display: inline-block;
       width: 100%;
-      margin-block: var(--wp--custom--spacing--gap) !important;
       text-decoration: none;
+      &.wp-block-heading {
+        margin-block-start: var(--wp--custom--spacing--gap) !important;
+      }
     }
   
     &__content {
