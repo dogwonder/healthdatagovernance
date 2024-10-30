@@ -267,7 +267,7 @@
 		},
 		"h3": {
 		  "typography": {
-			"fontSize": "var(--wp--preset--font-size--lg)",
+			"fontSize": "var(--wp--preset--font-size--md)",
 			"fontWeight": "800",
 			"lineHeight": "var(--wp--custom--typography--line-height--heading)",
 			"letterSpacing": "var(--wp--custom--typography--letter-spacing--heading)"
