@@ -4,8 +4,8 @@
       margin: 0;
     }
     .govuk-accordion__section-header {
-      font-size: var(--wp--preset--font-size--md);
-      line-height: var(--wp--custom--typography--line-height--body);
+    font-size: var(--wp--preset--font-size--body); 
+    line-height: var(--wp--custom--typography--line-height--body);
       border-color: var(--wp--custom--color--border);
     }
     .govuk-accordion__section-toggle, 
