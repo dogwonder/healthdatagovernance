@@ -347,7 +347,7 @@
 
         //Get the heigh of #page and apply it to the gradient data-gradient
         constructor() {
-            this.page = document.querySelector('#page');
+            this.page = document.body;
             this.gradient = document.querySelector('[data-gradient]');
             this.init();
         }
