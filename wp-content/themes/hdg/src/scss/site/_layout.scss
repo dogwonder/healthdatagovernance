@@ -31,7 +31,7 @@
 .hdg-content-wrapper {
   .entry-header, 
   .entry-content {
-    > *:where(:not(.hdg-block)) {
+    > *:where(:not(.hdg-hero)) {
       max-width: var(--wp--custom--width--content);
       width: 100%;
       margin-inline: auto;
