@@ -145,7 +145,7 @@ function hdg_filter_the_markup( string $content, array $block ) : string {
 	if ( $attributes->next_tag( array( 'class' => 'wp-block-heading' ) ) ) {
         // $attributes->set_attribute( 'id', 'h-' . $id_hash );
         $attributes->set_attribute( 'id', 'h-' . $title_sanitize );
-		$attributes->add_class( 'cfc-block-heading' );
+		$attributes->add_class( 'hdg-block-heading' );
 	}
 
 	return $attributes->get_updated_html();

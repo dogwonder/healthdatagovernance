@@ -26,7 +26,7 @@
 				<div class="entry-main stack">
 					<?php
                     the_title(
-                        '<h1 class="cfc-page-header__title" itemprop="headline">',
+                        '<h1 class="hdg-page-header__title" itemprop="headline">',
                         "</h1>"
                     );
                     ?>
