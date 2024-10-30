@@ -116,7 +116,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "all"
+                "value": "acf\/hdg-hero"
             }
         ]
     ],
@@ -129,5 +129,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729779270
+    "modified": 1730303742
 }
