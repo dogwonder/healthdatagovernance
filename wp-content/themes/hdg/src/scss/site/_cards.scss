@@ -80,7 +80,7 @@
       @extend %hdg-heading-sm;
       display: inline-block;
       width: 100%;
-      margin: 0 0 var(--wp--custom--spacing--gap);
+      margin-block: var(--wp--custom--spacing--gap) !important;
       text-decoration: none;
     }
   
