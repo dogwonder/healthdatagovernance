@@ -1,5 +1,6 @@
 //WP entry-content e.g. posts
-.entry-content {
+.entry-content, 
+.entry-main {
   //Hide empty paragraphs
   p:empty {
     display:none;
