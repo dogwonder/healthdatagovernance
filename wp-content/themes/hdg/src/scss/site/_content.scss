@@ -62,7 +62,7 @@
     .wp-block-image {
       display: flex;
       background-color: var(--wp--preset--color--light);
-      height: 100%;
+      height: auto;
       align-items: center;
       justify-content: center;
       aspect-ratio: 1 / 1;
