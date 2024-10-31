@@ -14,7 +14,7 @@
     }
   }
 
-  &:has(.wp-block-heading) {
+  &:has(.wp-block-heading:not(.hdg-card__heading)) {
     .hdg-cards__grid {
       margin-block-start: var(--wp--custom--spacing--gap);
     }
@@ -43,7 +43,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    aspect-ratio: 4 / 3;
     picture {
       display: block;
       width: 100%;
@@ -62,18 +61,15 @@
   &__image-placeholder {
     width: 100%;
     min-height: 6rem;
-    aspect-ratio: 4 / 3;
     background-color: var(--wp--preset--color--primary);
   }
 
   &__heading  {
     @extend %hdg-heading-sm;
+    margin-block-start: var(--wp--custom--spacing--gap) !important;
     display: inline-block;
     width: 100%;
     text-decoration: none;
-    &.wp-block-heading {
-      margin-block-start: var(--wp--custom--spacing--gap) !important;
-    }
   }
 
   &__content {

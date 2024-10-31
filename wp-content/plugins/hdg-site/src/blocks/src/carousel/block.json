@@ -1,0 +1,17 @@
+{
+    "name": "acf/hdg-carousel",
+    "title": "HDG Carousel",
+    "description": "Carousel block",
+    "category": "theme",
+    "icon": "format-gallery",
+    "apiVersion": 2,
+    "supports": {
+        "jsx": true, 
+        "alignText": false, 
+        "color": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "carousel.php"
+    }
+}

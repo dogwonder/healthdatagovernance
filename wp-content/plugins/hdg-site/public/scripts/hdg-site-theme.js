@@ -55,5 +55,46 @@ Alpine.data('scrollSpy', function () {
     };
 });
 
-// Start the AlpineJS application
+Alpine.data('carousel', function () {
+    return {
+        
+        skip: 3, // Number of slides to skip (change as needed)
+        atBeginning: true, // Start at the beginning
+        atEnd: false, // Not at the end initially
+        currentIndex: 0, // Track the current index
+
+        init() {
+            // Set the initial state of the buttons
+            this.updateButtonStates();
+        },
+
+        next() {
+            this.currentIndex += this.skip;
+            this.scrollToCurrent();
+            this.updateButtonStates();
+        },
+
+        prev() {
+            this.currentIndex -= this.skip;
+            this.scrollToCurrent();
+            this.updateButtonStates();
+        },
+
+        scrollToCurrent() {
+            let slider = this.$refs.slider;
+            let offset = slider.firstElementChild.getBoundingClientRect().width; // Width of each slide
+            slider.scrollTo({ left: offset * this.currentIndex, behavior: 'smooth' });
+        },
+
+        updateButtonStates() {
+            let slider = this.$refs.slider;
+            let totalItems = slider.children.length;
+
+            // Update button states based on the current index
+            this.atBeginning = this.currentIndex <= 0;
+            this.atEnd = this.currentIndex >= totalItems - 1;
+        }
+    };
+});
+
 Alpine.start();

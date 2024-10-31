@@ -25,6 +25,7 @@ class HDG_Site_ACF {
 		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/breadcrumbs/block.json' );
 		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/cards/block.json' );
     	register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/cards/query/block.json' );
+		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/carousel/block.json' );
 		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/content/block.json' );
 		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/embed/block.json' );
 		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/hero/block.json' );
