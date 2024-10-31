@@ -23,6 +23,7 @@
         display: flex;
         list-style: none;
         width: 100%;
+        max-width: var(--wp--custom--width--content);
         transition: scroll-left 0.5s ease; /* Smooth scroll transition */
         .carousel-item {
             padding-inline: var(--wp--custom--spacing--gap);
