@@ -1,12 +1,6 @@
-.hdg-country {
-    &__iso {
-        display: block;
-    }
-    &__button {
-        
-    }
+#map-container {
+	
 }
-
 #svg-map {
 	fill: none;
 	width: 100%;
@@ -15,24 +9,29 @@
 #background {
 	fill: none;
 }
-
+text {
+	text-anchor: middle;
+	cursor: default;
+	font-family: Arial, Helvetica, sans-serif;
+}
 .landxx {
 	stroke-width: 0.5;
 	fill-rule: evenodd;
 	fill: transparent;
 	stroke: var(--wp--preset--color--dark);
-    &.active {
-        path {
-            fill: var(--wp--preset--color--green);    
-        }
-    }
-    &.highlight {
-        path {
-            fill: var(--wp--preset--color--pink);
-            cursor: pointer;
-        }
-    }
 }
+
+.landxx.active {
+}
+
+/* .landxx.active path {
+	fill: var(--wp--preset--color--green);
+}
+
+.landxx.highlight path {
+	fill: var(--wp--preset--color--pink);
+	cursor: pointer;
+} */
 
 .coastxx {
 	stroke-width: 0.2;

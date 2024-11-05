@@ -27,75 +27,61 @@ $country_query = new WP_Query( $post_args );
 $country_data = array();
 
 if ( $country_query->have_posts() ) :
+
+	// $coordinates = get_field('coordinates', get_the_ID());
+	// Use wp_remote_get to fetch the JSON file
+	$countriesData = wp_remote_get(get_template_directory_uri() . '/src/utils/countries.json');
+	if (is_wp_error($countriesData)) {
+		// Handle error
+		$countriesJSON = '[]';
+	} else {
+		$countries = wp_remote_retrieve_body($countriesData);
+		$countriesJSON = json_decode($countries, true);
+	}
+	// print_r($countriesJSON);
+
+	// Create a lookup table for latitude and longitude based on iso-alpha-2 code
+    $coordinatesLookup = [];
+    foreach ($countriesJSON as $country) {
+        $isoAlpha2 = trim($country['iso-alpha-2'], ' "');
+        $coordinatesLookup[$isoAlpha2] = [
+            'latitude' => trim($country['latitude'], ' "'),
+            'longitude' => trim($country['longitude'], ' "')
+        ];
+    }
+
+	// print_r($coordinatesLookup);
+
     while ( $country_query->have_posts() ) :
+
         $country_query->the_post();
-        $iso_code = strtolower(get_post_meta(get_the_ID(), 'iso_code', true));
+
+        $iso_code_lower = strtolower(get_post_meta(get_the_ID(), 'iso_code', true));
+		$iso_code = get_post_meta(get_the_ID(), 'iso_code', true);
+		
+		// $coordinates = get_field('coordinates', get_the_ID());
+		// $latitude = $coordinates['latitude'] ?? '';
+		// $longitude = $coordinates['longitude'] ?? '';
+
+		// Get the latitude and longitude from the lookup table
+        $latitude = $coordinatesLookup[$iso_code]['latitude'] ?? '';
+        $longitude = $coordinatesLookup[$iso_code]['longitude'] ?? '';
+		
         $country_data[] = array(
             'title' => get_the_title(),
             'link' => get_permalink(),
-            'iso_code' => $iso_code
+            'iso_code' => $iso_code, 
+			'latitude' => $latitude,
+			'longitude' => $longitude
         );
+		
     endwhile;
 endif;
 
 // Convert the PHP array to a JSON object
 $country_data_json = json_encode($country_data);
+// print_r($country_data_json);
 ?>
-<style>
-#map-container {
-	
-}
-#svg-map {
-	fill: none;
-	width: 100%;
-	height: auto;
-}
-#background {
-	fill: none;
-}
-text {
-	text-anchor: middle;
-	cursor: default;
-	font-family: Arial, Helvetica, sans-serif;
-}
-.landxx {
-	stroke-width: 0.5;
-	fill-rule: evenodd;
-	fill: transparent;
-	stroke: var(--wp--preset--color--dark);
-}
-
-.landxx.active path {
-	fill: var(--wp--preset--color--green);
-}
-
-.landxx.highlight path {
-	fill: var(--wp--preset--color--pink);
-	cursor: pointer;
-}
-
-.coastxx {
-	stroke-width: 0.2;
-}
-
-.limitxx {
-	opacity: 0;
-	/* Change opacity to 1 to display all territories */
-}
-
-.antxx {
-	opacity: 1;
-	/* Change opacity to 0 to hide all territories */
-}
-
-/* Hover animation */
-g,
-path {
-	transition: fill 0.24s ease-in-out;
-}
-
-</style>
-
 <div id="primary" class="hdg-content-wrapper">
 	<?php
 	while ( have_posts() ) :
@@ -103,8 +89,10 @@ path {
 		get_template_part( 'template-parts/_templates/content', 'page' );
 	endwhile; // End of the loop.
 	?>
-	<?php if ( $country_query->have_posts() ) : ?>
+	
 		<div class="entry-content">
+			<?php /* ?>
+		<?php if ( $country_query->have_posts() ) : ?>
 		<?php
 		while ( $country_query->have_posts() ) :
 			$country_query->the_post();
@@ -120,94 +108,63 @@ path {
 			</div>
 		<?php endwhile; // End of the loop.
 		endif; ?>
-		</div>
+		<?php */ ?>
 
-		<div x-data="modalHandler()" @keydown.escape.window="closeModal()">
 
-			<div id="map-container" class="map-container">
-			<?php 
-				//https://github.com/ahuseyn/SVG-World-Map-with-labels?tab=readme-ov-file
-				get_template_part( 'template-parts/_molecules/countries');
-			?>
-			<!-- Modal Overlay -->
-			<div
-				class="modal-overlay"
-				:class="{ 'active': isOpen }"
-				@click="closeModal()"
-			>
-				<!-- Modal Content -->
-				<div class="modal" @click.stop>
-					<div class="modal-header">
-						<h2 x-text="modalData.name"></h2>
-						<button class="close-button" @click="closeModal()">&times;</button>
-					</div>
-					<div class="modal-body">
-						<a :href="modalData.link" target="_blank">Visit Website</a>
-					</div>
-				</div>
-			</div>
+		<!-- Leaflet CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+		<!-- Leaflet JavaScript -->
+		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+		<style>
+			/* Set the size of the map */
+			#map {
+				height: 600px;
+				width: 100%;
+			}
+		</style>
 
-		</div>
+		<div id="map"></div>
 
-		
 		<?php wp_reset_postdata(); ?>
-		<?php wp_reset_query(); ?>	
+		<?php wp_reset_query(); ?>			
+		</div>
 </div>
+
 <script>
-    function modalHandler() {
-        return {
-            isOpen: false,
-            modalData: {
-                name: '',
-                description: '',
-                link: '#'
-            },
-            openModal(data) {
-                this.modalData = data;
-                this.isOpen = true;
-            },
-            closeModal() {
-                this.isOpen = false;
-            },
-            init() {
-                // Parse the JSON object from PHP
-                const countryData = <?php echo $country_data_json; ?>;
-				console.log(countryData);
+// Initialize the map and set its view to the world
+const map = L.map('map').setView([20, 0], 2);
 
-                countryData.forEach(country => {
-                    const isoCode = country.iso_code;
-                    if (isoCode) {
-                        const svgElement = document.querySelector(`.landxx.${isoCode}`);
-                        if (svgElement) {
-                            svgElement.classList.add('active');
+// Add a tile layer (OpenStreetMap tiles)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
-                            // Add hover effects (optional)
-                            svgElement.addEventListener('mouseover', () => {
-                                svgElement.classList.add('highlight');
-                            });
-                            svgElement.addEventListener('mouseout', () => {
-                                svgElement.classList.remove('highlight');
-                            });
+// Define the bounds for the image overlay
+// const imageUrl = '<?php echo get_template_directory_uri(); ?>/src/images/world.png'; // Replace with your PNG path
+// const imageBounds = [[-90, -180], [90, 180]]; // Bottom left and top right corners
 
-                            // Add click event to open modal
-                            svgElement.addEventListener('click', (event) => {
-                                event.preventDefault();
-                                // You can enhance this with more data as needed
-                                const data = {
-                                    name: country.title || 'No Name',
-                                    link: country.link || '#'
-                                };
-                                this.openModal(data);
-                            });
-                        }
-                    }
-                });
-            }
-        }
-    }
-	window.addEventListener('DOMContentLoaded', () => {
-		modalHandler().init();
-	});
+// // Add the image overlay
+// L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+//Remove the zoom control
+map.zoomControl.remove();
+
+//Disable zooming
+map.scrollWheelZoom.disable();
+
+const countryData = <?php echo $country_data_json; ?>;
+
+// Loop through the countries array and add markers
+countryData.forEach(function(country) {
+// Create a marker
+var marker = L.marker([country.latitude, country.longitude]).addTo(map);
+
+// Create an anchor tag as the marker's popup content
+var anchor = '<a href="' + country.link + '">' + country.title + '</a>';
+
+// Bind a popup to the marker with the anchor tag
+marker.bindPopup(anchor);
+});
 </script>
 
 

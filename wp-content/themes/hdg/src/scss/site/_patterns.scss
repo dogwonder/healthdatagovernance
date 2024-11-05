@@ -1,23 +1,161 @@
-.hdg-album {
-    .wp-block-columns {
-        @include mq($from: lg) {
-            display: grid;
-            width: 100%;
-            grid-template-columns: 1fr 0.5fr 0.4fr 1fr;
-            gap: var(--wp--custom--spacing--gap);
-        }
+$number-of-items: 6;
+$rotation-angle: 270deg / $number-of-items;
+
+/*
+<nav class="hdg-princilples">
+    <div class="center">
+      <span></span>
+    </div>
+    <ul>
+        <li class="protext-people"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c1.8 0 3.5-.2 5.3-.5c-76.3-55.1-99.8-141-103.1-200.2c-16.1-4.8-33.1-7.3-50.7-7.3l-91.4 0zm308.8-78.3l-120 48C358 277.4 352 286.2 352 296c0 63.3 25.9 168.8 134.8 214.2c5.9 2.5 12.6 2.5 18.5 0C614.1 464.8 640 359.3 640 296c0-9.8-6-18.6-15.1-22.3l-120-48c-5.7-2.3-12.1-2.3-17.8 0zM591.4 312c-3.9 50.7-27.2 116.7-95.4 149.7l0-187.8L591.4 312z"/></svg><span>Protect individuals and communities</span></li>
+        <li class="protext-people"><span>Build trust in data systems</span></li>
+        <li class="protext-people"><span>Ensure data security</span></li>
+        
+        <li class="promote-health"><span>Enhance health systems and services</span></li>
+        <li class="promote-health"><span>Promote data sharing and interoperability</span></li>
+        <li class="promote-health"><span>Facilitate innovation using health data</span></li>
+        
+        <li class="priorities-equity"><span>Promote equitable benefits from health data</span></li>
+        <li class="priorities-equity"><span>Establish data rights and ownership</span></li>
+    </ul>
+</nav>
+*/
+
+.hdg-princilples {
+    --protext-people: #dbc4f2;
+    --promote-health: #c9e7f2;
+    --priorities-equity: #c0f0c4;
+    position: relative;
+    width: 300px !important;
+    height: 300px !important;
+    margin: 0px auto;
+    padding: 0 !important;
+    span {
+        position: absolute;
+        top: 30px;
+        left: 24px;
+        color: #fff;
     }
-    &__links {
-        margin-block-start: var(--wp--custom--spacing--2-xl) !important;
-        .wp-block-button {
-            > a {
-                background-color: transparent;
-                border: 0;
-                padding: 0;
-                margin: 0;
+    ul {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none;
+        border-radius: 50%;
+        overflow: hidden;
+        li {
+            position: absolute;
+            top: -10px;
+            left: -10px; 
+            width: 160px;
+            height: 160px;
+            transform-origin: 100% 100%;
+            overflow: hidden;
+            border-bottom: 2px solid #fff;
+            &.protext-people {
+                background-color: var(--protext-people);
+            }
+            &.promote-health {
+                background-color: var(--promote-health);
+            }
+            &.priorities-equity {
+                background-color: var(--priorities-equity);
+            }
+            span {
+                display: none;
+            }
+            svg {
+                width: 2rem;
+                height: 2rem;
             }
         }
+        @for $i from 1 through $number-of-items {
+            li:nth-child(#{$i}) {
+              transform: rotate($rotation-angle * ($i - 1)) skew(30deg);
+            }
+        }
+        li:nth-child(7) {
+            transform: rotate(270deg) skew(45deg);
+        }
+        li:nth-child(8) {
+            transform: rotate(315deg) skew(45deg);
+        }
     }
-
+    .center{
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        top: 110px;
+        left: 110px;
+        z-index: 1;
+        border-radius: 50%;
+        background-color: #003C5A;
+    }
 }
 
+
+svg#principles {
+  
+      width: 50%;
+
+      .text {
+        font-size: 22px;
+        font-weight: 600;
+        fill: #000000;
+      }
+
+      //Outer text
+      .cls-9 {
+        font-size: 36px;
+        font-weight: 700;
+      }
+
+      .protect-people, .promote-health, .protect-equity {
+        stroke-miterlimit: 10;
+      }
+
+      .protect-people {
+        fill: #dbc4f2;
+        stroke: #611ca6;
+      }
+
+      /*Outer and Fill*/
+      .protect-people--fill {
+        fill: #611ca6;
+      }
+
+      .protect-equity {
+        fill: #c0f0c4;
+        stroke: #027353;
+      }
+      
+      /*Outer and Fill*/
+      .protect-equity--fill {
+        fill: #027353;
+      }
+
+      .promote-health {
+        fill: #c9e7f2;
+        stroke: #4a30f2;
+      }
+
+        /*Outer and Fill*/
+      .promote-health--fill {
+        fill: #4a30f2;
+      }
+
+      /*Circles*/
+      .cls-7 {fill: #025939;}
+      .cls-17 {fill: #8b3dd9;}
+      .cls-25 {fill: #4a30f2;}
+      
+      .cls-8, .cls-9 {
+        fill: #fff;
+      }
+
+      
+
+
+}

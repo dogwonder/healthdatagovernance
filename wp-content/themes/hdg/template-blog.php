@@ -25,6 +25,11 @@ $post_args = array(
 $blog_query = new WP_Query( $post_args );
 ?>
 <div id="primary" class="hdg-content-wrapper">
+
+	<?php 
+	include locate_template( 'template-parts/_molecules/principles.php' );
+	?>
+
 	<?php
 	while ( have_posts() ) :
 		the_post();

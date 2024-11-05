@@ -194,124 +194,6 @@
 
     };
 
-    const gradientAnimation = (elem) => {
-        const gradient = document.querySelector(elem);
-        let xPos = Math.random() * 100;
-        let yPos = Math.random() * 100;
-    
-        // Increase speed and range for more noticeable movement
-        let xSpeed = (Math.random() - 0.5) * 1.5; // Random speed between -0.75 and 0.75
-        let ySpeed = (Math.random() - 0.5) * 1.5;
-    
-        const animate = () => {
-            // Update positions
-            xPos = (xPos + xSpeed) % 200;
-            yPos = (yPos + ySpeed) % 200;
-    
-            // Apply the new background position
-            gradient.style.backgroundPosition = `${xPos}% ${yPos}%`;
-    
-            // Randomly adjust speed for natural movement
-            xSpeed += (Math.random() - 0.5) * 0.1;
-            ySpeed += (Math.random() - 0.5) * 0.1;
-    
-            // Keep speeds within a reasonable range
-            xSpeed = Math.max(Math.min(xSpeed, 2), -2);
-            ySpeed = Math.max(Math.min(ySpeed, 2), -2);
-    
-            requestAnimationFrame(animate);
-        };
-    
-        // Start the animation
-        animate();
-    };
-
-    const cardClick = (elem)=>{  
-
-        const cardLinks = document.querySelectorAll(elem);
-
-        if (!cardLinks) return;
-
-        Array.prototype.forEach.call(cardLinks, function(card, i){
-
-            card.addEventListener("click", handleClick);
-
-            // Click handler but only if text is not selected
-            function handleClick(event) {
-                const isTextSelected = window.getSelection().toString();
-                if (!isTextSelected) {
-                    window.location = card.dataset.url;
-                }
-            }
-
-        });   
-        
-    };
-
-    class TextareaHandler {
-        constructor(elem) {
-            document.querySelectorAll(elem).forEach((textarea) => {
-                // Set the minimum number of rows for each textarea based on its 'rows' attribute or default to 2
-                textarea.setAttribute('rows', 4);
-                // Update each textarea to adjust its size
-                this.update(textarea);
-            });
-        }
-    
-        // Check if the textarea has a scrollbar
-        isScrolling(textarea) {
-            return textarea.scrollHeight > textarea.clientHeight;
-        }
-    
-        // Increase the number of rows of the textarea until it no longer needs to scroll
-        grow(textarea) {
-            let clientHeight = textarea.clientHeight;
-            let rows = this.rows(textarea);
-            while (this.isScrolling(textarea)) {
-                rows++;
-                textarea.rows = rows;
-                const newClientHeight = textarea.clientHeight;
-                if (newClientHeight === clientHeight) {
-                    break; // Stop if the height does not change
-                }
-                clientHeight = newClientHeight;
-            }
-        }
-    
-        // Decrease the number of rows of the textarea until it reaches the minimum or starts to need a scrollbar
-        shrink(textarea) {
-            let clientHeight = textarea.clientHeight;
-            const minRows = parseInt(textarea.dataset.minRows);
-            let rows = this.rows(textarea);
-            while (!this.isScrolling(textarea) && rows > minRows) {
-                rows--;
-                textarea.rows = Math.max(rows, minRows);
-                if (textarea.clientHeight === clientHeight) {
-                    break; // Stop if the height does not change
-                }
-                if (this.isScrolling(textarea)) {
-                    this.grow(textarea); // Grow again if we over-shrunk
-                    break;
-                }
-            }
-        }
-    
-        // Update the textarea by growing or shrinking it as needed
-        update(textarea) {
-            if (this.isScrolling(textarea)) {
-                this.grow(textarea);
-            } else {
-                this.shrink(textarea);
-            }    
-        }
-    
-        // Helper method to get the current number of rows of the textarea
-        rows(textarea) {
-            return textarea.rows || parseInt(textarea.dataset.minRows);
-        }
-
-    };
-
     class GradientInteractive {
         constructor() {
             this.interBubble = document.querySelector('.interactive');
@@ -372,19 +254,13 @@
         }
 
     }
-
     
-    
-
     //Init
     document.addEventListener("DOMContentLoaded", function() {
         externalLinks();
         smoothScroll();
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
-        // gradientAnimation('.hdg-wrapper');
-        // cardClick('.hdg-card');
-        new TextareaHandler('textarea');
         // new GradientInteractive();
      });
 
