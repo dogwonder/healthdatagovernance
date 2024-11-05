@@ -21,83 +21,9 @@ $rotation-angle: 270deg / $number-of-items;
 </nav>
 */
 
-.hdg-princilples {
-    --protext-people: #dbc4f2;
-    --promote-health: #c9e7f2;
-    --priorities-equity: #c0f0c4;
-    position: relative;
-    width: 300px !important;
-    height: 300px !important;
-    margin: 0px auto;
-    padding: 0 !important;
-    span {
-        position: absolute;
-        top: 30px;
-        left: 24px;
-        color: #fff;
-    }
-    ul {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        padding: 0 !important;
-        margin: 0 !important;
-        list-style: none;
-        border-radius: 50%;
-        overflow: hidden;
-        li {
-            position: absolute;
-            top: -10px;
-            left: -10px; 
-            width: 160px;
-            height: 160px;
-            transform-origin: 100% 100%;
-            overflow: hidden;
-            border-bottom: 2px solid #fff;
-            &.protext-people {
-                background-color: var(--protext-people);
-            }
-            &.promote-health {
-                background-color: var(--promote-health);
-            }
-            &.priorities-equity {
-                background-color: var(--priorities-equity);
-            }
-            span {
-                display: none;
-            }
-            svg {
-                width: 2rem;
-                height: 2rem;
-            }
-        }
-        @for $i from 1 through $number-of-items {
-            li:nth-child(#{$i}) {
-              transform: rotate($rotation-angle * ($i - 1)) skew(30deg);
-            }
-        }
-        li:nth-child(7) {
-            transform: rotate(270deg) skew(45deg);
-        }
-        li:nth-child(8) {
-            transform: rotate(315deg) skew(45deg);
-        }
-    }
-    .center{
-        position: absolute;
-        width: 75px;
-        height: 75px;
-        top: 110px;
-        left: 110px;
-        z-index: 1;
-        border-radius: 50%;
-        background-color: #003C5A;
-    }
-}
-
 
 svg#principles {
-  
+
       width: 50%;
 
       .text {
@@ -141,10 +67,22 @@ svg#principles {
         stroke: #4a30f2;
       }
 
-        /*Outer and Fill*/
+      /*Outer and Fill*/
       .promote-health--fill {
         fill: #4a30f2;
       }
+
+      //Hover
+      .promote-health, 
+      .protect-people,
+      .protect-equity {
+        &:hover {
+          fill: transparent;
+          transition: fill 0.3s;
+          cursor: pointer;
+        }
+      }
+      
 
       /*Circles*/
       .cls-7 {fill: #025939;}
