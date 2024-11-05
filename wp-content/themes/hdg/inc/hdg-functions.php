@@ -120,42 +120,11 @@ function hdg_filter_the_markup( string $content, array $block ) : string {
 	
 	$block_level = $block['attrs']['level'] ?? false;
 	$block_level = $block_level ? intval( $block_level ) : 2;
-	// Only target h2 heading level.
-	function hdg_filter_the_markup( string $content, array $block ) : string {
-	
-	$block_level = $block['attrs']['level'] ?? false;
-	$block_level = $block_level ? intval( $block_level ) : 2;
-	// Only target h2 heading level.
-	if ( ! in_array( $block_level, [2, 3], true ) ) {
+	 // Only target h2 and h3 heading levels.
+	 if ( ! in_array( $block_level, [2, 3], true ) ) {
         return $content;
     }
 
-	// Parse the HTML.
-	$attributes = new WP_HTML_Tag_Processor( $content );
-
-	$id = $attributes->get_attribute( 'id' ) ?? false;
-	$id = $id ? strval( $id ) : '';
-	// Bail early if we already have an `id` attribute.
-	if ( ! empty( $id ) ) {
-		return $content;
-	}
-
-	// Create a unique ID.
-	$inner_html = $block['innerHTML'] ?? false;
-	$inner_html = $inner_html ? strval( $inner_html ) : '';
-	$inner_html = wp_strip_all_tags( $inner_html );
-	$id_hash    = md5( $inner_html );
-    $title_sanitize = sanitize_title($inner_html);
-
-	// Add the attributes to the markup.
-	if ( $attributes->next_tag( array( 'class' => 'wp-block-heading' ) ) ) {
-        // $attributes->set_attribute( 'id', 'h-' . $id_hash );
-        $attributes->set_attribute( 'id', 'h-' . $title_sanitize );
-		$attributes->add_class( 'hdg-block-heading' );
-	}
-
-	return $attributes->get_updated_html();
-}
 
 	// Parse the HTML.
 	$attributes = new WP_HTML_Tag_Processor( $content );
