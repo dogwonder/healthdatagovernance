@@ -1,5 +1,4 @@
 <svg id="principles" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950.36 1217.16">
-
   
   <path data-link="#promote-health-enhance" class="promote-health" d="M855.33,453.63h-211.91c0-52.41-21.24-99.87-55.59-134.21l149.91-149.91c72.67,72.67,117.59,173.1,117.59,284.12Z"/>
   <path data-link="#promote-health-data" class="promote-health" d="M855.33,453.63c0,111-44.92,211.43-117.59,284.11l-149.91-149.91c34.35-34.34,55.59-81.79,55.59-134.2h211.91Z"/>
@@ -315,17 +314,5 @@
   <text class="cls-9" transform="translate(894.87 443.38) rotate(-93.29)"><tspan x="0" y="0">L</tspan></text>
   <text class="cls-9" transform="translate(893.81 423.08) rotate(-96.45)"><tspan x="0" y="0">U</tspan></text>
   <text class="cls-9" transform="translate(890.56 395.3) rotate(-99.86)"><tspan x="0" y="0">E</tspan></text>
+  <text class="cls-2" transform="translate(809.79 1214.44)"><tspan class="cls-14" x="0" y="0">L</tspan><tspan x="6.76" y="0">o</tspan><tspan class="cls-18" x="13.98" y="0">r</tspan><tspan x="18.16" y="0">em ipsum</tspan></text>
 </svg>
-
-<script>
-//If click on data-link scroll to the section
-document.addEventListener('click', function(e) {
-  if (e.target.dataset.link) {
-    e.preventDefault();
-    console.log(e.target.dataset.link);
-    document.querySelector(e.target.dataset.link).scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
-});
-</script>
