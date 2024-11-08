@@ -316,16 +316,3 @@
   <text class="cls-9" transform="translate(893.81 423.08) rotate(-96.45)"><tspan x="0" y="0">U</tspan></text>
   <text class="cls-9" transform="translate(890.56 395.3) rotate(-99.86)"><tspan x="0" y="0">E</tspan></text>
 </svg>
-
-<script>
-//If click on data-link scroll to the section
-document.addEventListener('click', function(e) {
-  if (e.target.dataset.link) {
-    e.preventDefault();
-    console.log(e.target.dataset.link);
-    document.querySelector(e.target.dataset.link).scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
-});
-</script>

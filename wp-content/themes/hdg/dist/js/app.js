@@ -254,6 +254,28 @@
         }
 
     }
+
+    class interactiveSVG {
+        //If click on data-link scroll to the section
+        //Get all elements with data-link
+        constructor() {
+            this.links = document.querySelectorAll('[data-link]');
+            this.init();
+        }
+        //Loop through and add event listener
+        init() {
+            for (let i = 0; i < this.links.length; i++) {
+                this.links[i].addEventListener('click', (e) => {
+                    e.preventDefault();
+                    //Get the data-link attribute
+                    const id = this.links[i].getAttribute('data-link');
+                    const url = "/principles/principles-core-elements/";
+                    //Go to url
+                    window.location.href = url + id;
+                });
+            }
+        }
+    }
     
     //Init
     document.addEventListener("DOMContentLoaded", function() {
@@ -261,6 +283,7 @@
         smoothScroll();
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
+        new interactiveSVG();
         // new GradientInteractive();
      });
 
