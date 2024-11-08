@@ -63,7 +63,7 @@
 .hdg-page {
   .entry-content, 
   .entry-main {
-    .wp-block-heading:not(.hdg-card__heading) {
+    .wp-block-heading:not(.hdg-card__heading):not(.hdg-card-media__heading) {
       margin-block-start: var(--wp--custom--spacing--xl) !important;
     }
     .hdg-page-header__title + h2.wp-block-heading {

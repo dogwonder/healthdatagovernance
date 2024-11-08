@@ -11,26 +11,27 @@
             color: black;
             fill: none;
         }
-        &.opacity-50 {
+        &.disabled {
             opacity: 0.5;
-        }
-        &.cursor-not-allowed {
             cursor: not-allowed;
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
     .carousel-items {
-        overflow-x: hidden;
+        overflow-x: scroll; 
         display: flex;
         list-style: none;
         width: 100%;
         max-width: var(--wp--custom--width--content);
-        transition: scroll-left 0.5s ease; /* Smooth scroll transition */
         .carousel-item {
+            box-sizing: border-box;
             padding-inline: var(--wp--custom--spacing--gap);
             width: 33.333%;
-            scroll-snap-align: start;
             flex: 0 0 auto; /* Prevent items from shrinking */
             figure {
+                box-sizing: border-box; 
                 padding-inline: var(--wp--custom--spacing--xs);
                 display: flex;
                 background-color: var(--wp--preset--color--light);

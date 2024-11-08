@@ -57,44 +57,60 @@ Alpine.data('scrollSpy', function () {
 
 Alpine.data('carousel', function () {
     return {
-        
-        skip: 3, // Number of slides to skip (change as needed)
-        atBeginning: true, // Start at the beginning
-        atEnd: false, // Not at the end initially
-        currentIndex: 0, // Track the current index
-
+        currentPage: 0,           // Tracks the current page index (0-based)
+        itemsPerPage: 3,          // Number of items to skip per navigation
+        totalItems: 0,            // Total number of carousel items
+        totalPages: 0,            // Total number of pages
+        atBeginning: true,        // Indicates if the carousel is at the first page
+        atEnd: false,             // Indicates if the carousel is at the last page
+  
+        // Initializes the carousel by calculating total items and pages
         init() {
-            // Set the initial state of the buttons
-            this.updateButtonStates();
+          this.totalItems = this.$refs.slider.children.length;
+          this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+          console.log(`Total Items: ${this.totalItems}`);
+          console.log(`Total Pages: ${this.totalPages}`);
+          this.updateButtons();
         },
-
+  
+        // Navigates to the next set of items
         next() {
-            this.currentIndex += this.skip;
-            this.scrollToCurrent();
-            this.updateButtonStates();
+          if (this.currentPage < this.totalPages - 1) {
+            this.currentPage++;
+            console.log(`Navigating to next page: ${this.currentPage}`);
+            this.scrollToPage();
+            this.updateButtons();
+          }
         },
-
+  
+        // Navigates to the previous set of items
         prev() {
-            this.currentIndex -= this.skip;
-            this.scrollToCurrent();
-            this.updateButtonStates();
+          if (this.currentPage > 0) {
+            this.currentPage--;
+            console.log(`Navigating to previous page: ${this.currentPage}`);
+            this.scrollToPage();
+            this.updateButtons();
+          }
         },
-
-        scrollToCurrent() {
-            let slider = this.$refs.slider;
-            let offset = slider.firstElementChild.getBoundingClientRect().width; // Width of each slide
-            slider.scrollTo({ left: offset * this.currentIndex, behavior: 'smooth' });
+  
+        // Scrolls the carousel to the current page
+        scrollToPage() {
+          const containerWidth = this.$refs.slider.clientWidth;
+          const scrollPosition = this.currentPage * containerWidth;
+          console.log(`Scrolling to position: ${scrollPosition}px`);
+          this.$refs.slider.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
         },
-
-        updateButtonStates() {
-            let slider = this.$refs.slider;
-            let totalItems = slider.children.length;
-
-            // Update button states based on the current index
-            this.atBeginning = this.currentIndex <= 0;
-            this.atEnd = this.currentIndex >= totalItems - 1;
+  
+        // Updates the state of navigation buttons
+        updateButtons() {
+          this.atBeginning = this.currentPage === 0;
+          this.atEnd = this.currentPage >= this.totalPages - 1;
+          console.log(`At Beginning: ${this.atBeginning}, At End: ${this.atEnd}`);
         }
-    };
+      }
 });
 
 Alpine.start();

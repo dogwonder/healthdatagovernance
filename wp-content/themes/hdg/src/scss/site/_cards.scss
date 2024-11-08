@@ -77,3 +77,28 @@
   }
 
 }
+
+.hdg-media {
+
+}
+
+.hdg-card-media {
+  
+  .wp-block-columns {
+    display: flex;
+    gap: var(--wp--custom--spacing--xl);
+    @include mq($from: lg) {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+  }
+  &__image {
+  }
+  &__heading {
+    
+  }
+  &__text {
+  }
+  &__button {
+  }
+}
