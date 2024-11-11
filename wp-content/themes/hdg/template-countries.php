@@ -31,6 +31,7 @@ if ( $country_query->have_posts() ) :
 	// $coordinates = get_field('coordinates', get_the_ID());
 	// Use wp_remote_get to fetch the JSON file
 	$countriesData = wp_remote_get(get_template_directory_uri() . '/src/utils/countries.json');
+	
 	if (is_wp_error($countriesData)) {
 		// Handle error
 		$countriesJSON = '[]';
@@ -120,6 +121,7 @@ $country_data_json = json_encode($country_data);
 			#map {
 				height: 600px;
 				width: 100%;
+				background: transparent;
 			}
 		</style>
 
@@ -135,8 +137,16 @@ $country_data_json = json_encode($country_data);
 const map = L.map('map').setView([20, 0], 2);
 
 // Add a tile layer (OpenStreetMap tiles)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	attribution: '&copy; OpenStreetMap contributors'
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+// 	attribution: '&copy; OpenStreetMap contributors'
+// }).addTo(map);
+
+// Add a tile layer using locally sourced images
+L.tileLayer('<?php echo get_template_directory_uri(); ?>/src/map/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18,
+    tileSize: 256,
+    zoomOffset: 0
 }).addTo(map);
 
 // Define the bounds for the image overlay
@@ -153,11 +163,25 @@ map.zoomControl.remove();
 map.scrollWheelZoom.disable();
 
 const countryData = <?php echo $country_data_json; ?>;
+// Define global offsets for latitude and longitude
+const latitudeOffset = -4; // Adjust this value as needed
+const longitudeOffset = -9; // Adjust this value as needed
+
+// Define custom SVG icon
+const customIcon = L.icon({
+    iconUrl: '<?php echo get_template_directory_uri(); ?>/src/map/pin.svg', // Path to your custom SVG
+    iconSize: [32, 32], // Size of the icon
+    iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
+    popupAnchor: [0, -32] // Point from which the popup should open relative to the iconAnchor
+});
 
 // Loop through the countries array and add markers
 countryData.forEach(function(country) {
+const adjustedLatitude = parseFloat(country.latitude) + latitudeOffset;
+const adjustedLongitude = parseFloat(country.longitude) + longitudeOffset;
 // Create a marker
-var marker = L.marker([country.latitude, country.longitude]).addTo(map);
+// var marker = L.marker([country.latitude, country.longitude]).addTo(map);
+var marker = L.marker([adjustedLatitude, adjustedLongitude], { icon: customIcon }).addTo(map);
 
 // Create an anchor tag as the marker's popup content
 var anchor = '<a href="' + country.link + '">' + country.title + '</a>';

@@ -1,18 +1,15 @@
-<svg id="principles" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950.36 1217.16">
+<svg id="principles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950.36 1217.16">
 
+  <path data-link="#h-protect-individuals-and-communities" class="protect-people" d="M319.42,319.42c-34.35,34.34-55.59,81.8-55.59,134.21H51.92c0-111.02,44.92-211.45,117.59-284.12l149.91,149.91Z"/>
+  <path data-link="#h-build-trust-in-data-systems" class="protect-people" d="M453.63,51.92v211.91c-52.42,0-99.86,21.24-134.21,55.59l-149.91-149.91c72.67-72.67,173.1-117.59,284.12-117.59Z"/>
+  <path data-link="#h-ensure-data-security" class="protect-people" d="M737.74,169.51l-149.91,149.91c-34.34-34.35-81.79-55.59-134.2-55.59V51.92c111.02,0,211.44,44.92,284.11,117.59Z"/>
   
-  <path data-link="#promote-health-enhance" class="promote-health" d="M855.33,453.63h-211.91c0-52.41-21.24-99.87-55.59-134.21l149.91-149.91c72.67,72.67,117.59,173.1,117.59,284.12Z"/>
-  <path data-link="#promote-health-data" class="promote-health" d="M855.33,453.63c0,111-44.92,211.43-117.59,284.11l-149.91-149.91c34.35-34.34,55.59-81.79,55.59-134.2h211.91Z"/>
-  <path data-link="#promote-health-facilitate" class="promote-health" d="M737.74,737.74h0c-72.67,72.68-173.09,117.6-284.11,117.6v-211.92c52.41,0,99.86-21.24,134.2-55.59l149.91,149.91Z"/>
+  <path data-link="#h-enhance-health-systems-and-services" class="promote-health" d="M855.33,453.63h-211.91c0-52.41-21.24-99.87-55.59-134.21l149.91-149.91c72.67,72.67,117.59,173.1,117.59,284.12Z"/>
+  <path data-link="#h-promote-data-sharing-and-interoperability" class="promote-health" d="M855.33,453.63c0,111-44.92,211.43-117.59,284.11l-149.91-149.91c34.35-34.34,55.59-81.79,55.59-134.2h211.91Z"/>
+  <path data-link="#h-facilitate-innovation-using-health-data" class="promote-health" d="M737.74,737.74h0c-72.67,72.68-173.09,117.6-284.11,117.6v-211.92c52.41,0,99.86-21.24,134.2-55.59l149.91,149.91Z"/>
   
-  
-  <path data-link="#protect-equity-promote" class="protect-equity" d="M453.63,643.42v211.92c-111.02,0-211.45-44.92-284.12-117.59l149.91-149.92c34.35,34.35,81.79,55.59,134.21,55.59Z"/>
-  <path data-link="#protect-equity-establish" class="protect-equity" d="M319.42,587.83l-149.91,149.92c-72.67-72.68-117.59-173.11-117.59-284.12h211.91c0,52.41,21.24,99.86,55.59,134.2Z"/>
-
-  <path data-link="#protect-people-individuals" class="protect-people" d="M319.42,319.42c-34.35,34.34-55.59,81.8-55.59,134.21H51.92c0-111.02,44.92-211.45,117.59-284.12l149.91,149.91Z"/>
-  <path data-link="#protect-people-trust" class="protect-people" d="M453.63,51.92v211.91c-52.42,0-99.86,21.24-134.21,55.59l-149.91-149.91c72.67-72.67,173.1-117.59,284.12-117.59Z"/>
-  <path data-link="#protect-people-ensure" class="protect-people" d="M737.74,169.51l-149.91,149.91c-34.34-34.35-81.79-55.59-134.2-55.59V51.92c111.02,0,211.44,44.92,284.11,117.59Z"/>
-  
+  <path data-link="#h-promote-equitable-benefits-from-health-data" class="protect-equity" d="M453.63,643.42v211.92c-111.02,0-211.45-44.92-284.12-117.59l149.91-149.92c34.35,34.35,81.79,55.59,134.21,55.59Z"/>
+  <path data-link="#h-establish-data-rights-and-ownership" class="protect-equity" d="M319.42,587.83l-149.91,149.92c-72.67-72.68-117.59-173.11-117.59-284.12h211.91c0,52.41,21.24,99.86,55.59,134.2Z"/>
 
   <path class="protect-equity--fill" d="M453.63,855.34v51.92c-125.27,0-238.68-50.78-320.77-132.87C50.77,692.3,0,578.9,0,453.63h51.92c0,111.01,44.92,211.44,117.59,284.12,72.67,72.67,173.1,117.59,284.12,117.59Z"/>
   <path class="protect-people--fill" d="M774.39,132.86l-36.65,36.65c-72.67-72.67-173.09-117.59-284.11-117.59s-211.45,44.92-284.12,117.59c-72.67,72.67-117.59,173.1-117.59,284.12H0c0-125.27,50.77-238.68,132.86-320.77C214.95,50.77,328.36,0,453.63,0s238.67,50.77,320.76,132.86Z"/>
