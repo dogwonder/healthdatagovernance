@@ -1,6 +1,8 @@
 //Fallback for forms
 label {
-  line-height: 1.5;
+  font-size: var(--wp--preset--font-size--body); 
+  line-height: var(--wp--custom--typography--line-height--body);
+  font-weight: 600;
 }
 
 input[type="text"],
