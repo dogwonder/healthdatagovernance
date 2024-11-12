@@ -20,6 +20,7 @@
     },
     "styles": [
         { "name": "default", "label": "Default", "isDefault": true },
+        { "name": "right", "label": "Right" },
         { "name": "monochrome", "label": "Monochrome" }
     ],
     "acf": {

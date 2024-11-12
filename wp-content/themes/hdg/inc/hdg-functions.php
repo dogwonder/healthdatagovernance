@@ -24,11 +24,6 @@ if ( ! function_exists( 'hdg_body_classes' ) ) :
 			$classes[] = 'hfeed';
 		}
 
-		// Adds a class of no-sidebar when there is no sidebar present.
-		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-			$classes[] = 'no-sidebar';
-		}
-
 		return $classes;
 	}
 	add_filter( 'body_class', 'hdg_body_classes' );

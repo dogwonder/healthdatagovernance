@@ -60,5 +60,29 @@
         filter: grayscale(100%) contrast(200%);
       }
     }
+
+    &.is-style-right {
+      text-align: right;
+    }
      
+}
+
+
+.page-template-template-contents {
+  #primary {
+    .hdg-hero {
+      min-height: auto;
+      &.has-image {
+        height: auto;
+      }
+      .wp-block-heading {
+        margin-block-start: 0 !important;
+        text-transform: none;
+      }
+      &__inner {
+        padding: var(--wp--custom--spacing--2-xl) var(--wp--custom--spacing--lg);
+      }
+    }
+  }
+  
 }

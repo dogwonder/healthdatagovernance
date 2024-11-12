@@ -1,4 +1,4 @@
-<svg id="principles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950.36 1217.16">
+<svg id="principles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950.36 950.36">
 
   <path data-link="#h-protect-individuals-and-communities" class="protect-people  protect-people-path--1" d="M319.42,319.42c-34.35,34.34-55.59,81.8-55.59,134.21H51.92c0-111.02,44.92-211.45,117.59-284.12l149.91,149.91Z"/>
   <path data-link="#h-build-trust-in-data-systems" class="protect-people protect-people-path--2" d="M453.63,51.92v211.91c-52.42,0-99.86,21.24-134.21,55.59l-149.91-149.91c72.67-72.67,173.1-117.59,284.12-117.59Z"/>

@@ -74,7 +74,7 @@
 
 
 //Blocks page - add some extra spacing
-.hdg-wrapper:has(.hdg-hero) {
+body:not(.page-template-template-contents) .hdg-wrapper:has(.hdg-hero) {
   .hdg-masthead {
     position: absolute;
     top: 0;

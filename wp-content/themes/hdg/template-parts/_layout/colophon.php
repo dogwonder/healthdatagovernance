@@ -5,7 +5,7 @@
 		<div class="hdg-footer__section">
 
 				<div class="hdg-footer__about">
-					<?php get_template_part( 'template-parts/_atoms/logo' ); ?>
+					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.svg" alt="Health Data Governance logo" class="hdg-footer__logo">
 					<p><?php 
 					
 					printf(

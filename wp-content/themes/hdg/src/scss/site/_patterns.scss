@@ -2,7 +2,9 @@ svg#principles {
 
       width: 100%;
 
-      .text {
+      .protect-people--text, 
+      .promote-health--text,
+      .prioritise-equity--text {
         font-size: 22px;
         font-weight: 600;
         fill: #000000;
@@ -62,19 +64,6 @@ svg#principles {
         }
       }
 
-      
-
-      // &:has(.prioritise-equity-path--1:hover) {
-      //   .prioritise-equity--1 .prioritise-equity--icon,  
-      //   .prioritise-equity--1 .prioritise-equity--text {
-      //     fill: white;
-      //     color: white;
-      //     transition: none;
-      //   }
-      //   .prioritise-equity-path--1 {
-      //     fill: #027353;
-      //   }
-      // }
 
       .promote-health {
         fill: #c9e7f2;

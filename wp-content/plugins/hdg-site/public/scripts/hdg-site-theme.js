@@ -58,7 +58,7 @@ Alpine.data('scrollSpy', function () {
 Alpine.data('carousel', function () {
     return {
         currentPage: 0,           // Tracks the current page index (0-based)
-        itemsPerPage: 3,          // Number of items to skip per navigation
+        itemsPerPage: 5,          // Number of items to skip per navigation
         totalItems: 0,            // Total number of carousel items
         totalPages: 0,            // Total number of pages
         atBeginning: true,        // Indicates if the carousel is at the first page

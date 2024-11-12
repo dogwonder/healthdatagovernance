@@ -27,8 +27,8 @@
         max-width: var(--wp--custom--width--content);
         .carousel-item {
             box-sizing: border-box;
-            padding-inline: var(--wp--custom--spacing--gap);
-            width: 33.333%;
+            padding: var(--wp--custom--spacing--gap);
+            width: 20%;
             flex: 0 0 auto; /* Prevent items from shrinking */
             figure {
                 box-sizing: border-box; 
@@ -40,7 +40,7 @@
                 justify-content: center;
                 aspect-ratio: 1 / 1;
                 img {
-                    max-width: 10rem;
+                    max-width: 4rem;
                     height: auto;
                 }
             }

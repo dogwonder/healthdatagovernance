@@ -25,6 +25,10 @@
       "isDefault": true
     },
     {
+      "name": "right",
+      "label": "Right"
+    },
+    {
       "name": "monochrome",
       "label": "Monochrome"
     }
