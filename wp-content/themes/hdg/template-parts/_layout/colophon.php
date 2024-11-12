@@ -3,6 +3,17 @@
 	<div class="hdg-footer__inner">   
 
 		<div class="hdg-footer__section">
+
+				<div class="hdg-footer__about">
+					<?php get_template_part( 'template-parts/_atoms/logo' ); ?>
+					<p><?php 
+					
+					printf(
+						esc_html__('This website is managed by Transform Health, who has been convening efforts to advocate for this agenda. Visit the %s page to view more information about all contributors.', 'hdg'),
+						'<a href="/acknowledgements">' . esc_html__('acknowledgements', 'hdg') . '</a>'
+					); ?>
+					</p>
+				</div>
 			
 				<div class="hdg-footer__links">
 				<?php
@@ -18,6 +29,9 @@
 				}
 				?>
 				</div>
+
+			</div>
+			<div class="hdg-footer__section">
 			
 				<div class="hdg-footer__social">
 					<p class="visually-hidden"><?php esc_html_e( 'Connect', 'hdg' ); ?></p>

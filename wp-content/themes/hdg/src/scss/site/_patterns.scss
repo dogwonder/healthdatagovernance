@@ -14,7 +14,7 @@ svg#principles {
         font-weight: 700;
       }
 
-      .protect-people, .promote-health, .protect-equity {
+      .protect-people, .promote-health, .prioritise-equity {
         stroke-miterlimit: 10;
       }
 
@@ -24,19 +24,57 @@ svg#principles {
       }
 
       /*Outer and Fill*/
-      .protect-people--fill {
+      .protect-people--icon, 
+      .protect-people--border {
         fill: #611ca6;
       }
 
-      .protect-equity {
+      .prioritise-equity {
         fill: #c0f0c4;
         stroke: #027353;
       }
       
       /*Outer and Fill*/
-      .protect-equity--fill {
+      .prioritise-equity--icon, 
+      .prioritise-equity--border {
         fill: #027353;
       }
+
+      $conditions: (
+        'protect-people': #611ca6,
+        'promote-health': #4a30f2,
+        'prioritise-equity': #027353
+      );
+
+      @each $key, $color in $conditions {
+        @for $i from 1 through 3 {
+          &:has(.#{$key}-path--#{$i}:hover) {
+            .#{$key}--#{$i} .#{$key}--icon,  
+            .#{$key}--#{$i} .#{$key}--text {
+              fill: white;
+              color: white;
+              transition: none;
+            }
+            .#{$key}-path--#{$i} {
+              fill: $color;
+            }
+          }
+        }
+      }
+
+      
+
+      // &:has(.prioritise-equity-path--1:hover) {
+      //   .prioritise-equity--1 .prioritise-equity--icon,  
+      //   .prioritise-equity--1 .prioritise-equity--text {
+      //     fill: white;
+      //     color: white;
+      //     transition: none;
+      //   }
+      //   .prioritise-equity-path--1 {
+      //     fill: #027353;
+      //   }
+      // }
 
       .promote-health {
         fill: #c9e7f2;
@@ -44,17 +82,16 @@ svg#principles {
       }
 
       /*Outer and Fill*/
-      .promote-health--fill {
+      .promote-health--icon, 
+      .promote-health--border {
         fill: #4a30f2;
       }
 
       //Hover
       .promote-health, 
       .protect-people,
-      .protect-equity {
+      .prioritise-equity {
         &:hover {
-          fill: transparent;
-          transition: fill 0.3s;
           cursor: pointer;
         }
       }

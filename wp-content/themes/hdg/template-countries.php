@@ -164,7 +164,7 @@ map.scrollWheelZoom.disable();
 
 const countryData = <?php echo $country_data_json; ?>;
 // Define global offsets for latitude and longitude
-const latitudeOffset = -4; // Adjust this value as needed
+const latitudeOffset = -3; // Adjust this value as needed
 const longitudeOffset = -9; // Adjust this value as needed
 
 // Define custom SVG icon
