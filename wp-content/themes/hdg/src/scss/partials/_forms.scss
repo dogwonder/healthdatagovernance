@@ -123,6 +123,10 @@ input[type="submit"] {
     @extend %hdg-button;
   }
 
+  .gpnf-add-entry {
+    margin-block-start: var(--wp--custom--spacing--gap);
+  }
+
   //Choises
   .gchoice {
     display: flex;
