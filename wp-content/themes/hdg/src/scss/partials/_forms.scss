@@ -124,7 +124,7 @@ input[type="submit"] {
   }
 
   .gpnf-add-entry {
-    margin-block-start: var(--wp--custom--spacing--gap);
+    margin-block-start: var(--wp--custom--spacing--gap) !important;
   }
 
   //Choises
