@@ -118,7 +118,8 @@ input[type="submit"] {
 
   .gform_next_button,
   .gform_previous_button, 
-  .gform_save_link {
+  .gform_save_link, 
+  .gpnf-add-entry {
     @extend %hdg-button;
   }
 
