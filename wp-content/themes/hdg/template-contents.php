@@ -10,6 +10,10 @@
  */
 
  get_header();
+// Hide title via custom field
+if ( class_exists( 'acf' ) ) {
+	$hidden_title = get_field( 'hide_title' );
+}
  ?>
  
 	 <div id="primary" class="hdg-content-wrapper">
@@ -24,11 +28,13 @@
 					</div>
 				</div>
 				<div class="entry-main stack">
-					<?php
+
+					<?php if ( ! $hidden_title ) : 
                     the_title(
                         '<h1 class="hdg-page-header__title" itemprop="headline">',
                         "</h1>"
                     );
+					endif;
                     ?>
 					<?php the_content(); ?>
 				</div>

@@ -212,7 +212,7 @@
 		}
 	  },
 	  "color": {
-		"background": "var(--wp--preset--color--light)",
+		"background": "#fafcfa",
 		"text": "var(--wp--preset--color--dark)"
 	  },
 	  "elements": {
