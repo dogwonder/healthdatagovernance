@@ -25,11 +25,14 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
         font-size: 0.875em;
         margin-top: 0.25em;
     }
+    .previewForm {
+    }
 </style>
+<script src="<?php echo get_template_directory_uri(); ?>/src/vendor/jspdf/jspdf.umd.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-        function downloadPDF(event) {
+        function downloadTXT(event) {
             event.preventDefault(); // Prevent form submission
             if (!validateForm()) {
                 return;
@@ -44,10 +47,36 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
             element.click();
         }
 
+        function downloadPDF(event) {
+
+            event.preventDefault(); // Prevent form submission
+            // Import jsPDF from the library
+            const { jsPDF } = window.jspdf;
+
+            // Create a new instance of jsPDF
+            const pdf = new jsPDF();
+
+            // Get the content of #preview
+            const content = document.getElementById('previewForm').innerText;
+
+            // console.log(content);
+
+            // Set the font size
+            pdf.setFontSize(10);
+
+            // Add the content to the PDF
+            pdf.text(content, 10, 10); // Start at 10,10 (x, y)
+
+            // Save the PDF
+            pdf.save('preview.pdf');
+        }
+        
+
         function addToPreview(label, value) {
             const previewElement = document.getElementById('previewForm');
             const previewItem = document.createElement('div');
-            previewItem.innerHTML = `<strong>${label}:</strong> ${value}`;
+            previewItem.className = 'preview-item';
+            previewItem.innerHTML = `<strong>${label}:</strong><br> ${value}`;
             previewElement.appendChild(previewItem);
         }
 
@@ -117,11 +146,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                 const label = formElement.querySelector(`label[for="${element.id}"]`);
                 const value = element.value;
 
-                if (legend && label && value && element.type !== 'checkbox') {
-                    const previewItem = document.createElement('div');
-                    previewItem.innerHTML = `<strong>${legend.textContent} - ${label.textContent}:</strong> ${value}`;
-                    previewElement.appendChild(previewItem);
-                } else if (legend && label && element.type === 'checkbox' && element.checked) {
+                if (legend && label && element.type === 'checkbox' && element.checked) {
                     if (!checkboxGroups[legend.textContent]) {
                         checkboxGroups[legend.textContent] = [];
                     }
@@ -132,7 +157,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
 
              // Append checkbox groups to the preview
              for (const [legendText, labels] of Object.entries(checkboxGroups)) {
-                addToPreview(legendText, labels.join(', '));
+                addToPreview(legendText, labels.join('<br>'));
             }
 
         }
@@ -358,7 +383,8 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
 
     <div class="govuk-form-group stack stack-large">
 
-            <div id="previewForm"></div>
+            <h2><?php esc_html_e( 'Preview', 'hdg' ); ?></h2>   
+            <div id="previewForm" class="previewForm stack"></div>
 
             <a class="govuk-button" type="submit" id="downloadForm">
                 <?php esc_html_e( 'Download Form', 'hdg' ); ?>
