@@ -16,8 +16,33 @@ $core_prinicples_3 = array("Represent all groups and populations equitably in da
 //Merge arrays
 $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicples_3);
 ?>
+<style>
+    .error {
+        border-color: red;
+    }
+    .error-message {
+        color: red;
+        font-size: 0.875em;
+        margin-top: 0.25em;
+    }
+</style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+        function downloadPDF(event) {
+            event.preventDefault(); // Prevent form submission
+            if (!validateForm()) {
+                return;
+            }
+            const formPreview = document.getElementById('previewForm');
+            //Generate a TXT file
+            const element = document.createElement('a');
+            const file = new Blob([formPreview.innerText], { type: 'text/plain' });
+            element.href = URL.createObjectURL(file);
+            element.download = 'assessment.txt';
+            document.body.appendChild(element); // Required for this to work in FireFox
+            element.click();
+        }
 
         function addToPreview(label, value) {
             const previewElement = document.getElementById('previewForm');
@@ -32,13 +57,13 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
             const previewElement = document.getElementById('previewForm');
             previewElement.innerHTML = ''; // Clear previous content
 
-            const country = formElement.querySelector('select[name="country"]').value;
-            const legislation = formElement.querySelector('select[name="legislation"]').value;
-            const specificActName = formElement.querySelector('input[name="specificActName"]').value;
-            const sourceDocumentLink = formElement.querySelector('input[name="sourceDocumentLink"]').value;
-            const year = formElement.querySelector('input[name="year"]').value;
-            const stage = formElement.querySelector('select[name="stage"]').value;
-            const resultsDetail = formElement.querySelector('textarea[name="resultsDetail"]').value;
+            const country = formElement.querySelector('select[name="country"]')?.value || '';
+            const legislation = formElement.querySelector('select[name="legislation"]')?.value || '';
+            const specificActName = formElement.querySelector('input[name="specificActName"]')?.value || '';
+            const sourceDocumentLink = formElement.querySelector('input[name="sourceDocumentLink"]')?.value || '';
+            const year = formElement.querySelector('input[name="year"]')?.value || '';
+            const stage = formElement.querySelector('select[name="stage"]')?.value || '';
+            const resultsDetail = formElement.querySelector('textarea[name="resultsDetail"]')?.value || '';
 
             //Add country to the preview
             const countryItem = document.createElement('div');
@@ -61,7 +86,9 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
             previewElement.appendChild(sourceDocumentLinkItem);
 
             //Also update the prompt value in #sourceDocumentURL
-            document.getElementById('sourceDocumentURL').textContent = sourceDocumentLink;
+            if(document.getElementById('sourceDocumentURL')) {
+                document.getElementById('sourceDocumentURL').textContent = sourceDocumentLink;
+            }
 
             //Add year to the preview
             const yearItem = document.createElement('div');
@@ -74,10 +101,11 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
             previewElement.appendChild(stageItem);
 
             //Add resultsDetail to the preview
-            const resultsDetailItem = document.createElement('div');
-            resultsDetailItem.innerHTML = `<strong>Results:</strong> ${resultsDetail}`;
-            previewElement.appendChild(resultsDetailItem);
-
+            if(resultsDetail) {
+                const resultsDetailItem = document.createElement('div');
+                resultsDetailItem.innerHTML = `<strong>Results:</strong> ${resultsDetail}`;
+                previewElement.appendChild(resultsDetailItem);
+            }
 
             const formElements = formElement.querySelectorAll('input[type="checkbox"]');
             const checkboxGroups = {};
@@ -107,8 +135,35 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                 addToPreview(legendText, labels.join(', '));
             }
 
+        }
 
+        function validateForm() {
 
+            const formElement = document.getElementById('assessmentForm');
+            const requiredFields = formElement.querySelectorAll('[required]');
+            let isValid = true;
+
+            console.log(requiredFields);
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('error');
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'error-message';
+                    errorMessage.textContent = 'This field is required';
+                    if (!field.nextElementSibling || !field.nextElementSibling.classList.contains('error-message')) {
+                        field.parentNode.insertBefore(errorMessage, field.nextSibling);
+                    }
+                } else {
+                    field.classList.remove('error');
+                    if (field.nextElementSibling && field.nextElementSibling.classList.contains('error-message')) {
+                        field.nextElementSibling.remove();
+                    }
+                }
+            });
+
+            return isValid;
         }
 
         // Add event listeners to form elements
@@ -116,6 +171,11 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
         formElements.forEach(element => {
             element.addEventListener('change', updatePreview);
         });
+
+        //If the button #downloadPDF is clicked, download the PDF
+        document.getElementById('downloadForm').addEventListener('click', downloadPDF);
+
+        
         
     });
 </script>
@@ -137,7 +197,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                 <label class="govuk-label govuk-label--m" for="country">
                     <?php esc_html_e( 'Country', 'hdg' ); ?>
                 </label>
-                <select class="govuk-select" id="country" name="country">
+                <select class="govuk-select" id="country" name="country" required>
                     <option value=""><?php esc_html_e( 'Select Country', 'hdg' ); ?></option>
                     <?php foreach ( $countries as $country ) : ?>
                         <option value="<?php echo esc_attr( $country ); ?>">
@@ -165,14 +225,14 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                 <label class="govuk-label govuk-label--m" for="specific-act-name">
                     <?php esc_html_e( 'Specific Act Name', 'hdg' ); ?>
                 </label>
-                <input class="govuk-input" id="specific-act-name" name="specificActName" type="text">
+                <input class="govuk-input" id="specific-act-name" name="specificActName" type="text" required>
             </div>
 
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--m" for="source-document-link">
                     <?php esc_html_e( 'Source document link', 'hdg' ); ?>
                 </label>
-                <input class="govuk-input" id="source-document-link" name="sourceDocumentLink" type="text">
+                <input class="govuk-input" id="source-document-link" name="sourceDocumentLink" type="text" required>
             </div>
 
             <div class="govuk-form-group">
