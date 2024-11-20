@@ -135,6 +135,7 @@ $country_data_json = json_encode($country_data);
 <script>
 // Initialize the map and set its view to the world
 const map = L.map('map').setView([20, 0], 2);
+// const map = L.map('map').setView([53, 12], 5);
 
 // Add a tile layer (OpenStreetMap tiles)
 // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -164,8 +165,10 @@ map.scrollWheelZoom.disable();
 
 const countryData = <?php echo $country_data_json; ?>;
 // Define global offsets for latitude and longitude
-const latitudeOffset = -3; // Adjust this value as needed
-const longitudeOffset = -9; // Adjust this value as needed
+//const latitudeOffset = -3; // Adjust this value as needed
+//const longitudeOffset = -9; // Adjust this value as needed
+const latitudeOffset = 0; // Adjust this value as needed
+const longitudeOffset = 0; // Adjust this value as needed
 
 // Define custom SVG icon
 const customIcon = L.icon({

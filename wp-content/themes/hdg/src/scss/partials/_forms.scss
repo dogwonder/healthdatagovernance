@@ -342,3 +342,15 @@ input[type="submit"] {
   color: var(--wp--custom--color--error);
   font-weight: normal;
 }
+
+
+//Prinicples form
+
+.hdg-principles-form {
+  &__legislation, 
+  &__detail, 
+  &__summary {
+    border-top: 2px solid var(--wp--preset--color--dark);
+    padding-block-start: var(--wp--custom--spacing--gap);
+  }
+}

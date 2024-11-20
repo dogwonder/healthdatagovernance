@@ -9,7 +9,7 @@
             <div class="hdg-masthead__logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="Go to the homepage for <?php bloginfo( 'name' ); ?>">
                 <?php get_template_part( 'template-parts/_atoms/logo' ); ?>
-                <span class="visually-hidden"><?php esc_html_e( 'hdg Rós', 'hdg' ); ?></span>
+                <span class="visually-hidden"><?php esc_html_e( 'Health Data Governance', 'hdg' ); ?></span>
                 </a>
             </div><!-- .masthead__logo -->
 
