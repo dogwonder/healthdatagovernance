@@ -138,6 +138,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                     <?php esc_html_e( 'Country', 'hdg' ); ?>
                 </label>
                 <select class="govuk-select" id="country" name="country">
+                    <option value=""><?php esc_html_e( 'Select Country', 'hdg' ); ?></option>
                     <?php foreach ( $countries as $country ) : ?>
                         <option value="<?php echo esc_attr( $country ); ?>">
                             <?php echo esc_html( $country ); ?>
@@ -151,6 +152,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                     <?php esc_html_e( 'Legislation method', 'hdg' ); ?>
                 </label>
                 <select class="govuk-select" id="legislation" name="legislation">
+                    <option value=""><?php esc_html_e( 'Select Legislation method', 'hdg' ); ?></option>
                     <?php foreach ( $legislations as $legislation ) : ?>
                         <option value="<?php echo esc_attr( $legislation ); ?>">
                             <?php echo esc_html( $legislation ); ?>
@@ -191,6 +193,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                     <?php esc_html_e( 'Stage of Implementation', 'hdg' ); ?>
                 </label>
                 <select class="govuk-select" id="stage" name="stage">
+                    <option value=""><?php esc_html_e( 'Select Stage of Implementation', 'hdg' ); ?></option>
                     <?php foreach ( $stages as $stage ) : ?>
                         <option value="<?php echo esc_attr( $stage ); ?>">
                             <?php echo esc_html( $stage ); ?>
