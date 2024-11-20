@@ -19,19 +19,6 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-
-        function downloadPDF(event) {
-            event.preventDefault(); // Prevent form submission
-            const formPreview = document.getElementById('previewForm');
-            //Generate a TXT file
-            const element = document.createElement('a');
-            const file = new Blob([formPreview.innerText], { type: 'text/plain' });
-            element.href = URL.createObjectURL(file);
-            element.download = 'assessment.txt';
-            document.body.appendChild(element); // Required for this to work in FireFox
-            element.click();
-        }
-
         function addToPreview(label, value) {
             const previewElement = document.getElementById('previewForm');
             const previewItem = document.createElement('div');
@@ -47,9 +34,11 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
 
             const country = formElement.querySelector('select[name="country"]').value;
             const legislation = formElement.querySelector('select[name="legislation"]').value;
-            const specificActName = formElement.querySelector('input[name="sourceDocumentLink"]').value;
+            const specificActName = formElement.querySelector('input[name="specificActName"]').value;
+            const sourceDocumentLink = formElement.querySelector('input[name="sourceDocumentLink"]').value;
             const year = formElement.querySelector('input[name="year"]').value;
             const stage = formElement.querySelector('select[name="stage"]').value;
+            const resultsDetail = formElement.querySelector('textarea[name="resultsDetail"]').value;
 
             //Add country to the preview
             const countryItem = document.createElement('div');
@@ -66,6 +55,14 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
             specificActNameItem.innerHTML = `<strong>Specific Act Name:</strong> ${specificActName}`;
             previewElement.appendChild(specificActNameItem);
 
+            //Add source document link to the preview
+            const sourceDocumentLinkItem = document.createElement('div');
+            sourceDocumentLinkItem.innerHTML = `<strong>Source Document Link:</strong> ${sourceDocumentLink}`;
+            previewElement.appendChild(sourceDocumentLinkItem);
+
+            //Also update the prompt value in #sourceDocumentURL
+            document.getElementById('sourceDocumentURL').textContent = sourceDocumentLink;
+
             //Add year to the preview
             const yearItem = document.createElement('div');
             yearItem.innerHTML = `<strong>Year:</strong> ${year}`;
@@ -75,6 +72,11 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
             const stageItem = document.createElement('div');
             stageItem.innerHTML = `<strong>Stage:</strong> ${stage}`;
             previewElement.appendChild(stageItem);
+
+            //Add resultsDetail to the preview
+            const resultsDetailItem = document.createElement('div');
+            resultsDetailItem.innerHTML = `<strong>Results:</strong> ${resultsDetail}`;
+            previewElement.appendChild(resultsDetailItem);
 
 
             const formElements = formElement.querySelectorAll('input[type="checkbox"]');
@@ -109,9 +111,6 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
 
         }
 
-        // Add event listener to the download button
-        document.querySelector('#downloadForm').addEventListener('click', downloadPDF);
-
         // Add event listeners to form elements
         const formElements = document.querySelectorAll('#assessmentForm input, #assessmentForm select, #assessmentForm textarea');
         formElements.forEach(element => {
@@ -120,6 +119,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
         
     });
 </script>
+
 <form id="assessmentForm" method="get">
     <fieldset class="govuk-fieldset stack stack-large">
 
@@ -205,12 +205,46 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
         
         <div class="stack hdg-principles-form__detail">
             <h2 id="step-2"><?php esc_html_e( 'Step 2 - Country-Specific Detail', 'hdg' ); ?></h2>
+            
             <p>
                 <?php esc_html_e( 'This will take the source document link as provided in Step 1 and generate AI reponsed based on the Core Principles', 'hdg' ); ?>
             </p>
-            <button type="submit" class="govuk-button" data-module="govuk-button">
-                Generate Reponses
-            </button>
+            <p>
+                <a href="Generate via AI" class="govuk-button">Generate via AI</a> 
+            </p>
+
+            <?php /* ?>
+            <p>
+                <?php esc_html_e( 'Use the below prompt to generate potential matching summaries from the source document against the Core Prinicples', 'hdg' ); ?>
+            </p>
+            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Prompt
+                    </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+                    <p class="govuk-notification-banner__heading govuk-!-text-break-word">
+                        Task: Using the document defined here: <span id="sourceDocumentURL">[source document link]</span>
+                    </p>
+                    <p class="govuk-notification-banner__heading govuk-!-text-break-word ">
+                        Identify the clauses or specific sentences that correspond to each of the following core principles found here https://gist.githubusercontent.com/dogwonder/557c494038aa55cb87409e1bb629e282/raw/bd6aba91b4ae7297d627d214cce026b9e5005b24/core-principles.txt. 
+                    </p>
+                    <p class="govuk-notification-banner__heading">
+                        For each principle, provide the relevant clause or sentence from the document in a table format. 
+                    </p>
+                    <p class="govuk-notification-banner__heading">
+                    Search for any clauses or sentences that align with the given description. Extract the specific clause or sentence, and match it to the corresponding core principle. Present your findings in a table, including the principle, the matching clause/sentence, and the clause number or section if possible.
+                    </p>
+                </div>
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="results-detail"><?php esc_html_e( 'Results', 'hdg' ); ?></label>
+                <textarea class="govuk-textarea" id="results-detail" name="resultsDetail" rows="5" ></textarea>
+            </div>
+            <?php */ ?>
+
         </div>
 
         <div class="stack stack-large hdg-principles-form__summary">
