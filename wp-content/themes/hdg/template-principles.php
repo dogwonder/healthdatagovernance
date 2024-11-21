@@ -10,27 +10,174 @@
  */
 
 get_header();
+// Hide title via custom field
+if ( class_exists( 'acf' ) ) {
+	$hidden_title = get_field( 'hide_title' );
+}
 ?>
-<style>
-	#principles {
-		max-width: 50%;
-	}
-	.hdg-content-wrapper {
-		text-align:center;
-	}
-</style>
 <div id="primary" class="hdg-content-wrapper">
 
-	<?php 
-	get_template_part( 'template-parts/_molecules/principles' );
-	?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('hdg-page stack'); ?>>
 
-	<?php
-	while ( have_posts() ) :
-		the_post();
-		get_template_part( 'template-parts/_templates/content', 'page' );
-	endwhile; // End of the loop.
-	?>
-</div><!-- #primary -->
+	 	<div class="entry-wrapper">
+        	<div class="entry-wrapper__inner">
+
+				<div class="entry-sidebar stack">
+					<div class="sticky">
+						<?php include locate_template('template-parts/_partials/contents-list-headings.php');  ?>
+					</div>
+				</div>
+
+				<div class="entry-main stack">
+
+					<?php if ( ! $hidden_title ) : 
+                    the_title(
+                        '<h1 class="hdg-page-header__title" itemprop="headline">',
+                        "</h1>"
+                    );
+					endif;
+                    ?>
+
+					<h2 id="h-about-the-principles" class="wp-block-heading hdg-block-heading">About the Principles</h2>
+
+					<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
+						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+
+						<div x-data="modalHandler()" @keydown.escape.window="closeModal()">
+
+						<div id="wheel-container" class="wheel-container">
+
+							<?php get_template_part( 'template-parts/_molecules/principles-modal' ); ?>
+							
+							<div
+								class="modal-overlay"
+								:class="{ 'active': isOpen }"
+								@click="closeModal()"
+							>
+								<div class="modal stack" @click.stop>
+									<div class="modal-header">
+										<h2 x-text="modalData.name"></h2>
+										<button class="close-button" @click="closeModal()">&times;</button>
+									</div>
+									<div class="modal-body stack">
+										<p x-text="modalData.description"></p>
+										<p x-text="modalData.principle"></p>
+										<a :href="modalData.link" target="_blank">Core elements</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						</div>
+
+							
+						</div>
+						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+							<p>The Health Data Governance Principles bring a human rights and equity lens to the governance of health data and are oriented towards supporting sustainable and resilient public health systems that can deliver universal health coverage (UHC). They create a common vision where all people and communities can share, use and benefit from health data.</p>
+							<p>The Health Data Governance Principles have been primarily driven and developed by civil society through an inclusive and consultative, bottom-up process stewarded by Transform Health. This process brought together more than 200 contributors from more than 130 organisations through global and regional workshops and a one-month public consultation period.</p>
+						</div>
+					</div>
+
+					<?php the_content(); ?>
+
+				</div>
+
+			</div>
+		</div>
+
+		</article>
+
+</div>
+<?php 
+$principle_data = [
+    'protect_people' => [
+        'title' => 'Protect People',
+        'intro' => 'Health data governance must ensure protection for individuals, groups and communities against data-related harm and violations.',
+        'principles' => [
+            'Protect individuals and communities', 
+            'Build trust in data systems', 
+            'Ensure data security'
+        ]
+    ],
+    'promote_health_value' => [
+        'title' => 'Promote Health Value',
+        'intro' => 'Health data governance must maximise the value obtained from the use of data to improve health outcomes for both individuals and society.',
+        'principles' => [
+            'Enhance health systems and services', 
+            'Promote data sharing and interoperability', 
+            'Facilitate innovation using health data'
+        ]
+    ],
+    'prioritise_equity' => [
+        'title' => 'Prioritise Equity',
+        'intro' => 'Health value created by the use of data must equitably benefit individuals and communities.',
+        'principles' => [
+            'promote-equitable-benefits-from-health-data', 
+            'establish-data-rights-and-ownership'
+        ]
+    ]
+];
+$principle_data_json = json_encode($principle_data);
+?>
+<script>
+	function modalHandler() {
+        return {
+            isOpen: false,
+            modalData: {
+                name: '',
+                description: '',
+				principle: '',
+                link: '#'
+            },
+            openModal(data) {
+                this.modalData = data;
+                this.isOpen = true;
+            },
+            closeModal() {
+                this.isOpen = false;
+            },
+            init() {
+
+				// Parse the JSON object from PHP
+				const prinicpleData = <?php echo $principle_data_json; ?>;
+				// console.log(prinicpleData);
+
+				//Get all the principles from the JSON object
+				const principles = Object.values(prinicpleData).reduce((acc, curr) => {
+					return acc.concat(curr.principles);
+				}, []);
+
+				//Loop through each principle and add event listener
+				principles.forEach(principle => {
+					
+					//Convert principle to lowercase and replace spaces with hyphens
+					principleLower = principle.toLowerCase().replace(/\s/g, '-');
+					const principleElement = document.querySelector(`[data-link=${principleLower}]`);
+
+					// console.log(principleElement);
+					if (principleElement) {
+						principleElement.addEventListener('click', () => {
+							const principleData = Object.values(prinicpleData).find(principleData => principleData.principles.includes(principle));
+							// console.log(principleData);
+							const data = {
+								name: principleData.title || 'No Name',
+								description: principleData.intro || 'No Description',
+								principle: principle,
+								link: principleData.intro || '#'
+							};
+							this.openModal(data);
+						});
+					}
+				});
+				
+			}
+        }
+    }
+	window.addEventListener('DOMContentLoaded', () => {
+		modalHandler().init();
+	});
+</script>
+		
 <?php
 get_footer();

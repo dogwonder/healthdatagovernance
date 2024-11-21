@@ -28,11 +28,10 @@ if ( class_exists( 'acf' ) ) {
 	
 		<article id="post-<?php the_ID(); ?>" <?php post_class('hdg-page stack'); ?>>
 
-
 			<?php
 			// First we need to check where we are in the tree, if the current page is not the parent page then display the title of the parent page
 			if ( ! $parent ) :
-				?>
+			?>
 			
 			
 			<div class="entry-header">

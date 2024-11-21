@@ -283,7 +283,7 @@
         smoothScroll();
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
-        new interactiveSVG();
+        // new interactiveSVG();
         // new GradientInteractive();
      });
 
