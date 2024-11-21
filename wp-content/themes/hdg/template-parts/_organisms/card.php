@@ -27,15 +27,6 @@
 		<?php } ?>
 		<div class="hdg-card__content">
 			<h2 class="hdg-card__heading"><?php the_title(); ?></h2>
-			<div class="hdg-card__description">
-			<?php
-			// Display the excerpt is exists
-			if ( has_excerpt( $post->ID ) ) {
-				echo esc_html( get_the_excerpt( $post->ID ) );
-			} else {
-				echo esc_html( hdg_standfirst( 30, $post->ID ) );
-			}
-			?>
 			</div>
 		</div>
 	</a>
