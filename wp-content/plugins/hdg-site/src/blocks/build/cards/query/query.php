@@ -16,7 +16,7 @@ $paged = get_query_var("paged") ? get_query_var("paged") : 1;
 $grid_classes = "";
 $cards_count = 0;
 $has_description = true;
-$has_image = $has_kicker = $has_author = $has_meta = $has_date = false;
+$has_image = $has_author = $has_meta = false;
 $heading_level = "h2";
 $thumbnail_size = "hdg-medium-card";
 
@@ -54,13 +54,6 @@ if (isset($cardTypeMappings[$cards_type])) {
 // After mapping, append classes for card type and specific grid class
 if (!empty($cards_type) && $cards_type !== "default") {
     $grid_classes .= " cards-type--$cards_type";
-}
-
-//Custom fields
-$featured = get_field( 'featured_card' ) ? : '';
-$has_featured = get_field("has_featured") ? : ''; 
-if (!empty($has_featured)) {
-    $grid_classes .= " has-featured";
 }
 
 // Additional logic if needed

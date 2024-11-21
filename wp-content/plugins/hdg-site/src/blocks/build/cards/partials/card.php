@@ -19,11 +19,16 @@ $image_alt = get_post_meta(
     true
 );
 $has_image = has_post_thumbnail($card) ? true : false;
-$is_featured = ( $featured == $card ) ? true : false;
+$article_link = get_field( 'article_link', $card );
+if ( $article_link ) {
+	$card_link = $article_link;
+} else {
+	$card_link = get_the_permalink($card);
+}
 ?>
 <div class="hdg-card <?php echo has_post_thumbnail( $card )
     ? " has-post-thumbnail"
-    : ""; ?> card-<?php echo $card_index; ?><?php echo ( $is_featured ) ? ' is-featured' : ''; ?>"> 
+    : ""; ?> card-<?php echo $card_index; ?>"> 
 	<div class="hdg-card__inner">
 
 	<?php if ($has_image): ?>
@@ -44,13 +49,9 @@ $is_featured = ( $featured == $card ) ? true : false;
 		
 		<div class="hdg-card__content">
 
-			<?php if ($has_kicker) { ?>
-				<?php require HDG_SITE_PLUGIN_BLOCKS . 'build/cards/partials/taxonomy.php'; ?>
-			<?php } ?>
-
 			<<?php echo $heading_level ?> class="hdg-card__heading">
 
-				<a class="hdg-card__link" href="<?php echo esc_url(get_permalink($card)); ?>">
+				<a class="hdg-card__link" href="<?php echo esc_url($article_link); ?>">
 					<?php echo esc_html(get_the_title($card)); ?>
             	</a>
 
@@ -60,30 +61,6 @@ $is_featured = ( $featured == $card ) ? true : false;
 				<div class="hdg-card__meta">
 					<?php hdg_posted_on(); ?>
 				</div>
-			<?php endif; ?>
-
-			<?php if($has_date) :
-				//start date
-				$start_date = get_field('event_start_date', $card);
-				//Convert to date object
-				$start_date = new DateTime($start_date);
-				//Format date
-				$start_date = $start_date->format('j F Y');
-				$end_date = get_field('event_end_date', $card) ?? '';
-				?>
-				<span class="hdg-card__date">
-				<?php 
-				//Echo start date and end date but only end date if it exists
-				echo $start_date;
-				if ($end_date) {
-					//Convert to date object
-					$end_date = new DateTime($end_date);
-					//Format date
-					$end_date = $end_date->format('j F Y');
-					echo ' &mdash; ' . $end_date;
-				}
-				?>
-				</span>
 			<?php endif; ?>
 
    			<?php if($has_description) : ?>
@@ -103,8 +80,6 @@ $is_featured = ( $featured == $card ) ? true : false;
 			<?php endif; ?>
 			
 		</div>
-
-
 
 	</div>
 </div>

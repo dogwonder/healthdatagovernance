@@ -349,17 +349,10 @@ class HDG_Site_Public {
 		$cardTypeMappings = [
 			'default' => [
 				'has_image' => true, 
-				'has_kicker' => true,
-				'has_description' => true,
+				'has_description' => false,
 				'grid_classes' => "",
 				'heading_level' => "h2",
 				'thumbnail_size' => "hdg-medium-card"
-			],
-			'news-summary-card' => [ 
-				'has_kicker' => false, 
-				'has_category' => true, 
-				'has_description' => true,
-				'has_date' => true
 			]
 		];
 		return $cardTypeMappings;

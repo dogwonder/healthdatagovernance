@@ -19,7 +19,7 @@ if ( $article_link ) {
 		<?php if ( has_post_thumbnail() ) { ?>
 			<?php
 			the_post_thumbnail(
-				'hdg-medium-crop',
+				'hdg-medium',
 				array(
 					'alt'   => the_title_attribute(
 						array(

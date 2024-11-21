@@ -376,59 +376,6 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
-        },
-        {
-            "key": "field_66703ce0f4c81",
-            "label": "Featured card",
-            "name": "featured_card",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_66703898ee6de",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": [],
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_6682bce463a69",
-            "label": "Featured card ID",
-            "name": "featured_card_id",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -453,5 +400,5 @@
     "graphql_field_name": "block:Cards",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1723815468
+    "modified": 1732209942
 }
