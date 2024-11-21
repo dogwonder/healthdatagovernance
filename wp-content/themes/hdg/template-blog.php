@@ -24,7 +24,7 @@ $post_args = array(
 
 $blog_query = new WP_Query( $post_args );
 ?>
-<div id="primary" class="hdg-content-wrapper">
+<div id="primary" class="hdg-content-wrapper stack">
 
 	<div class="entry-header">
 		<?php echo do_blocks( '<!-- wp:post-title {"level":1,"className":"wp-block-post-title"} /-->' ); ?>
