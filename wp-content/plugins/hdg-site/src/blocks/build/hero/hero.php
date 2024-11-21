@@ -108,7 +108,7 @@ $block_template = array(
 					}
 					</style>
 				<?php endif; ?>
-				<div class="block__background">
+				<div class="hdg-block__background">
 					<?php 
 					//Don't lazyload this https://cloudfour.com/thinks/stop-lazy-loading-product-and-hero-images/
 					?>
