@@ -218,6 +218,10 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
 
             <h2 id="step-1"><?php esc_html_e( 'Step 1 - Country-Specific Legislation', 'hdg' ); ?></h2>
 
+            <?php 
+            //Add multiple rows of the
+            ?>
+
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--m" for="country">
                     <?php esc_html_e( 'Country', 'hdg' ); ?>
@@ -290,17 +294,25 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
         
         <div class="stack hdg-principles-form__detail">
             <h2 id="step-2"><?php esc_html_e( 'Step 2 - Country-Specific Detail', 'hdg' ); ?></h2>
-            
+
+            <?php /* ?>
             <p>
                 <?php esc_html_e( 'This will take the source document link as provided in Step 1 and generate AI reponsed based on the Core Principles', 'hdg' ); ?>
             </p>
             <p>
                 <a href="Generate via AI" class="govuk-button">Generate via AI</a> 
             </p>
-
-            <?php /* ?>
+            <?php */ ?>
+            
             <p>
                 <?php esc_html_e( 'Use the below prompt to generate potential matching summaries from the source document against the Core Prinicples', 'hdg' ); ?>
+
+                <?php 
+                /*
+                Buttons for AI tools
+                */
+                ?>
+
             </p>
             <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
                 <div class="govuk-notification-banner__header">
@@ -313,7 +325,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                         Task: Using the document defined here: <span id="sourceDocumentURL">[source document link]</span>
                     </p>
                     <p class="govuk-notification-banner__heading govuk-!-text-break-word ">
-                        Identify the clauses or specific sentences that correspond to each of the following core principles found here https://gist.githubusercontent.com/dogwonder/557c494038aa55cb87409e1bb629e282/raw/bd6aba91b4ae7297d627d214cce026b9e5005b24/core-principles.txt. 
+                        Identify the clauses or specific sentences that correspond to each of the following core principles found here https://hdg-staging.mystagingwebsite.com/wp-content/themes/hdg/src/vendor/core-principles.txt. 
                     </p>
                     <p class="govuk-notification-banner__heading">
                         For each principle, provide the relevant clause or sentence from the document in a table format. 
@@ -328,7 +340,13 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                 <label class="govuk-label" for="results-detail"><?php esc_html_e( 'Results', 'hdg' ); ?></label>
                 <textarea class="govuk-textarea" id="results-detail" name="resultsDetail" rows="5" ></textarea>
             </div>
-            <?php */ ?>
+
+            <?php 
+            /*
+            Buttons for AI tools
+            */
+            ?>
+            
 
         </div>
 
@@ -364,6 +382,16 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                         <textarea class="govuk-textarea" id="more-detail" name="notesDetail" rows="5" aria-describedby="notes-detail-hint"></textarea>
                     </div>
                     <?php */ ?>
+                    
+                    <!-- 
+                    Add Rows - Source document
+                    
+                    //Prompt >> 
+                    //Sample text - AI
+                    //Source document name
+                    //Dropdown of legislation type 
+                    //Dropdown Core priniciples -->
+
                 
                 </div>
                 </details>
