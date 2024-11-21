@@ -40,13 +40,13 @@
                 "id": ""
             },
             "choices": {
-                "default": "Default",
-                "event-summary-card": "Events summary card"
+                "default": "Default"
             },
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
@@ -148,15 +148,14 @@
                         "id": ""
                     },
                     "choices": {
-                        "post": "News",
-                        "page": "Page",
-                        "event": "Events",
-                        "document": "Documents"
+                        "post": "Post",
+                        "page": "Page"
                     },
                     "default_value": "post",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
+                    "allow_in_bindings": 1,
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": ""
@@ -247,56 +246,6 @@
                     "bidirectional_target": []
                 },
                 {
-                    "key": "field_657b138a8910c",
-                    "label": "Query Topic",
-                    "name": "query_topic",
-                    "aria-label": "",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "taxonomy": "topic",
-                    "add_term": 0,
-                    "save_terms": 0,
-                    "load_terms": 0,
-                    "return_format": "id",
-                    "field_type": "checkbox",
-                    "bidirectional": 0,
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "bidirectional_target": []
-                },
-                {
-                    "key": "field_657b13888910b",
-                    "label": "Query City",
-                    "name": "query_city",
-                    "aria-label": "",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "taxonomy": "city",
-                    "add_term": 0,
-                    "save_terms": 0,
-                    "load_terms": 0,
-                    "return_format": "id",
-                    "field_type": "checkbox",
-                    "bidirectional": 0,
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "bidirectional_target": []
-                },
-                {
                     "key": "field_64be5dfb1e776",
                     "label": "Query order",
                     "name": "query_order",
@@ -348,34 +297,6 @@
                     "save_other_choice": 0
                 }
             ]
-        },
-        {
-            "key": "field_66703898ee6de",
-            "label": "Has featured",
-            "name": "has_featured",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_657b1c205ce50",
-                        "operator": "==",
-                        "value": "picker"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
         }
     ],
     "location": [
@@ -396,9 +317,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "show_in_graphql": 0,
-    "graphql_field_name": "block:Cards",
-    "map_graphql_types_from_location_rules": 0,
-    "graphql_types": "",
-    "modified": 1732209942
+    "modified": 1732210727
 }
