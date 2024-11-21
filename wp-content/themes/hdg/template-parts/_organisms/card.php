@@ -7,9 +7,15 @@
  *
  * @package hdg
  */
+$article_link = get_field( 'article_link' );
+if ( $article_link ) {
+	$card_link = $article_link;
+} else {
+	$card_link = get_the_permalink();
+}
 ?>
 <div class="hdg-card<?php echo ( has_post_thumbnail() ? ' has-image' : '' ); ?>">
-	<a class="hdg-card__link-wrapper" href="<?php the_permalink(); ?>">
+	<a class="hdg-card__link-wrapper" href="<?php echo $card_link ?>">
 		<?php if ( has_post_thumbnail() ) { ?>
 			<?php
 			the_post_thumbnail(
@@ -27,7 +33,6 @@
 		<?php } ?>
 		<div class="hdg-card__content">
 			<h2 class="hdg-card__heading"><?php the_title(); ?></h2>
-			</div>
 		</div>
 	</a>
 </div>

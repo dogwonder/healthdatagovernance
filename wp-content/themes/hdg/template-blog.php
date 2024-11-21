@@ -26,25 +26,19 @@ $blog_query = new WP_Query( $post_args );
 ?>
 <div id="primary" class="hdg-content-wrapper">
 
-	<div class="entry-header visually-hidden">
+	<div class="entry-header">
 		<?php echo do_blocks( '<!-- wp:post-title {"level":1,"className":"wp-block-post-title"} /-->' ); ?>
 	</div>
 
 	<div class="entry-content">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			get_template_part( 'template-parts/_templates/content', 'page' );
-		endwhile; // End of the loop.
-		?>
 		<?php if ( $blog_query->have_posts() ) : ?>
-			<div class="hdg-grid" data-layout="50-50">
+			<div class="hdg-cards__grid">
 			<?php
 			while ( $blog_query->have_posts() ) :
 				$blog_query->the_post();
 				?>
-				<?php get_template_part( 'template-parts/_organisms/card.php' ); ?>
+				<?php get_template_part( 'template-parts/_organisms/card' ); ?>
 			<?php endwhile; // End of the loop. ?>
 			</div>
 			<?php wp_reset_postdata(); ?>
@@ -57,7 +51,7 @@ $blog_query = new WP_Query( $post_args );
 				get_template_part( 'template-parts/_templates/content', 'none' );
 			endif;
 			?>
-			<?php wp_reset_query(); ?>	
+		<?php wp_reset_query(); ?>	
 			
 	</div>
 
