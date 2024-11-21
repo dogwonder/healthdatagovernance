@@ -72,6 +72,15 @@
   }
 }
 
+//Homepage height
+.home {
+  .hdg-wrapper:has([data-elfsight-app-lazy]) {
+    min-height: 3000px;
+  }
+}
+
+
+
 
 //Blocks page - add some extra spacing
 body:not(.page-template-template-contents) .hdg-wrapper:has(.hdg-hero) {

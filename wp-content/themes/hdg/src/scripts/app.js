@@ -245,6 +245,7 @@
             if (document.body.classList.contains('admin-bar')) {
                 this.gradient.style.height = `${this.page.offsetHeight + 32}px`;
             }
+            
         }
 
         watchResize() {
