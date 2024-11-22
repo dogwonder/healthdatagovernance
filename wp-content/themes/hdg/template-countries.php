@@ -92,24 +92,27 @@ $country_data_json = json_encode($country_data);
 	?>
 	
 		<div class="entry-content">
+
 			<?php /* ?>
-		<?php if ( $country_query->have_posts() ) : ?>
-		<?php
-		while ( $country_query->have_posts() ) :
-			$country_query->the_post();
-			$iso_code = get_field('iso_code') ?? '';
-			?>
-			<div class="hdg-country" data-iso-code="<?php echo esc_html(strtolower($iso_code)) ?>">
-			<?php 
-			if ($iso_code) {
-				echo '<span class="hdg-country__iso">' . esc_html($iso_code) . '</span>';
-			}
-			echo the_title();
-			?>
-			</div>
-		<?php endwhile; // End of the loop.
-		endif; ?>
-		<?php */ ?>
+			<?php if ( $country_query->have_posts() ) : ?>
+			<?php
+			while ( $country_query->have_posts() ) :
+				$country_query->the_post();
+				$iso_code = get_field('iso_code') ?? '';
+				?>
+				<div class="hdg-country" data-iso-code="<?php echo esc_html(strtolower($iso_code)) ?>">
+				<?php 
+				if ($iso_code) {
+					echo '<span class="hdg-country__iso">' . esc_html($iso_code) . '</span>';
+				}
+				echo the_title();
+				?>
+				</div>
+			<?php endwhile; // End of the loop.
+			endif; ?>
+			<?php wp_reset_postdata(); ?>
+			<?php wp_reset_query(); ?>		
+			<?php */ ?>
 
 
 		<!-- Leaflet CSS -->
@@ -127,8 +130,7 @@ $country_data_json = json_encode($country_data);
 
 		<div id="map"></div>
 
-		<?php wp_reset_postdata(); ?>
-		<?php wp_reset_query(); ?>			
+			
 		</div>
 </div>
 

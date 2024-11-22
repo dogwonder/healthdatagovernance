@@ -51,6 +51,11 @@
     @include mq($from: lg) {
       grid-template-columns: var(--sidebar-width-fluid) 1fr;  
     }
+    &.full {
+      @include mq($from: lg) {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 }
 
