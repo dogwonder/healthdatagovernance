@@ -73,6 +73,9 @@ if ( class_exists( 'acf' ) ) {
 							<p>The Health Data Governance Principles bring a human rights and equity lens to the governance of health data and are oriented towards supporting sustainable and resilient public health systems that can deliver universal health coverage (UHC). They create a common vision where all people and communities can share, use and benefit from health data.</p>
 							<p>The Health Data Governance Principles have been primarily driven and developed by civil society through an inclusive and consultative, bottom-up process stewarded by Transform Health. This process brought together more than 200 contributors from more than 130 organisations through global and regional workshops and a one-month public consultation period.</p>
 							<p>Download the Principles (<a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/EN-Health-Data-Governance-Principles-1.pdf">EN</a> | <a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/FR-Health-Data-Governance-Principles.pdf">FR</a> | <a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/SP-Health-Data-Governance-Principles.pdf">SP</a>)</p>
+
+							Download a snapshot of the Principles (<a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/EN-Snapshot-of-the-Principles.pdf">EN</a> | <a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/FR-Snapshot-of-the-Principles.pdf">FR</a> | <a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/SP-Snapshot-of-the-Principles.pdf">SP</a>)
+
 						</div>
 					</div>
 
