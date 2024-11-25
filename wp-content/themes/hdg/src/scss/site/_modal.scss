@@ -62,3 +62,28 @@
 
     }
 }
+
+//Leaflet
+.leaflet-pane {
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+        background: rgba(255, 255, 255, 0.5);
+        
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    .leaflet-popup-content-wrapper{
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: var(--wp--custom--spacing--md); 
+        border-radius: 8px;
+    }
+    .leaflet-popup-content {
+        margin: 0;
+        > a {
+            @extend %hdg-heading-md;
+            color: var(--wp--preset--color--dark);
+        }
+    }
+}

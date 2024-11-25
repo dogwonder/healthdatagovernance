@@ -358,63 +358,68 @@ class HDG_Site_Public {
 		return $cardTypeMappings;
 	}
 
-	public static function hdg_list_post_headings( $wrapper = true ) {
-        global $post;
-
-        $blocks = parse_blocks( $post->post_content );
-        $headings = array();
-
-        /*
-        $start_time = microtime(true);
-        //Do Stuff
-        $end_time = microtime(true);
-        $execution_time = ($end_time - $start_time) * 1000; // Convert to milliseconds
-        echo "Execution time: $execution_time ms";
-        */
-        
-        foreach( $blocks as $block ) {
-            if( 'core/heading' === $block['blockName'] ) {
-                // Check if the level attribute is set
-                $level = isset($block['attrs']['level']) ? $block['attrs']['level'] : null;
-
-                // Check if the className attribute is set and if it contains the specific class
-                $className = isset($block['attrs']['className']) ? $block['attrs']['className'] : '';
-                $hasSpecificClass = strpos($className, 'dont-show-on-page-menu') !== false;
-        
-                // If the level attribute is not set or is 2, and the block does not have the specific class, treat this block as an <h2>
-                // Exclude blocks with level 1, 3, 4, 5, or 6
-                if (($level === null || $level === 2) && !in_array($level, array(1, 3, 4, 5, 6)) && !$hasSpecificClass) {
-                    $heading = wp_strip_all_tags( $block['innerHTML'] );
-                    if (!empty($heading)) {
-                        $headings[] = $heading;
-                    }
-                }
-            }
-			// If the block is a core/block or core/template-part block, render the block and search for <h2> tags
-            if ($block['blockName'] === 'core/block' || $block['blockName'] === 'core/template-part') {
-                $block_content = render_block($block);
-                if (is_string($block_content)) {
-                    preg_match_all('/<h2[^>]*>(.*?)<\/h2>/si', $block_content, $matches);
-                    foreach ($matches[1] as $match) {
-                        if (!empty($match)) {
-                            $headings[] = $match;
-                        }
-                    }
-                }
-            }
-        }
-        if (!empty($headings)) {
-            $output = $wrapper ? '<ol class="hdg-contents-list__list" role="tablist">' : '';
-            foreach ($headings as $heading) {
-                $headingID = sanitize_title($heading);
-                //Add h- to the headingID to match the ID of the heading (which is generared by Yoast SEO plugin)
-                $headingID = 'h-' . $headingID;
-                //The first heading should be selected by default
-                $output .= '<li class="hdg-contents-list__item"><a href="#' . $headingID .'" class="hdg-contents-list__link" x-bind:class="{\'active\': activeSection === \'' . $headingID . '\'}">' . $heading . '</a></li>';
-            }
-            $output .= $wrapper ? '</ol>' : '';
-            return $output;
-        }
-    }
+	public static function hdg_list_post_headings($wrapper = true, $headingLevels = array(2, 3)) {
+		global $post;
+	
+		$blocks = parse_blocks($post->post_content);
+		$headings = array();
+		$added_headings = array(); // To keep track of added headings
+	
+		foreach ($blocks as $block) {
+			if ('core/heading' === $block['blockName']) {
+				// Check if the level attribute is set
+				$level = isset($block['attrs']['level']) ? $block['attrs']['level'] : null;
+	
+				// Treat `null` as <h2> and ensure the level is in the allowed levels
+				$effectiveLevel = $level === null ? 2 : $level;
+	
+				// Check if the className attribute is set and if it contains the specific class
+				$className = isset($block['attrs']['className']) ? $block['attrs']['className'] : '';
+				$hasSpecificClass = strpos($className, 'dont-show-on-page-menu') !== false;
+	
+				// Only include headings that match the allowed levels and do not have the excluded class
+				if (in_array($effectiveLevel, $headingLevels) && !$hasSpecificClass) {
+					$heading = wp_strip_all_tags($block['innerHTML']);
+					if (!empty($heading) && !isset($added_headings[$heading])) {
+						$headings[] = array('heading' => $heading, 'level' => $effectiveLevel);
+						$added_headings[$heading] = true; // Mark this heading as added
+					}
+				}
+			}
+			// If the block is a core/block or core/template-part block, render the block and search for specified heading tags
+			if ($block['blockName'] === 'core/block' || $block['blockName'] === 'core/template-part') {
+				$block_content = render_block($block);
+				if (is_string($block_content)) {
+					foreach ($headingLevels as $level) {
+						preg_match_all('/<h' . $level . '[^>]*>(.*?)<\/h' . $level . '>/si', $block_content, $matches);
+						foreach ($matches[1] as $match) {
+							$heading = wp_strip_all_tags($match);
+							if (!empty($heading) && !isset($added_headings[$heading])) {
+								$headings[] = array('heading' => $heading, 'level' => $level);
+								$added_headings[$heading] = true; // Mark this heading as added
+							}
+						}
+					}
+				}
+			}
+		}
+	
+		if (!empty($headings)) {
+			$output = $wrapper ? '<ol class="hdg-contents-list__list" role="tablist">' : '';
+			foreach ($headings as $heading_data) {
+				$heading = $heading_data['heading'];
+				$level = $heading_data['level'];
+				$headingID = sanitize_title($heading);
+				// Add h- to the headingID to match the ID of the heading (which is generated by the Yoast SEO plugin)
+				$headingID = 'h-' . $headingID;
+				// The first heading should be selected by default
+				$output .= '<li class="hdg-contents-list__item h' . $level . '"><a href="#' . $headingID . '" class="hdg-contents-list__link" x-bind:class="{\'active\': activeSection === \'' . $headingID . '\'}">' . $heading . '</a></li>';
+			}
+			$output .= $wrapper ? '</ol>' : '';
+			return $output;
+		}
+	
+		return '';
+	}
 
 }

@@ -123,6 +123,11 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
   margin: 0;
 }
 
+%hdg-heading-2-xs,
+.hdg-heading-2-xs {
+  font-size: var(--wp--preset--font-size--sm);
+}
+
 .hdg-body, 
 %hdg-body,
 .govuk-body {
