@@ -1,0 +1,50 @@
+1.1.1. Address individual and collective risk
+1.1.2. Collect data with a defined purposes
+1.1.3. Collect personal or sensitive data only when necessary and with informed consent
+1.1.4. Use secure data collection and storage mechanisms
+1.1.5. Use de-identification and anonymisation
+1.1.6. Define inappropriate uses of health data
+1.1.7. Institute safeguards against discrimination, stigma, harassment and bias
+1.1.8. Provide guidance specific to marginalised groups and populations
+1.2.1. Align with best practices for data protection and privacy
+1.2.2. Ensure consent is informed and understood in all its complexities
+1.2.3. Obtain collective consent where appropriate
+1.2.4. Define concrete exceptions to informed consent
+1.2.5. Ensure data quality, availability, and accessibility
+1.2.6. Reinforce health data governance with evidence
+1.2.7. Establish transparent and accessible processes and systems
+1.2.8. Institute feedback and accountability mechanisms
+1.3.1. Require strong technical security measures for data processing
+1.3.2. Mitigate risks related to security threats
+1.3.3. Ensure transparency around data breaches
+1.3.4. Consider federated data systems
+2.1.1. Evaluate the benefits of health data
+2.1.2. Use data to enhance health services for individuals and communities
+2.1.3. Encourage a culture of data-led insights and action
+2.1.4. Address health system efficiency, effectiveness, and resilience
+2.1.5. Strengthen community ownership of health data
+2.1.6. Enable and empower frontline health workers
+2.2.1. Establish data sharing rules and guidelines
+2.2.2. Validate informed consent before sharing data
+2.2.3. Promote interoperability of data systems
+2.2.4. Define common data structures across health systems
+2.2.5. Define multiple levels of data access
+2.2.6 Use common definitions and global standards
+2.2.7. Support multi-sector partnerships
+2.3.1. Apply health data governance to emerging technologies
+2.3.2. Address the use of non-health data in health contexts
+2.3.3. Build public health data infrastructure
+2.3.4. Employ policy innovation
+3.1.1. Represent all groups and populations equitably in data
+3.1.2. Consider the unique needs of marginalised groups and populations
+3.1.3. Mitigate data bias
+3.1.4. Use accessible language and plug knowledge gaps
+3.1.5. Implement inclusive data feedback mechanisms
+3.1.6. Promote equitable impact and benefit
+3.2.1. Apply a human rights lens to health data governance
+3.2.2. Define clear governance roles and responsibilities
+3.2.3. Codify data rights and ownership
+3.2.4. Extend data rights and ownership to products and services
+3.2.5. Develop health data trusts and health data cooperatives
+3.2.6. Employ participatory data governance mechanisms
+3.2.7. Connect to broader accountability
