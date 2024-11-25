@@ -32,6 +32,11 @@
 			"color": "#d1b3e5"
 		  },
 		  {
+			"name": "Highlight",
+			"slug": "highlight",
+			"color": "#28eadb"
+		  },
+		  {
 			"name": "Blue",
 			"slug": "blue",
 			"color": "#6e99da"
@@ -172,6 +177,7 @@
 	  "custom": {
 		"spacing": {
 		  "gap": "1.25rem",
+		  "2xs": "0.25rem",
 		  "xs": "0.5rem",
 		  "sm": "0.75rem",
 		  "md": "0.9375rem",
@@ -219,7 +225,7 @@
 		"button": {
 		  "border": {
 			"color": "var(--wp--preset--color--dark)",
-			"radius": "0",
+			"radius": "8px",
 			"style": "solid",
 			"width": "2px"
 		  },
@@ -229,9 +235,9 @@
 		  },
 		  "spacing": {
 			"padding": {
-			  "top": "1rem",
+			  "top": "0.8rem",
 			  "right": "1.5rem",
-			  "bottom": "1rem",
+			  "bottom": "0.8rem",
 			  "left": "1.5rem"
 			}
 		  },
@@ -243,7 +249,7 @@
 		  ":hover": {
 				"border": {
 					"color": "var(--wp--preset--color--dark)",
-					"radius": "0",
+					"radius": "8px",
 					"width": "2px",
 					"style": "solid"
 				}

@@ -7,8 +7,8 @@
     <div class="hdg-masthead-container">
 
             <div class="hdg-masthead__logo">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="Go to the homepage for <?php bloginfo( 'name' ); ?>">
-                <?php get_template_part( 'template-parts/_atoms/logo' ); ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.png" alt="<?php bloginfo( 'name' ); ?>">
                 <span class="visually-hidden"><?php esc_html_e( 'Health Data Governance', 'hdg' ); ?></span>
                 </a>
             </div><!-- .masthead__logo -->

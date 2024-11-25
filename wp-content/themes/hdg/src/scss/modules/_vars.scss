@@ -72,5 +72,16 @@ $mq-breakpoints: (
   --gradient-position-x: 50%;
   --gradient-position-y: 0%;
 
+  //Gradient
+  --blur: 50px;
+  --color1: 213, 162, 240; //Purple
+  --color2: 119, 165, 243; //Blue/green
+  --color3: 210, 159, 239; //Pink
+  --color4: 252, 254, 255; //Light
+  --color5: 252, 243, 254; //Light-2
+  --color-interactive: 143, 65, 217; 
+  --circle-size: 80%;
+  --blending: hard-light;
+
 
 }

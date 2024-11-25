@@ -5,9 +5,9 @@
 		<div class="hdg-footer__section">
 
 				<div class="hdg-footer__about">
-					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.svg" alt="Health Data Governance logo" class="hdg-footer__logo">
+					<a href="https://transformhealthcoalition.org" target="_blank"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/TH-Logo+Tag-Fill-01.png" alt="<?php esc_html_e( 'Transform Health', 'hdg' ); ?>"></img>
 					<p><?php 
-					
+
 					printf(
 						esc_html__('This website is managed by Transform Health, who has been convening efforts to advocate for this agenda. Visit the %s page to view more information about all contributors.', 'hdg'),
 						'<a href="/acknowledgements">' . esc_html__('acknowledgements', 'hdg') . '</a>'

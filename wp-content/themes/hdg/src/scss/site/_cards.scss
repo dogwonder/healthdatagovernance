@@ -76,6 +76,12 @@
     padding: var(--wp--custom--spacing--gap) 0 0;
   }
 
+  h2, h3 {
+    &:before {
+      display: none;
+    }
+  }
+
 }
 
 .hdg-media {

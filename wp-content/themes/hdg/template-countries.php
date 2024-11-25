@@ -130,6 +130,10 @@ $country_data_json = json_encode($country_data);
 
 		<div id="map"></div>
 
+		<div class="">
+			<p class="hdg-mbs-lg"><a href="" target="_blank">Explanatory Note and Methodology</a></p>
+
+
 			
 		</div>
 </div>

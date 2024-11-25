@@ -27,7 +27,7 @@
         max-width: var(--wp--custom--width--content);
         .carousel-item {
             box-sizing: border-box;
-            padding: var(--wp--custom--spacing--gap);
+            padding: var(--wp--custom--spacing--sm) var(--wp--custom--spacing--2-xs);
             width: 20%;
             flex: 0 0 auto; /* Prevent items from shrinking */
             figure {

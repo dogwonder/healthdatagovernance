@@ -58,7 +58,7 @@ if ( class_exists( 'acf' ) ) {
 									<div class="modal-body stack">
 										<p x-text="modalData.description"></p>
 										<p><strong x-text="modalData.principle"></strong></p>
-										<a :href="modalData.link" target="_blank">Core elements</a>
+										<p><a :href="modalData.link" target="_blank" class="hdg-button">Read more about the principles</a></p>
 									</div>
 								</div>
 							</div>
@@ -72,9 +72,9 @@ if ( class_exists( 'acf' ) ) {
 						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
 							<p>The Health Data Governance Principles bring a human rights and equity lens to the governance of health data and are oriented towards supporting sustainable and resilient public health systems that can deliver universal health coverage (UHC). They create a common vision where all people and communities can share, use and benefit from health data.</p>
 							<p>The Health Data Governance Principles have been primarily driven and developed by civil society through an inclusive and consultative, bottom-up process stewarded by Transform Health. This process brought together more than 200 contributors from more than 130 organisations through global and regional workshops and a one-month public consultation period.</p>
-							<p>Download the Principles (<a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/EN-Health-Data-Governance-Principles-1.pdf">EN</a> | <a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/FR-Health-Data-Governance-Principles.pdf">FR</a> | <a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/SP-Health-Data-Governance-Principles.pdf">SP</a>)</p>
+							<p>Download the Principles (<a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/EN-Health-Data-Governance-Principles-1.pdf">English</a> | <a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/FR-Health-Data-Governance-Principles.pdf">French</a> | <a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/SP-Health-Data-Governance-Principles.pdf">Spanish</a>)</p>
 
-							Download a snapshot of the Principles (<a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/EN-Snapshot-of-the-Principles.pdf">EN</a> | <a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/FR-Snapshot-of-the-Principles.pdf">FR</a> | <a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/SP-Snapshot-of-the-Principles.pdf">SP</a>)
+							Download a snapshot of the Principles (<a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/EN-Snapshot-of-the-Principles.pdf">English</a> | <a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/FR-Snapshot-of-the-Principles.pdf">French</a> | <a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/SP-Snapshot-of-the-Principles.pdf">Spanish</a>)
 
 						</div>
 					</div>
@@ -159,7 +159,8 @@ $principle_data_json = json_encode($principle_data);
 					if (principleElement) {
 						principleElement.addEventListener('click', () => {
 							const principleData = Object.values(prinicpleData).find(principleData => principleData.principles.includes(principle));
-							const linkFull = `/principles/principles-core-elements/#h-${principleLower}`;
+							// const linkFull = `/principles/principles-core-elements/#h-${principleLower}`;
+							const linkFull = `/principles/principles-core-elements/`;
 							// console.log(principleData);
 							const data = {
 								name: principleData.title || 'No Name',
