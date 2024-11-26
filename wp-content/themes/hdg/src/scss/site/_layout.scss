@@ -57,6 +57,18 @@
   }
 }
 
+.wp-block-group.is-layout-grid {
+  .wp-block-safe-svg-svg-icon {
+    .safe-svg-inside {
+      width: toRem(60);
+      height: toRem(60);
+    }
+    & ~ p {
+      margin-block-start: 0;
+    }
+  }
+}
+
 //Page layout
 .hdg-content-wrapper {
   .entry-header, 
