@@ -15,6 +15,59 @@ if ( class_exists( 'acf' ) ) {
 	$hidden_title = get_field( 'hide_title' );
 }
  ?>
+
+ <style>
+	.hdg-contents-list__item.h3:before, 
+	.entry-main h3:before {
+		font: var(--fa-font-solid);
+		background: none;
+		width: auto;
+		display: inline-block;
+  		text-rendering: auto;
+  		-webkit-font-smoothing: antialiased;
+		margin-inline-end: 1ch;
+	} 
+
+  .protect-individuals-and-communities:before, 
+  #h-protect-individuals-and-communities:before {
+ 	content: '\e533';
+  }
+
+  .build-trust-in-data-systems:before, 
+  #h-build-trust-in-data-systems:before {
+	content: '\f2b5';
+  }
+
+  .ensure-data-security:before, 
+  #h-ensure-data-security:before {
+	content: '\f023';
+  }
+
+  .enhance-health-systems-and-services:before, 
+  #h-enhance-health-systems-and-services:before {
+	content: '\e3b2';
+  }
+
+  .promote-data-sharing-and-interoperability:before, 
+  #h-promote-data-sharing-and-interoperability:before {
+	content: '\f0ee';
+  }
+
+  .facilitate-innovation-using-health-data:before, 
+  #h-facilitate-innovation-using-health-data:before {
+	content: '\f0eb';
+  }
+
+  .promote-equitable-benefits-from-health-data:before,
+  #h-promote-equitable-benefits-from-health-data:before {
+	content: '\f63d';
+  }
+
+  .establish-data-rights-and-ownership:before, 
+  #h-establish-data-rights-and-ownership:before {
+	content: '\e05c';
+  }
+</style>
  
 	 <div id="primary" class="hdg-content-wrapper">
 
