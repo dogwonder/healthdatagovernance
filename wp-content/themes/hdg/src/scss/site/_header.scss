@@ -86,205 +86,59 @@ $nav-height: toRem(120);
 .hdg-nav {
   z-index: $z-low;
   display: flex;
-  
   .hdg-menu {
-    margin: var(--wp--custom--spacing--gap) 0 0 0;
-    padding: 0;
+    list-style: none;
+    padding: var(--wp--custom--spacing--gap);
+    padding-block-start: var(--wp--custom--spacing--lg);
     display: flex;
     flex-direction: column;
-    gap: var(--wp--custom--spacing--gap);
-    @include mq($from: lg) {
-      flex: 1;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-    }
+    gap: var(--wp--custom--spacing--sm);
     .menu-item {
-      list-style-type: none;
-      @extend %hdg-navigation;
-      line-height: 1;
+      font-size: var(--wp--preset--font-size--md); 
+      font-weight: 800;
       text-align: left;
-      position: relative;
-      padding: 0;
-      margin: 0;
-      @include mq($until: lg) {
-
-        font-size: var(--wp--preset--font-size--lg);
-
-        &.current-menu-item > a, 
-        &.current-page-ancestor > a {
-          width: calc(100% - 80px) !important;
-        }
-      }
-      @include mq($from: lg) {
-        margin: 0 var(--wp--custom--spacing--gap) 0 0;
-      }
-      &:last-of-type {
-        margin: 0;
-      }
       a {
-        display: inline-block;
         text-decoration: none;
-        padding: 0;
-        margin:0;
-        width: 100%;
-        @include mq($from: lg) {
-          color: var(--wp--preset--color--dark);
-        }
         &:hover {
           text-decoration: underline;
         }
-        &:focus-visible {
-          border: 0;
-          background-color: transparent;
-          box-shadow: none;
-          text-decoration: underline;
-          outline: 0;
-          color: white !important;
-          text-decoration-color: white !important;
-          @include mq($from: lg) {
-            color: var(--wp--preset--color--dark) !important;
-            text-decoration-color: var(--wp--preset--color--primary) !important;
-          }
-        }
-      }
-
-
-      // Use a different one to .current-menu-item so we can toggle it in the mobile view
-      &.current_page_item, 
-      &.current_page_ancestor {
-        > a {
-          text-decoration: underline;
-        }
-      }
-
-      &.menu-item-has-children {
-        @include mq($from: lg) {
-          display: flex;
-          align-items: center;
-          > a {
-            padding-right:0;
-            margin-inline-end:0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            &:after {
-              //Chevron down
-              content: "";
-              display: block;
-              box-sizing: border-box;
-              width: 0;
-              height: 0;
-              width: 0.8ex;
-              height: 0.8ex;
-              border-bottom: 2px solid;
-              border-right: 2px solid;
-              transform: rotate(45deg);
-              margin-inline-start: var(--wp--custom--spacing--sm);
-              margin-block-start: -0.4ex;
-            }
-          }
-        }
-      }
-
-      //With JS - see a11yMenu()
-      //Hover/Click method (including class name for JS to target)
-      &.menu-item-has-children.menu-open {
-        .sub-menu {
-          display: block;
-          @include mq($from: lg) {
-            display: flex;
-          }
-        }
-      }
-
-      //We don't want hover events on smaller screens
-      &.menu-item-has-children:focus-within,
-      &.menu-item-has-children:hover {
-        .sub-menu {
-          @include mq($from: lg) {
-            display: flex;
-            transition-delay: 0s; /* react immediately on hover */
-          }
-        }
-      }
-
-      &.menu-item-has-children.menu-open {
-        //a11y menu for opening menu via button
-        @include mq($from: lg) {
-          .sub-menu {
-            opacity: 1;
-            visibility: visible;
-            transition-delay: 250ms;
-          }
-        }
-      }
-
-      //If current menu open the sub-menu on mobile
-      &.menu-item-has-children.current-menu-item, 
-      &.menu-item-has-children.current-menu-ancestor {
-        .sub-menu {
-          @include mq($until: lg) {
-            display: block;
-          }
-        }
-      }
-
-    }
-
-    //Sub menu
-    .sub-menu {
-      display: none;
-      @include mq($until: lg) {
-        margin: var(--wp--custom--spacing--sm) 0 var(--wp--custom--spacing--md) var(--wp--custom--spacing--sm);
-        li {
-          line-height: var(--wp--custom--typography--line-height--body);
-          margin: 0;
-        }
-      }
-      @include mq($from: lg) {
-        display: flex;
-        flex-direction: column;
-        opacity: 0;
-        visibility: hidden;
-        transition: visibility .25s cubic-bezier(.24,.26,.2,1),opacity .25s cubic-bezier(.24,.26,.2,1);
-        z-index: $z-high;
-        position: absolute;
-        left: auto;
-        right: 0;
-        top: 100%;
-        margin:0;
-        padding:0;
-        width: auto;
-        background-color: white;
-        min-width: 24rem;
-        .menu-item {
-          @include mq($from: lg) {
-            line-height: 1;
-            a {
-              padding: var(--wp--custom--spacing--sm);
-              display: block;
-            }
-          }
-        }
       }
     }
-
   }
-
+  .nav-close {
+    box-shadow: none;
+    font-weight: $bold;
+    background-color: transparent;
+    border:0;
+    width: toRem(44);
+    height: toRem(44);
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+    svg {
+      height: toRem(44);
+    }
+  }
 }
 
 //Navigation Toggle
 .nav-toggle {
+  display: block; 
+  .open {display: block;}
   margin: 0 0 0 auto;
   padding: 0;
-  display: none;
   box-shadow: none;
   font-weight: $bold;
   background-color: transparent;
   border:0;
   width: toRem(44);
   height: toRem(44);
+  &:hover {
+    cursor: pointer;
+  }
   &:focus-visible {
     background-color: transparent;
     box-shadow: none;
@@ -295,139 +149,25 @@ $nav-height: toRem(120);
   }
 }
 
+.hdg-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px; // Adjust the width as needed
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transform: translateX(100%); // Initially hide the sidebar off-screen
+  transition: transform 0.3s ease-in-out; // Add transition for smooth animation
+  z-index: 1000; // Ensure the sidebar is above other content
 
-//Attempt at fixing Cumulative Layout Shift issue with menu before JS kicks in
-.no-js {
-
-  .hdg-masthead {
-    /* browser decide if x is ok to scroll and show bars on, y hidden */
-    overflow: visible;
-    /* prevent scroll chaining on x scroll */
-    overscroll-behavior-x: contain;
-    /* scrolling should snap children on x */
-    scroll-snap-type: x mandatory;
-    
-    @media (hover: none) {
-      scrollbar-width: none;
-  
-      &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
-    }
-  
-    .hdg-nav {
-      display: flex;
-      /* defend against <main> needing 100% */
-      flex-shrink: 0;
-      /* fixes cross browser quarks */
-      min-block-size: fit-content;
-
-      .hdg-menu {
-        .menu-item > a {
-            color: var(--wp--preset--color--dark);
-        }
-      }
-    }
+  &.hdg-translate-x-0 {
+    transform: translateX(0); // Show the sidebar
   }
 
-  
-}
-
-//JS progressive enhancement
-.js-enabled {
-
-  //Desktop menu is open
-  &.masthead-expanded {
-    .hdg-wrapper {
-      position: relative;
-      &:before {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-    .sub-menu {
-      z-index: $z-highest;
-    }
+  &.hdg-translate-x-full {
+    transform: translateX(100%); // Hide the sidebar
   }
-
-  //Mobile menu is open
-  &.nav-open {
-    .hdg-wrapper {
-      position: relative;
-      &:before {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-  }
-
-
-  .hdg-nav__wrapper { 
-    //Cumulative Layout Shift fix - hide the menu if JS is enabled to avoid layout shift, maybe becuase ResizeObserver is too slow? 🤷
-    display: none;  
-    @include mq($from: lg) {
-      display: flex;  
-      width: 100%;
-    }
-  }
-
-  .hdg-masthead {
-  
-    //If we are in the mobile view (<769px), we need to show the burger menu
-    &[data-enabled="true"] {
-
-      .hdg-nav {
-        align-items: center;
-      }
-
-      .nav-toggle { 
-        display: block; 
-        .open {display: block;}
-        .close {display: none;}
-      }    
-
-      .hdg-nav__wrapper { 
-        display: none;  
-        content-visibility: hidden;
-        position: absolute;
-        width: 100%;
-        top: 90px;
-        left: 0;
-      }
-      
-    }
-
-    //Switch the menu icons
-    &.masthead-is-open {
-      z-index: $z-highest;
-      position: relative;
-      background-color: var(--wp--preset--color--light);
-      .hdg-nav__wrapper {
-        content-visibility: visible;
-        display: block;
-        padding: var(--wp--custom--spacing--gap);
-        margin-block-start: var(--wp--custom--spacing--lg);
-        .hdg-menu {
-          display: flex;
-        }
-      }
-      .nav-toggle {
-        position: relative;
-        z-index: $z-highest;
-        display: flex;
-        justify-content: center;
-        .open {display: none;}
-        .close {display: block;}
-        &:focus-visible {
-          background-color: transparent;
-          box-shadow: none;
-          outline: var(--wp--preset--color--light) solid var(--outline-size);
-          outline-offset: var(--outline-offset, var(--outline-size));
-        }
-      }
-    }
-
-  }
-
 }

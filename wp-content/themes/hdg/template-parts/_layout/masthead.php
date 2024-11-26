@@ -15,29 +15,34 @@
 
             <nav id="site-navigation" class="main-navigation hdg-nav" aria-label="primary">
 
-                <button class="nav-toggle" id="nav-toggle" aria-label="Show or hide Top Level Navigation" aria-controls="nav-primary" aria-expanded="false">
-                    <svg class="open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 80c0-8.8 7.2-16 16-16l416 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L16 96C7.2 96 0 88.8 0 80zM0 240c0-8.8 7.2-16 16-16l416 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L16 256c-8.8 0-16-7.2-16-16zM448 400c0 8.8-7.2 16-16 16L16 416c-8.8 0-16-7.2-16-16s7.2-16 16-16l416 0c8.8 0 16 7.2 16 16z"/></svg>
-                    <svg class="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M340.8 32l40.1 0L212 256 380.9 480l-40.1 0L192 282.6 43.2 480 3.1 480 172 256 3.1 32l40.1 0L192 229.4 340.8 32z"/></svg>
+            <div x-data="{ open: false }">
+                <button @click="open = !open" class="nav-toggle" id="nav-toggle" aria-label="Show or hide Top Level Navigation" aria-controls="nav-primary" aria-expanded="false">
+                    <svg class="open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
                     <span class="visually-hidden"><?php esc_html_e( 'Menu', 'hdg' ); ?></span>
                 </button>
+                <div class="hdg-sidebar" :class="{'hdg-translate-x-0': open, 'hdg-translate-x-full': !open}">
 
-                <div class="hdg-nav__wrapper">
+                <button @click="open = false" class="nav-close" aria-label="Close Sidebar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Pro 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M326.6 166.6L349.3 144 304 98.7l-22.6 22.6L192 210.7l-89.4-89.4L80 98.7 34.7 144l22.6 22.6L146.7 256 57.4 345.4 34.7 368 80 413.3l22.6-22.6L192 301.3l89.4 89.4L304 413.3 349.3 368l-22.6-22.6L237.3 256l89.4-89.4z"/></svg>
+                </button>
+                   
 
-                <?php
-                if ( has_nav_menu( 'primary' ) ) {
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'primary',
-                            'menu_id'        => 'nav-primary',
-                            'menu_class'     => 'hdg-menu',
-                            'container'      => false,
-                        )
-                    );
-                }
-                ?>
-                
+                    <?php
+                    if ( has_nav_menu( 'primary' ) ) {
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'primary',
+                                'menu_id'        => 'nav-primary',
+                                'menu_class'     => 'hdg-menu',
+                                'container'      => false,
+                            )
+                        );
+                    }
+                    ?>
                 </div>
-                
+            </div>
+
+
             </nav>
 
             
