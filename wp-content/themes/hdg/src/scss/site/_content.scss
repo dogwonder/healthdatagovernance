@@ -58,15 +58,12 @@
     }
   }
   //Gallery
-  .hdg-wp-block-gallery {
+  .wp-block-gallery {
     display: grid;
     gap: var(--wp--custom--spacing--2-xs) !important;
     grid-template-columns: repeat(2, 1fr);
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 35rem; 
     @include mq($from: lg) {
-    grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
     .wp-block-image {
       display: flex;
@@ -83,6 +80,14 @@
         height: auto;
         
       }
+    }
+  }
+  .hdg-wp-block-gallery {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 35rem; 
+    @include mq($from: lg) {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
   // Embed
