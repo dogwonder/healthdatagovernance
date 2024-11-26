@@ -60,8 +60,8 @@
 .wp-block-group.is-layout-grid {
   .wp-block-safe-svg-svg-icon {
     .safe-svg-inside {
-      width: toRem(60);
-      height: toRem(60);
+      width: toRem(60) !important;
+      height: toRem(60) !important;
     }
     & ~ p {
       margin-block-start: 0;
