@@ -29,7 +29,6 @@ if (is_wp_error($versionData)) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="profile" href="https://gmpg.org/xfn/11">
-<script src="https://kit.fontawesome.com/39456e45bb.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/css/main.css<?php echo wp_get_environment_type() !== "development"
     ? '?v=' . $pkgVersion
     : ""; ?>">

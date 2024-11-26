@@ -15,7 +15,7 @@ if ( class_exists( 'acf' ) ) {
 	$hidden_title = get_field( 'hide_title' );
 }
  ?>
-
+ <script src="https://kit.fontawesome.com/39456e45bb.js" crossorigin="anonymous"></script>
  <style>
 	.hdg-contents-list__item.h3:before, 
 	.entry-main h3:before {
