@@ -44,11 +44,11 @@ if ( class_exists( 'acf' ) ) {
 							<?php get_template_part( 'template-parts/_molecules/principles-modal' ); ?>
 							
 							<div
-								class="modal-overlay"
+								class="hdg-modal-overlay"
 								:class="{ 'active': isOpen }"
 								@click="closeModal()"
 							>
-								<div class="modal stack" @click.stop>
+								<div class="hdg-modal stack" @click.stop>
 									<div class="modal-header">
 										<h2 x-text="modalData.name"></h2>
 										<button class="close-button" @click="closeModal()">
