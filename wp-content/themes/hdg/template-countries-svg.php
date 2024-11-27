@@ -82,12 +82,12 @@ $country_data_json = json_encode($country_data);
 			?>
 			<!-- Modal Overlay -->
 			<div
-				class="modal-overlay"
+				class="hdg-modal-overlay"
 				:class="{ 'active': isOpen }"
 				@click="closeModal()"
 			>
 				<!-- Modal Content -->
-				<div class="modal" @click.stop>
+				<div class="hdg-modal" @click.stop>
 					<div class="modal-header">
 						<h2 x-text="modalData.name"></h2>
 						<button class="close-button" @click="closeModal()">&times;</button>

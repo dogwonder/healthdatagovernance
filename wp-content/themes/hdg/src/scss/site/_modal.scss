@@ -1,5 +1,5 @@
 /* Basic styles for modal and overlay */
-.modal-overlay {
+.hdg-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,11 +12,11 @@
     z-index: 1000;
 }
 
-.modal-overlay.active {
+.hdg-modal-overlay.active {
     display: flex;
 }
 
-.modal {
+.hdg-modal {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -33,7 +33,7 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.modal-overlay.active .modal {
+.hdg-modal-overlay.active .hdg-modal {
     transform: scale(1);
     opacity: 1;
 }
