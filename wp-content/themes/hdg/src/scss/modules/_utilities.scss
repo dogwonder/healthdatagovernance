@@ -216,6 +216,22 @@ $sizes: (
   xl: var(--wp--custom--spacing--xl)
 );
 
+.hdg-mbs-none {
+  margin-block-start: 0 !important;
+}
+
+.hdg-mbe-none {
+  margin-block-end: 0 !important;
+}
+
+.hdg-pbs-none {
+  padding-block-start: 0 !important;
+}
+
+.hdg-pbe-none {
+  padding-block-end: 0 !important;
+}
+
 // Loop through the map to generate utility classes for margins and paddings
 @each $size, $value in $sizes {
   // Margin Block Start

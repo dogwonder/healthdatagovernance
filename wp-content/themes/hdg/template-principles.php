@@ -20,17 +20,35 @@ if ( class_exists( 'acf' ) ) {
 	<article id="post-<?php the_ID(); ?>" <?php post_class('hdg-page stack'); ?>>
 
 	 	<div class="entry-wrapper">
+
+
+		<div class="hdg-block hdg-hero is-style-right  alignfull has-text-align-left has-image hdg-mbe-none">
+			<div class="hdg-block__background">
+				<figure>
+					<picture>
+						<source media="(min-width: 64em)" srcset="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/10/1-1536x864.jpg">
+						<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/10/1-640x360.jpg" alt="" width="640" height="360" fetchpriority="high">
+					</picture>
+				</figure>
+			</div>
+
+
+			<div class="hdg-hero__wrapper">
+				<div class="hdg-hero__inner">   
+					<div class="hdg-hero__content stack">
+						<div class="acf-innerblocks-container">
+								<?php the_title('<h1 class="wp-block-heading" itemprop="headline">',"</h1>");?>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
         	<div class="entry-wrapper__inner full">
 
 				<div class="entry-main stack">
-
-					<?php if ( ! $hidden_title ) : 
-                    the_title(
-                        '<h1 class="hdg-page-header__title" itemprop="headline">',
-                        "</h1>"
-                    );
-					endif;
-                    ?>
 
 					<h2 id="h-about-the-principles" class="wp-block-heading hdg-block-heading hdg-pbe-md">About the Principles</h2>
 
