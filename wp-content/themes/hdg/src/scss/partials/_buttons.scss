@@ -63,3 +63,9 @@
     color: white;
   }
 }
+
+//Small Button
+.hdg-button--small {
+  padding: var(--wp--custom--spacing--xs) var(--wp--custom--spacing--sm);
+  font-size: var(--wp--preset--font-size--small);
+}

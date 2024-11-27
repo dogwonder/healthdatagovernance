@@ -52,3 +52,17 @@ g,
 path {
 	transition: fill 0.24s ease-in-out;
 }
+
+.country-container {
+    @include mq($from: lg) {
+        min-width: 16rem;
+    }
+    .hdg-button {
+        color: var(--wp--preset--color--light);
+        display: inline-block;
+        width: fit-content;
+        &:hover {
+            color: var(--wp--preset--color--dark);
+        }
+    }
+}

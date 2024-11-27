@@ -71,6 +71,7 @@ if ( $country_query->have_posts() ) :
         $country_data[] = array(
             'title' => get_the_title(),
             'link' => get_permalink(),
+			'tags' => get_the_tags(),
             'iso_code' => $iso_code, 
 			'latitude' => $latitude,
 			'longitude' => $longitude
@@ -132,9 +133,6 @@ $country_data_json = json_encode($country_data);
 
 		<div class="">
 			<p class="hdg-mbs-lg"><a href="" target="_blank">Explanatory Note and Methodology</a></p>
-
-
-			
 		</div>
 </div>
 
@@ -192,8 +190,24 @@ const adjustedLongitude = parseFloat(country.longitude) + longitudeOffset;
 // var marker = L.marker([country.latitude, country.longitude]).addTo(map);
 var marker = L.marker([adjustedLatitude, adjustedLongitude], { icon: customIcon }).addTo(map);
 
+// Create a list of tags
+var tagsList = '';
+
+console.log(country.tags);
+if (country.tags && country.tags.length > 0) {
+	country.tags.forEach(function(tag) {
+		tagsList = `<span>${tag.name}</span>`;
+	});
+}
+
 // Create an anchor tag as the marker's popup content
-var anchor = '<a href="' + country.link + '">' + country.title + '</a>';
+var anchor = `
+        <div class="country-container stack">
+            <h3>${country.title}</h3>
+			${tagsList}
+            <a class="hdg-button hdg-button--small" href="${country.link}">View full report</a>
+        </div>
+    `;
 
 // Bind a popup to the marker with the anchor tag
 marker.bindPopup(anchor);
