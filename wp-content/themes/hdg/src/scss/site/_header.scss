@@ -89,7 +89,7 @@ $nav-height: toRem(120);
   .hdg-menu {
     list-style: none;
     padding: var(--wp--custom--spacing--gap);
-    padding-block-start: var(--wp--custom--spacing--lg);
+    padding-block-start: var(--wp--custom--spacing--2-xl);
     display: flex;
     flex-direction: column;
     gap: var(--wp--custom--spacing--sm);
@@ -97,6 +97,7 @@ $nav-height: toRem(120);
       font-size: var(--wp--preset--font-size--md); 
       font-weight: 800;
       text-align: left;
+      max-width: 25ch;
       a {
         text-decoration: none;
         &:hover {
