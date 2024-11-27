@@ -126,6 +126,7 @@ $country_data_json = json_encode($country_data);
 				height: 600px;
 				width: 100%;
 				background: transparent;
+				border: 2px solid #d29fef;
 			}
 		</style>
 
