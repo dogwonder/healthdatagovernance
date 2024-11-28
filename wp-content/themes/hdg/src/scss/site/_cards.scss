@@ -12,6 +12,12 @@
     @include mq($from: lg) {
       grid-template-columns: repeat(3, 1fr);
     }
+    .hdg-card {
+      &__heading  {
+        @extend %hdg-heading-xs;
+      }
+    }
+
   }
 
   &:has(.wp-block-heading:not(.hdg-card__heading)) {
