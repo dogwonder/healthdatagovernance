@@ -86,6 +86,10 @@ $nav-height: toRem(120);
 .hdg-nav {
   z-index: $z-low;
   display: flex;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
   .hdg-menu {
     list-style: none;
     padding: var(--wp--custom--spacing--gap);
@@ -159,7 +163,7 @@ $nav-height: toRem(120);
     width: 30rem;
   }
   height: 100%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);

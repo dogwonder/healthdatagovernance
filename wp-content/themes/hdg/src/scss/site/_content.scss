@@ -76,7 +76,7 @@
       padding-inline: var(--wp--custom--spacing--2-xs);
       flex-grow: 0 !important;
       img {
-        object-fit: cover;
+        object-fit: contain;
         height: 100% !important;
       }
     }

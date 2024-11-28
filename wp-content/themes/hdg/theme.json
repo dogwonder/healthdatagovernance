@@ -131,6 +131,12 @@
 		  }
 		],
 		"fontSizes": [
+		{
+				"name": "Extra Small",
+				"size": "0.9rem",
+				"fluid": false,
+				"slug": "xs"
+		 },
 		  {
 			"name": "Small",
 			"size": "1rem",

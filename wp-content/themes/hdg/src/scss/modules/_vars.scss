@@ -28,7 +28,7 @@ $heavy: 900;
 
 //Colors
 $green: #afeba5;
-$pink: #d1bq3e5;
+$pink: #ebb2f7;
 $blue: #6e99da;
 $dark: #0d0f05;
 $light: #ffffff;
@@ -74,14 +74,12 @@ $mq-breakpoints: (
 
   //Gradient
   --blur: 50px;
-  --color1: 213, 162, 240; //Purple
-  --color2: 119, 165, 243; //Blue/green
-  --color3: 210, 159, 239; //Pink
-  --color4: 252, 254, 255; //Light
+  --color1: 142, 228, 172; //Green1
+  --color2: 110, 153, 218; //Blue
+  --color3: 161, 110, 190; //Purple
+  --color4: 235, 178, 247; //Light
   --color5: 252, 243, 254; //Light-2
   --color-interactive: 143, 65, 217; 
   --circle-size: 80%;
   --blending: hard-light;
-
-
 }

@@ -34,8 +34,7 @@ if (is_wp_error($versionData)) {
     ? '?v=' . $pkgVersion
     : ""; ?>">
 <?php wp_head(); ?>
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="<?php echo get_template_directory_uri(); ?>/dist/images/fav/favicon-128x128.png" type="image/x-icon">
-<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/fav/favicon-128x128.png">
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/favicon.png" type="image/x-icon">
 <meta name="apple-mobile-web-app-title" content="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#3C3C3C">

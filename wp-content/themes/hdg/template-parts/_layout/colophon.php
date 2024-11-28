@@ -5,7 +5,7 @@
 		<div class="hdg-footer__section">
 
 				<div class="hdg-footer__about">
-					<a href="https://transformhealthcoalition.org" target="_blank"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/TH-Logo+Tag-Fill-01.png" alt="<?php esc_html_e( 'Transform Health', 'hdg' ); ?>"></img>
+					<a href="https://transformhealthcoalition.org" target="_blank"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/TH-Logo+Tag-Fill-01.png" alt="<?php esc_html_e( 'Transform Health', 'hdg' ); ?>"></img></a>
 					<p><?php 
 
 					printf(
@@ -13,21 +13,6 @@
 						'<a href="/acknowledgements">' . esc_html__('acknowledgements', 'hdg') . '</a>'
 					); ?>
 					</p>
-				</div>
-			
-				<div class="hdg-footer__links">
-				<?php
-				if ( has_nav_menu( 'footer-links' ) ) {
-					wp_nav_menu(
-						array(
-							'theme_location' => 'footer-links',
-							'menu_id'        => 'footer-nav',
-							'menu_class'     => 'hdg-footer__list',
-							'container'      => false,
-						)
-					);	
-				}
-				?>
 				</div>
 
 			</div>

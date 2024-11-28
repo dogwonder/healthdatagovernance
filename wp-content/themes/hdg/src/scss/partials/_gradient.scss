@@ -9,7 +9,7 @@
 
 .gradient-bg {
     mask-clip: no-clip;
-    background: linear-gradient(40deg, var(--wp--preset--color--light), var(--wp--preset--color--green));
+    background: linear-gradient(40deg, var(--color4), var(--color1));
     filter: blur(var(--blur)); //For safari
     width: calc(100% + var(--blur)); //Increase the edge for the blur
     height: calc(100% + var(--blur)); //Increase the edge for the blur

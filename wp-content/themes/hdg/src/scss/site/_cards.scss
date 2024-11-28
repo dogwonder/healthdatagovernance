@@ -10,7 +10,7 @@
     grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-item-size), 1fr));
     
     @include mq($from: lg) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 

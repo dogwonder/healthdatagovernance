@@ -7,7 +7,7 @@
 
   p, li {
     font-weight: normal;
-    font-size: var(--wp--preset--font-size--sm);
+    font-size: var(--wp--preset--font-size--xs);
   }
 
   .hdg-footer__inner {
@@ -24,10 +24,11 @@
 
   &__about {
     display: flex;
+    align-items: flex-end;
+    max-width: 60rem;
     gap: var(--wp--custom--spacing--gap);
-    max-width: var(--wp--custom--width--lede);
     .logo {
-      max-width: 8rem;
+      max-width: 6rem;
     }
   }
 

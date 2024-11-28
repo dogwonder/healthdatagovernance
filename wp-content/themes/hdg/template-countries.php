@@ -120,20 +120,11 @@ $country_data_json = json_encode($country_data);
 		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 		<!-- Leaflet JavaScript -->
 		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-		<style>
-			/* Set the size of the map */
-			#map {
-				height: 600px;
-				width: 100%;
-				background: transparent;
-				border: 2px solid #d29fef;
-			}
-		</style>
 
 		<div id="map"></div>
 
 		<div class="">
-			<p class="hdg-mbs-lg"><a href="" target="_blank">Explanatory Note and Methodology</a></p>
+			<p class="hdg-mbs-lg hdg-button"><a href="" target="_blank">Explanatory Note and Methodology</a></p>
 		</div>
 </div>
 
@@ -204,9 +195,8 @@ if (country.tags && country.tags.length > 0) {
 // Create an anchor tag as the marker's popup content
 var anchor = `
         <div class="country-container stack">
-            <h3>${country.title}</h3>
-			${tagsList}
-            <a class="hdg-button hdg-button--small" href="${country.link}">View full report</a>
+            <h3><a href="${country.link}">${country.title}</a></h3>
+			<p>Source: ${tagsList}</p>
         </div>
     `;
 

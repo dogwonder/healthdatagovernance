@@ -128,6 +128,22 @@
   }
 }
 
+
+//Countries
+.page-template-template-countries {
+  .entry-content {
+    width: 100%;
+    display: block;
+    #map {
+      height: 65vh;
+      width: 100%;
+      background: transparent;
+      border: 2px solid #d29fef;
+      margin: 0 auto;
+    }
+  }
+}
+
 //Blocks page - add some extra spacing
 body:not(.page-template-template-contents) .hdg-wrapper:has(.hdg-hero) {
   .hdg-masthead {
