@@ -182,7 +182,7 @@ $principle_data_json = json_encode($principle_data);
 							const linkFull = `/principles/principles-core-elements/`;
 							// console.log(principleData);
 							const data = {
-								name: principleData.title || 'No Name',
+								name: principle || 'No Name',
 								description: principleData.intro || 'No Description',
 								principle: principle,
 								link: linkFull || '#'

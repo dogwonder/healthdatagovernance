@@ -52,7 +52,7 @@ if ( class_exists( 'acf' ) ) {
 
 					<h2 id="h-about-the-principles" class="wp-block-heading hdg-block-heading hdg-pbe-md">About the Principles</h2>
 
-					<div x-data="principleManager" class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
+					<div x-data="principleManager" @click.outside="restoreOriginalContent" class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
 						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
 							
 						<div id="wheel-container" class="wheel-container">
@@ -199,6 +199,11 @@ $principle_data_json = json_encode($principle_data);
                     this.currentPrinciple = principle;
                     this.replaceContent = true;
                 }
+            },
+
+			restoreOriginalContent() {
+                this.replaceContent = false;
+                this.currentPrinciple = { title: '', intro: '', slug: '' };
             }
         }));
     });

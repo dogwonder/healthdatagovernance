@@ -1,0 +1,27 @@
+.hdg-tabs {
+
+}
+
+.hdg-tabs-list {
+    display: flex;
+    list-style: none !important;
+    padding: 0;
+    gap: 4px;
+    li {
+        margin-block-start: var(--wp--custom--spacing--md) !important;
+        &.active {
+            a {
+                color: var(--wp--preset--color--light);
+                background-color: var(--wp--preset--color--dark);
+                border: 2px solid var(--wp--preset--color--dark);
+            }
+        }
+        a {
+            padding: var(--wp--custom--spacing--sm);
+            color: var(--wp--preset--color--dark);
+            background-color: transparent;
+            border: 2px solid var(--wp--preset--color--dark);
+            text-decoration: none;
+        }
+    }
+}

@@ -87,8 +87,8 @@ $nav-height: toRem(120);
   z-index: $z-low;
   display: flex;
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 2rem;
   z-index: 1000;
   .hdg-menu {
     list-style: none;
@@ -102,6 +102,10 @@ $nav-height: toRem(120);
       font-weight: 800;
       text-align: left;
       max-width: 25ch;
+      &:not(:last-of-type) {
+        border-bottom: 2px solid var(--wp--preset--color--dark);
+        padding-bottom: var(--wp--custom--spacing--sm);
+      }
       a {
         text-decoration: none;
         &:hover {
@@ -132,6 +136,7 @@ $nav-height: toRem(120);
 //Navigation Toggle
 .nav-toggle {
   display: block; 
+
   .open {display: block;}
   margin: 0 0 0 auto;
   padding: 0;
@@ -139,8 +144,8 @@ $nav-height: toRem(120);
   font-weight: $bold;
   background-color: transparent;
   border:0;
-  width: toRem(44);
-  height: toRem(44);
+  width: toRem(64);
+  height: toRem(64);
   &:hover {
     cursor: pointer;
   }
@@ -150,7 +155,9 @@ $nav-height: toRem(120);
     outline: var(--wp--preset--color--dark) solid var(--outline-size);
   }
   svg {
-    height: toRem(44);
+    padding: 0.625rem;
+    height: toRem(64);
+    background: linear-gradient(90deg, rgba(var(--color4), 0.5) 0, rgba(var(--color3), 0.7) 50%) no-repeat;
   }
 }
 
