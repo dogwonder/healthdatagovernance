@@ -135,8 +135,10 @@ $nav-height: toRem(120);
 
 //Navigation Toggle
 .nav-toggle {
-  display: block; 
-
+  display: flex; 
+  font-size: var(--wp--preset--font-size--lg);
+  font-weight: 800;
+  gap: var(--wp--custom--spacing--sm);
   .open {display: block;}
   margin: 0 0 0 auto;
   padding: 0;
@@ -144,8 +146,7 @@ $nav-height: toRem(120);
   font-weight: $bold;
   background-color: transparent;
   border:0;
-  width: toRem(64);
-  height: toRem(64);
+  width: fit-content;
   &:hover {
     cursor: pointer;
   }
