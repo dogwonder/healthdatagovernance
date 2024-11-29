@@ -87,8 +87,12 @@ $nav-height: toRem(120);
   z-index: $z-low;
   display: flex;
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
+  @include mq($from: lg) {
+    top: 3rem;
+    right: 3rem;
+  }
   z-index: 1000;
   .hdg-menu {
     list-style: none;
