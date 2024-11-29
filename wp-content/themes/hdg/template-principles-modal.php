@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Principles
+ * Template Name: Principles - Modal
  *
  * The template for displaying all single posts
  *
