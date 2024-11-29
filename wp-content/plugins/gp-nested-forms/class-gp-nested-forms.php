@@ -1362,7 +1362,7 @@ class GP_Nested_Forms extends GP_Plugin {
 
 	public function get_child_entry_ids_from_value( $value ) {
 		// For child entry ids passed over URLs, the comma character may have encoded to %2C which must be decoded before processing.
-		$child_entry_ids = explode( ',', urldecode( $value ) );
+		$child_entry_ids = is_string( $value ) ? explode( ',', urldecode( $value ) ) : array();
 		foreach ( $child_entry_ids as &$child_entry_id ) {
 			// We typecast the value as an integer for consistency and to as a security measure. See PR #77.
 			$child_entry_id = (int) trim( $child_entry_id );

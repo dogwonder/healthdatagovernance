@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.27 | November 27, 2024
+
+- Added [`gpasc_draft_markup`](https://gravitywiz.com/documentation/gpasc_draft_markup/) PHP filter hook.
+
 ## 1.0.26 | November 7, 2024
 
 - Fixed an issue where blank drafts are created in the `gf_draft_submissions` table when Save & Continue is active on a form even if both "Auto Save and Load" and "Draft Management" are disabled.

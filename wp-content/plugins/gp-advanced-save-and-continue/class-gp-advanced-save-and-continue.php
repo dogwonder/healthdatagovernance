@@ -1267,8 +1267,24 @@ class GP_Advanced_Save_And_Continue extends GP_Plugin {
 			$markup       .= '<li class="' . $list_item_class . '"><span class="gpasc-draft-link-content">' . $link_markup . $button_markup . '</span></li>';
 		}
 
-		$new_draft_button = '';
-		$form             = GFFormsModel::get_form( $form_id );
+		$new_draft_button  = '';
+		$form              = GFFormsModel::get_form( $form_id );
+		$data_user_id_attr = $user_id ? sprintf( ' data-user-id="%d"', $user_id ) : '';
+
+		$markup = sprintf( '<ul id="%s" class="gpasc-draft-links"%s>%s</ul>', 'gpasc_resume_token_list_' . $form_id, $data_user_id_attr, $markup );
+
+		/**
+		 * Allows the drafts markup to be modified.
+		 *
+		 * @param string $markup     The drafts markup.
+		 * @param array  $token_data The current user resume tokens.
+		 * @param string $user_id    The current user ID.
+		 * @param array  $form       Current form being processed.
+		 * @param class  $this       Current instance of GPASC.
+		 *
+		 * @since 1.0.27
+		 */
+		$markup = gf_apply_filters( array( 'gpasc_draft_markup', $form_id ), $markup, $token_data, $user_id, $form, $this );
 
 		/**
 		 * Allows the form path used in the "New Draft" button to be modified.
@@ -1291,9 +1307,7 @@ class GP_Advanced_Save_And_Continue extends GP_Plugin {
 			);
 		}
 
-		$data_user_id_attr = $user_id ? sprintf( ' data-user-id="%d"', $user_id ) : '';
-
-		return sprintf( '<div class="gpasc-drafts"><h4>%s</h4><ul id="%s" class="gpasc-draft-links"%s>%s</ul>%s</div>', $title, 'gpasc_resume_token_list_' . $form_id, $data_user_id_attr, $markup, $new_draft_button );
+		return sprintf( '<div class="gpasc-drafts"><h4>%s</h4>%s %s</div>', $title, $markup, $new_draft_button );
 	}
 
 	public function get_draft_display_name( $form_id, $resume_token_data ) {
