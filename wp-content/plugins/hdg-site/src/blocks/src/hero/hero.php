@@ -51,7 +51,7 @@ $block_overlay  = $overlay ? 'has-overlay ' : '';
 $block_classes_arr = array( $class_name, $block_classes, $block_image, $block_overlay);
 
 // JSX Innerblocks - https://www.billerickson.net/innerblocks-with-acf-blocks/
-$allowed_blocks = array( 'core/heading', 'core/paragraph', 'core/list', 'core/buttons', 'core/button' );
+$allowed_blocks = array( 'core/heading', 'core/paragraph', 'core/list', 'core/buttons', 'core/button', 'safe-svg/svg-icon' );
 $block_template = array(
 	array(
 		'core/heading',
