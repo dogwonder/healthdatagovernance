@@ -15,6 +15,13 @@ if ( class_exists( 'acf' ) ) {
 	$hidden_title = get_field( 'hide_title' );
 }
 ?>
+<style>
+.hdg-hero .acf-innerblocks-container img {
+      width: 100%;
+      max-width: 18.75rem;
+      margin-block-start: var(--wp--custom--spacing--lg) !important;
+}    
+</style>
 <div id="primary" class="hdg-content-wrapper">
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('hdg-page stack'); ?>>
@@ -22,12 +29,12 @@ if ( class_exists( 'acf' ) ) {
 	 	<div class="entry-wrapper">
 
 
-		<div class="hdg-block hdg-hero is-style-right  alignfull has-text-align-left has-image hdg-mbe-none">
+		<div class="hdg-block hdg-hero alignfull has-text-align-left has-image hdg-mbe-none">
 			<div class="hdg-block__background">
 				<figure>
 					<picture>
-						<source media="(min-width: 64em)" srcset="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/10/1-1536x864.jpg">
-						<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/10/1-640x360.jpg" alt="" width="640" height="360" fetchpriority="high">
+						<source media="(min-width: 64em)" srcset="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/banner-principles-1.png">
+						<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/banner-principles-1-640x360.jpg" alt="" width="640" height="360" fetchpriority="high">
 					</picture>
 				</figure>
 			</div>
@@ -37,7 +44,11 @@ if ( class_exists( 'acf' ) ) {
 				<div class="hdg-hero__inner">   
 					<div class="hdg-hero__content stack">
 						<div class="acf-innerblocks-container">
-								<?php the_title('<h1 class="wp-block-heading" itemprop="headline">',"</h1>");?>
+							<h1>
+							Health Data<br />
+							Governance Principles
+							</h1>
+							<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/banner-principles-icons.svg" />
 						</div>
 					</div>
 				</div>
