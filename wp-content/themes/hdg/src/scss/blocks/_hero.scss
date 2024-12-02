@@ -13,6 +13,11 @@
     max-width: 100%;
     grid-column: 1 / span 3 !important;
 
+    .acf-innerblocks-container {
+      @include stack($gap);
+    }
+
+
     h1, h2 {
       &:before {
         display: none;
@@ -28,8 +33,10 @@
       @extend %hdg-heading-lg;
       line-height: 1.2;
       font-weight: 500;
-      margin-block-start: var(--wp--custom--spacing--lg) !important;
+      margin-block-start: var(--wp--custom--spacing--lg);
     }
+
+    
 
     h1, h2, p {
       color:inherit;
