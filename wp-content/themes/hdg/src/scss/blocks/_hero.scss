@@ -6,19 +6,29 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: var(--wp--preset--color--dark);
+    background-color: transparent;
     min-height: 25rem;
 
     //Align full
     max-width: 100%;
     grid-column: 1 / span 3 !important;
 
-    .acf-innerblocks-container {
-      @include stack($gap);
+    h1, h2 {
+      &:before {
+        display: none;
+      }
     }
 
-    h1, h2 {
+    h1 {
       @extend %hdg-heading-xl;
+      margin: 0;
+    }
+
+    h2 {
+      @extend %hdg-heading-lg;
+      line-height: 1.2;
+      font-weight: 500;
+      margin-block-start: var(--wp--custom--spacing--lg) !important;
     }
 
     h1, h2, p {
