@@ -129,6 +129,8 @@
 }
 
 
+
+
 //Countries
 .page-template-template-countries {
   .entry-content {
@@ -137,9 +139,27 @@
     #map {
       height: 65vh;
       width: 100%;
-      background: transparent;
-      border: 2px solid #d29fef;
       margin: 0 auto;
+      background: transparent;
+      &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 15px;
+        border: 10px solid transparent;
+        background: linear-gradient(140deg, #9568aa, #d8edf3, #edf6f2) border-box;
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+      }
+      &:after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background-image: url('../../src/map/circle.svg');
+      }
     }
   }
 }
