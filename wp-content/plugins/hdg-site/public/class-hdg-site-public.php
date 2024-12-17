@@ -353,7 +353,14 @@ class HDG_Site_Public {
 				'grid_classes' => "",
 				'heading_level' => "h2",
 				'thumbnail_size' => "hdg-medium-card"
-			]
+			], 
+			'community-voice-card' => [
+                'post_type' => 'community-voice',
+                'has_image' => true, 
+				'has_description' => false,
+				'heading_level' => "h2",
+                'thumbnail_size' => "hdg-medium-card"
+            ]
 		];
 		return $cardTypeMappings;
 	}

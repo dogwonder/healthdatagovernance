@@ -18,6 +18,17 @@
       }
     }
 
+    &.cards-type--community-voice-card {
+      @include mq($from: lg) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hdg-card {
+        &__heading  {
+          @extend %hdg-heading-sm;
+        }
+      }
+    }
+
   }
 
   &:has(.wp-block-heading:not(.hdg-card__heading)) {

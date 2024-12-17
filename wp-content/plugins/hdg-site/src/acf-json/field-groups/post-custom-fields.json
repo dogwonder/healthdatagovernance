@@ -28,6 +28,13 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "community-voice"
+            }
         ]
     ],
     "menu_order": 0,
@@ -39,5 +46,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732205889
+    "modified": 1734432248
 }

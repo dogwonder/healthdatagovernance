@@ -20,11 +20,6 @@ $image_alt = get_post_meta(
 );
 $has_image = has_post_thumbnail($card) ? true : false;
 $article_link = get_field( 'article_link', $card );
-if ( $article_link ) {
-	$card_link = $article_link;
-} else {
-	$card_link = get_the_permalink($card);
-}
 ?>
 <div class="hdg-card <?php echo has_post_thumbnail( $card )
     ? " has-post-thumbnail"
@@ -50,10 +45,14 @@ if ( $article_link ) {
 		<div class="hdg-card__content">
 
 			<<?php echo $heading_level ?> class="hdg-card__heading">
-
-				<a class="hdg-card__link" href="<?php echo esc_url($article_link); ?>">
+				
+				<?php if($article_link) : ?>
+					<a class="hdg-card__link" href="<?php echo esc_url($article_link); ?>">
+						<?php echo esc_html(get_the_title($card)); ?>
+            		</a>
+				<?php else : ?>
 					<?php echo esc_html(get_the_title($card)); ?>
-            	</a>
+				<?php endif; ?>
 
 			</<?php echo $heading_level ?>>
 
