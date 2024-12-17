@@ -227,6 +227,20 @@
   inset 0px 0px 40px 5px rgba(255, 255, 255, 0.025);
 }
 
+%gradient-border, 
+.gradient-border {
+  content: "";
+    position: absolute;
+    inset: -15px;
+    border-radius: 15px;
+    border: 5px solid transparent;
+    background: linear-gradient(140deg, #9568aa, #d8edf3, #edf6f2) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    display: block;
+    z-index: -1;
+}
+
 // Define the map with sizes and their corresponding values
 $sizes: (
   sm: var(--wp--custom--spacing--xs),

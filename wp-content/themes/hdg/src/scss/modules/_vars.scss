@@ -27,11 +27,20 @@ $bold: 700;
 $heavy: 900;
 
 //Colors
-$green: #afeba5;
-$pink: #ebb2f7;
-$blue: #6e99da;
+$green: #b7dab8;
+$pink: #c6a2cc;
+$blue: #c9e7f2;
+$purple: #684998;
 $dark: #0d0f05;
 $light: #ffffff;
+
+$color-list: (
+    #434d9c,
+    #c6a2cc,
+    #c9e7f2, 
+    #b7dab8,
+    #684998
+);
 
 //Redeclare from vendor/_mq.scss -- https://github.com/sass-mq/sass-mq
 $mq-breakpoints: (
