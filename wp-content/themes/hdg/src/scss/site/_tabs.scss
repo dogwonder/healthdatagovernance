@@ -4,9 +4,13 @@
 
 .hdg-tabs-list {
     display: flex;
+    flex-wrap: wrap;
     list-style: none !important;
     padding: 0;
-    gap: 4px;
+    gap: var(--wp--custom--spacing--md);
+    @include mq($from: lg) {
+        gap: var(--wp--custom--spacing--2-xs);
+    }
     li {
         margin-block-start: var(--wp--custom--spacing--md) !important;
         &.active {
