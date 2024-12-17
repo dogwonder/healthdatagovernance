@@ -48,7 +48,7 @@ class Settings {
 			return false;
 		}
 
-		$should_auto_load = rgars( $form, $this->slug . '/auto_save_and_load_enabled', false ) === '1';
+		$should_auto_load = rgars( $form, $this->slug . '/auto_save_and_load_enabled', false ) === '1' && $this->save_and_continue_enabled( $form );
 
 		/**
 		 * Allows you to skip auto loading a draft entry for a given form or globally for all forms.
@@ -131,7 +131,7 @@ class Settings {
 	}
 
 	public function draft_management_enabled( $form ) {
-		return rgars( $form, $this->slug . '/draft_management_enabled', '0' ) === '1';
+		return rgars( $form, $this->slug . '/draft_management_enabled', '0' ) === '1' && $this->save_and_continue_enabled( $form );
 	}
 
 	public function display_available_drafts_above_form( $form ) {

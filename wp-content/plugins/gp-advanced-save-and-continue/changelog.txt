@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.28 | December 4, 2024
+
+- Fixed regression causing Advanced Save & Continue's assets to be loaded on forms even if Save and Continue is disabled.
+
 ## 1.0.27 | November 27, 2024
 
 - Added [`gpasc_draft_markup`](https://gravitywiz.com/documentation/gpasc_draft_markup/) PHP filter hook.

@@ -1389,6 +1389,16 @@ const ko = window.ko;
 						}, 50 );
 					}
 					$( document ).trigger( 'gpnf_post_render', [ formId, current_page] );
+
+					// GF 2.9+ initialization
+					gform?.utils?.trigger({
+						event: 'gform/post_render',
+						native: false,
+						data: {
+							formId: formId,
+							currentPage: current_page
+						}
+					});
 				} );
 		}
 

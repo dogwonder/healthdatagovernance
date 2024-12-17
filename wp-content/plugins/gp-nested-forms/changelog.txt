@@ -1,6 +1,10 @@
 
 # Changelog
 
+## 1.1.71 | December 10, 2024
+
+- Improved compatibility with Gravity Forms 2.9's improved initialization logic.
+
 ## 1.1.70 | November 27, 2024
 
 - Added check in `GP_Nested_Forms::get_child_entry_ids_from_value()` to prevent errors if a non-string value is passed.
