@@ -124,7 +124,7 @@ $country_data_json = json_encode($country_data);
 		<div id="map"></div>
 
 		<div class="">
-			<p class="hdg-mbs-lg hdg-button"><a href="" target="_blank">Explanatory Note and Methodology</a></p>
+			<p class="hdg-mbs-lg hdg-button"><a href="https://drive.google.com/file/d/1so_2S9MgHjUMkJm2HeF-1NEVHZYMi_mO/view?usp=drive_link" target="_blank">Explanatory Note and Methodology</a></p>
 		</div>
 </div>
 
