@@ -45,7 +45,7 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
 }
 
 
-:is(h2) {
+:is(h2):not(:empty) {
     &:before {
       background: linear-gradient(
       to right, 
