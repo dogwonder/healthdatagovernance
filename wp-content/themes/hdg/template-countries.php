@@ -70,6 +70,7 @@ if ( $country_query->have_posts() ) :
 		
         $country_data[] = array(
             'title' => get_the_title(),
+			'content' => get_the_content(),
             'link' => get_permalink(),
 			'tags' => get_the_tags(),
             'iso_code' => $iso_code, 
@@ -91,46 +92,26 @@ $country_data_json = json_encode($country_data);
 		get_template_part( 'template-parts/_templates/content', 'page' );
 	endwhile; // End of the loop.
 	?>
-	
-		<div class="entry-content">
-
-			<?php /* ?>
-			<?php if ( $country_query->have_posts() ) : ?>
-			<?php
-			while ( $country_query->have_posts() ) :
-				$country_query->the_post();
-				$iso_code = get_field('iso_code') ?? '';
-				?>
-				<div class="hdg-country" data-iso-code="<?php echo esc_html(strtolower($iso_code)) ?>">
-				<?php 
-				if ($iso_code) {
-					echo '<span class="hdg-country__iso">' . esc_html($iso_code) . '</span>';
-				}
-				echo the_title();
-				?>
-				</div>
-			<?php endwhile; // End of the loop.
-			endif; ?>
-			<?php wp_reset_postdata(); ?>
-			<?php wp_reset_query(); ?>		
-			<?php */ ?>
-
 
 		<!-- Leaflet CSS -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 		<!-- Leaflet JavaScript -->
 		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-		<div id="map"></div>
-
-		<div class="">
-			<p class="hdg-mbs-lg hdg-button"><a href="https://drive.google.com/file/d/1so_2S9MgHjUMkJm2HeF-1NEVHZYMi_mO/view?usp=drive_link" target="_blank">Explanatory Note and Methodology</a></p>
+		<div class="hdg-map">
+			<div id="map" class="hdg-map__container"></div>
 		</div>
-</div>
+	
+		<div class="entry-content">
+			<div>
+				<p class="hdg-mbs-lg hdg-button"><a href="https://drive.google.com/file/d/1so_2S9MgHjUMkJm2HeF-1NEVHZYMi_mO/view?usp=drive_link" target="_blank">Explanatory Note and Methodology</a></p>
+			</div>
+
+		</div>
 
 <script>
 // Initialize the map and set its view to the world
-const map = L.map('map').setView([20, 0], 2);
+const map = L.map('map').setView([20, 0], 3);
 // const map = L.map('map').setView([53, 12], 5);
 
 // Add a tile layer (OpenStreetMap tiles)
@@ -196,6 +177,7 @@ if (country.tags && country.tags.length > 0) {
 var anchor = `
         <div class="country-container stack">
             <h3><a href="${country.link}">${country.title}</a></h3>
+			<div>${country.content}</div>
 			<p>Source: ${tagsList}</p>
         </div>
     `;
