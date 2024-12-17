@@ -156,3 +156,13 @@
     }
   }
 }
+
+.hdg-content-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image img {
+  max-width: 120px !important;
+}
+
+
+.wpdt-c.wdt-skin-light .wpDataTablesWrapper table.wpDataTable > thead > tr > th.break-th {
+  text-overflow: initial;
+  word-break: break-all;
+}
