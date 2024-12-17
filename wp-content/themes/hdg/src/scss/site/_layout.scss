@@ -181,3 +181,10 @@ body:not(.page-template-template-contents) .hdg-wrapper:has(.hdg-hero) {
     margin: 0 !important;
   }
 }
+
+//Data tables
+body:has(.wp-block-wpdatatables-wpdatatables-gutenberg-block) {
+  .gradient-bg {
+    height: auto !important;
+  }
+}
