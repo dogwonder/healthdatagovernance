@@ -59,6 +59,8 @@ if ( $country_query->have_posts() ) :
 
         $iso_code_lower = strtolower(get_post_meta(get_the_ID(), 'iso_code', true));
 		$iso_code = get_post_meta(get_the_ID(), 'iso_code', true);
+
+		$report = get_field('report', get_the_ID());
 		
 		// $coordinates = get_field('coordinates', get_the_ID());
 		// $latitude = $coordinates['latitude'] ?? '';
@@ -74,6 +76,7 @@ if ( $country_query->have_posts() ) :
             'link' => get_permalink(),
 			'tags' => get_the_tags(),
             'iso_code' => $iso_code, 
+			'report' => $report,
 			'latitude' => $latitude,
 			'longitude' => $longitude
         );
@@ -104,7 +107,7 @@ $country_data_json = json_encode($country_data);
 	
 		<div class="entry-content">
 			<div>
-				<p class="hdg-mbs-lg hdg-button"><a href="https://drive.google.com/file/d/1so_2S9MgHjUMkJm2HeF-1NEVHZYMi_mO/view?usp=drive_link" target="_blank">Explanatory Note and Methodology</a></p>
+				<p class="hdg-mbs-lg hdg-button"><a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/National-health-data-governance-landscape-reports-Explanatory-Note-and-Methodology-.pdf" target="_blank">Explanatory Note and Methodology</a></p>
 			</div>
 
 		</div>
@@ -175,9 +178,10 @@ if (country.tags && country.tags.length > 0) {
 
 // Create an anchor tag as the marker's popup content
 var anchor = `
-        <div class="country-container stack">
-            <h3><a href="${country.link}">${country.title}</a></h3>
+        <div class="country-container stack stack-small">
+            <h3>${country.title}</h3>
 			<div>${country.content}</div>
+			${country.report ? `<p><a class="hdg-button hdg-button--small" href="${country.report}" target="_blank">Access detailed report</a></p>` : ''}
 			<p>Source: ${tagsList}</p>
         </div>
     `;
