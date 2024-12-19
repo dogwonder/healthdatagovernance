@@ -1,7 +1,7 @@
 //Accordion block
 .hdg-accordion {
     .govuk-accordion {
-      margin: var(--wp--custom--spacing--lg) var(--wp--custom--spacing--md);
+      margin: var(--wp--custom--spacing--lg) 0;
     }
     .govuk-accordion__section-header {
       font-size: var(--wp--preset--font-size--body); 
@@ -47,9 +47,9 @@
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
         border: 0;
-        gap: 50px;
+        gap: var(--wp--custom--spacing--md);
         @include mq($from: lg) {
-          grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+          grid-template-columns: repeat(2,minmax(0,1fr)) !important;
         }
         // @for $i from 1 through 10 { // Adjust the upper limit as needed
         //   .govuk-accordion__section:nth-child(#{$i}) {
@@ -59,14 +59,15 @@
         &__section {
           background: rgba(255, 255, 255, 0.5);
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          border: 3px solid var(--wp--preset--color--dark);
           backdrop-filter: blur(5px);
           -webkit-backdrop-filter: blur(5px);
-          border-radius: 5px;
+          border-radius: 8px;
           padding: var(--wp--custom--spacing--sm);
           height: 6rem;
-          &:before {
-            @extend %gradient-border;
-          }
+          // &:before {
+          //   @extend %gradient-border;
+          // }
         }
         &__section--expanded {
           height: auto;

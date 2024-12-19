@@ -101,13 +101,13 @@ $country_data_json = json_encode($country_data);
 		<!-- Leaflet JavaScript -->
 		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-		<div class="hdg-map">
-			<div id="map" class="hdg-map__container"></div>
-		</div>
 	
 		<div class="entry-content">
+			<div class="hdg-map">
+				<div id="map" class="hdg-map__container"></div>
+			</div>
 			<div>
-				<p class="hdg-mbs-lg hdg-button"><a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/National-health-data-governance-landscape-reports-Explanatory-Note-and-Methodology-.pdf" target="_blank">Explanatory Note and Methodology</a></p>
+				<p class="hdg-mbs-lg hdg-button"><a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/National-health-data-governance-landscape-reports-Explanatory-Note-and-Methodology.pdf" target="_blank">Explanatory Note and Methodology</a></p>
 			</div>
 
 		</div>
