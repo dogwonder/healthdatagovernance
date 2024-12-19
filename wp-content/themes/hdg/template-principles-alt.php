@@ -33,8 +33,8 @@ if ( class_exists( 'acf' ) ) {
 			<div class="hdg-block__background">
 				<figure>
 					<picture>
-						<source media="(min-width: 64em)" srcset="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/banner-principles-1.png">
-						<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/banner-principles-1-640x360.jpg" alt="" width="640" height="360" fetchpriority="high">
+						<source media="(min-width: 64em)" srcset="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/2-Principles.png">
+						<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/2-Principles-640x233.png" alt="" width="640" height="233" fetchpriority="high">
 					</picture>
 				</figure>
 			</div>
@@ -48,7 +48,7 @@ if ( class_exists( 'acf' ) ) {
 							Health Data<br />
 							Governance Principles
 							</h1>
-							<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/banner-principles-icons.svg" />
+							<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/2-icons.svg" />
 						</div>
 					</div>
 				</div>
