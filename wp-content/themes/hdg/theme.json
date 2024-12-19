@@ -151,7 +151,7 @@
 		  },
 		  {
 			"name": "Medium",
-			"size": "1rem",
+			"size": "1.5rem",
 			"slug": "md", 
 			"fluid": {
 				"min": "1rem",
