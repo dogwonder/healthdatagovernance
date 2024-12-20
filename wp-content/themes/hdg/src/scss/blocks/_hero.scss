@@ -66,7 +66,7 @@
       aspect-ratio: 10 / 16;
       @include mq($from: xl) {
         aspect-ratio: initial;
-        height: 65vh;
+        height: 45vh;
       }
     }
 

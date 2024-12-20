@@ -63,7 +63,7 @@
     gap: var(--wp--custom--spacing--2-xs) !important;
     grid-template-columns: repeat(2, 1fr);
     @include mq($from: lg) {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(7, 1fr);
     }
     .wp-block-image {
       display: flex;
@@ -84,9 +84,9 @@
   .hdg-wp-block-gallery {
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 35rem; 
+    height: 25rem; 
     @include mq($from: lg) {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(7, 1fr);
     }
   }
   // Embed

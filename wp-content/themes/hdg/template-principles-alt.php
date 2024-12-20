@@ -28,7 +28,7 @@ if ( class_exists( 'acf' ) ) {
 
 	 	<div class="entry-wrapper">
 
-
+			<?php /* ?>
 		<div class="hdg-block hdg-hero alignfull has-text-align-left has-image hdg-mbe-none">
 			<div class="hdg-block__background">
 				<figure>
@@ -55,13 +55,13 @@ if ( class_exists( 'acf' ) ) {
 			</div>
 
 		</div>
-
+<?php */ ?>
 
         	<div class="entry-wrapper__inner full">
 
 				<div class="entry-main stack">
 
-					<h2 id="h-about-the-principles" class="wp-block-heading hdg-block-heading hdg-pbe-md">About the Principles</h2>
+					<h1 id="h-about-the-principles" class="wp-block-heading hdg-block-heading hdg-pbe-md">Health Data Governance Principles</h1>
 
 					<div x-data="principleManager" @click.outside="restoreOriginalContent" class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
 						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">

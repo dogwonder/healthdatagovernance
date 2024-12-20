@@ -106,15 +106,12 @@ $country_data_json = json_encode($country_data);
 			<div class="hdg-map">
 				<div id="map" class="hdg-map__container"></div>
 			</div>
-			<div>
-				<p class="hdg-mbs-lg hdg-button"><a href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/National-health-data-governance-landscape-reports-Explanatory-Note-and-Methodology.pdf" target="_blank">Explanatory Note and Methodology</a></p>
-			</div>
 
 		</div>
 
 <script>
 // Initialize the map and set its view to the world
-const map = L.map('map').setView([20, 0], 3);
+const map = L.map('map').setView([20, 0], 2);
 // const map = L.map('map').setView([53, 12], 5);
 
 // Add a tile layer (OpenStreetMap tiles)
@@ -182,7 +179,7 @@ var anchor = `
             <h3>${country.title}</h3>
 			<div>${country.content}</div>
 			${country.report ? `<p><a class="hdg-button hdg-button--small" href="${country.report}" target="_blank">Access detailed report</a></p>` : ''}
-			<p>Source: ${tagsList}</p>
+			<p>${tagsList}</p>
         </div>
     `;
 
