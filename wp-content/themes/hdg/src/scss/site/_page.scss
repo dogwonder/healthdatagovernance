@@ -38,3 +38,9 @@
     margin-inline-start: var(--wp--custom--spacing--gap);
   }
 }
+
+.page-template-template-principles-alt {
+  h1#h-about-the-principles {
+    margin-block-start: 0 !important;
+  } 
+}

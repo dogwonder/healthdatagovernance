@@ -81,3 +81,9 @@ $emValue: math.div($value, 16) + em;
 @return $emValue;
 }
 
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}

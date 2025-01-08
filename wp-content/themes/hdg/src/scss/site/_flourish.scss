@@ -1,0 +1,59 @@
+ul.hdg-list-icons {
+    list-style-type: none;
+    li {
+        line-height: 2;
+        display: flex;
+        gap: 0.6ch;
+        align-items: center;
+        font-size: var(--wp--preset--font-size--md);
+        font-weight: 700;
+        position: relative;
+        &:before {
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: relative;
+            border-radius: 50%;
+            // background-image: url('../../src/map/circle.svg');
+            background-color: var(--wp--preset--color--primary);
+            z-index: 2;
+        }
+        &:after {
+            display: block;
+            content: "";
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            border-radius: 50%;
+            top: 0px;
+            left: 0px;
+            // background-image: url('../../src/map/circle.svg');
+            background-color: var(--wp--preset--color--secondary);
+            z-index: 2;
+        }
+        @for $i from 1 through 6 { // Adjust the upper limit as needed
+            &:nth-child(#{$i}) {
+                &:before {
+                    background-color: nth($color-list, ($i - 1) % length($color-list) + 1);
+                }
+            }
+        }
+        @for $i from 1 through 6 { // Adjust the upper limit as needed
+            &:nth-child(#{$i}) {
+                &:after {
+                    background-color: nth($color-list, ($i - 1) % length($color-list) + 1);
+                    //Semi random positioning
+                    top: randomNum(2, 8) + px;
+                    left: randomNum(2, 8) + px;
+                }
+            }
+        }
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

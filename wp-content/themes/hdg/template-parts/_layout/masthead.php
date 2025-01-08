@@ -9,13 +9,21 @@
             <div class="hdg-masthead__logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 
-                <?php if ( is_page_template( array( 'template-principles-core.php', 'template-principles-alt.php' ) ) ) : ?>
-                    <img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo-principles.png" alt="<?php bloginfo( 'name' ); ?>">
+                <?php 
+                // Hide title via custom field
+                $custom_logo = get_field( 'custom_logo' ) ?? false;
+                //If custom logo is set, use it
+                if ( $custom_logo ) : ?>
+                    <img class="logo" src="<?php echo esc_url( $custom_logo['url'] ); ?>" alt="<?php bloginfo( 'name' ); ?>">
                 <?php else : ?>
-                    <img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.png" alt="<?php bloginfo( 'name' ); ?>">
+                    <?php if ( is_page_template( array( 'template-principles-core.php', 'template-principles-alt.php' ) ) ) : ?>
+                        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo-principles.png" alt="<?php bloginfo( 'name' ); ?>">
+                    <?php else : ?>
+                        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.png" alt="<?php bloginfo( 'name' ); ?>">
+                    <?php endif; ?>
                 <?php endif; ?>
-
                 
+
                 <span class="visually-hidden"><?php esc_html_e( 'Health Data Governance', 'hdg' ); ?></span>
                 </a>
             </div><!-- .masthead__logo -->
