@@ -179,7 +179,6 @@ var anchor = `
             <h3>${country.title}</h3>
 			<div>${country.content}</div>
 			${country.report ? `<p><a class="hdg-button hdg-button--small" href="${country.report}" target="_blank">Access detailed report</a></p>` : ''}
-			<p>${tagsList}</p>
         </div>
     `;
 

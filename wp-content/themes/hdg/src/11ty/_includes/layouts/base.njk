@@ -25,7 +25,13 @@
         </header>
         <main id="content" class="hdg-container" tabindex="-1">
             <div id="primary" class="hdg-content-wrapper">
-                {{ content | safe }}
+                {% if file_type == 'html' %}
+                  {% block content %}
+                    This is content
+                  {% endblock %}
+                {% else %}
+                  {{ content | safe }}
+                {% endif %}
             </div>
         </main>
         <footer class="hdg-footer">
