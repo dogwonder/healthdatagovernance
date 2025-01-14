@@ -112,3 +112,66 @@ svg#principles {
     height: toRem(30);
   }
 }
+
+.hdg-grid-cards {
+  margin-block: var(--wp--custom--spacing--gap);
+  .is-layout-grid {
+    display: grid;
+    @include mq($from: lg) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  .hdg-grid-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--wp--custom--spacing--sm);
+    padding: var(--wp--custom--spacing--gap);
+    border-radius: var(--radius);
+    p {
+      font-size: 90%;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    svg {
+      fill: #7132af;
+      width: 3rem;
+      height: 3rem;
+    }
+    @for $i from 1 through 6 { // Adjust the upper limit as needed
+      &:nth-child(#{$i}) {
+          $color: nth($color-list, ($i - 1) % length($color-list) + 1);
+          background-color: $color;
+          @if $color == #434d9c {
+            p > a {
+              color: white;
+              &:hover {
+                text-decoration-color: white;
+              }
+            }
+            svg {
+              fill: white;
+            }
+          } @else if $color == #684998 {
+            p > a {
+              color: white;
+              &:hover {
+                text-decoration-color: white;
+              }
+            }
+            svg {
+              fill: white;
+            }
+          }
+      }
+  }
+  }
+  .wp-block-safe-svg-svg-icon {
+    margin-inline: 0 !important;
+  }
+}

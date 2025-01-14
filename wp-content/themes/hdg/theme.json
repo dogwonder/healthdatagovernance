@@ -170,11 +170,19 @@
 		  {
 			"name": "Extra Large",
 			"size": "3rem",
-			"fluid": false,
 			"slug": "xl",
 			"fluid": {
 				"min": "2.5rem",
 				"max": "3rem"
+			}
+		  },
+		  {
+			"name": "2XL",
+			"size": "3.4rem",
+			"slug": "2xl",
+			"fluid": {
+				"min": "3rem",
+				"max": "3.4rem"
 			}
 		  }
 		]

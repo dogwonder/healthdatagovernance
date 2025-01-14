@@ -77,6 +77,16 @@ body, h1, h2, h3, h4, h5, h6, address, p, hr, pre, blockquote, ol, ul, li, dl, d
 
 //Line heights are unitless, e.g. 1.5
 
+.hdg-heading-2-xl, 
+%hdg-heading-2-xl {
+  font-size: var(--wp--preset--font-size--2-xl);
+  font-variant-ligatures: discretionary-ligatures; 
+  font-size-adjust: 0.521;
+  line-height: var(--wp--custom--typography--line-height--heading);
+  letter-spacing: var(--wp--custom--typography--letter-spacing--heading);
+  margin: 0;
+}
+
 // H1
 .hdg-heading-xl, 
 %hdg-heading-xl {

@@ -15,17 +15,20 @@
 
     .acf-innerblocks-container {
       @include stack($gap);
+      justify-content: center;
+      align-items: center;
     }
 
 
     h1, h2 {
+      text-align: center;
       &:before {
         display: none;
       }
     }
 
     h1 {
-      @extend %hdg-heading-xl;
+      @extend %hdg-heading-2-xl;
       margin: 0;
     }
 
