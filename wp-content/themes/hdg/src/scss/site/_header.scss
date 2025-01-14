@@ -164,7 +164,7 @@ $nav-height: toRem(120);
     padding: 1rem;
     height: toRem(64);
     width: toRem(64);
-    background: linear-gradient(90deg, rgba(var(--color4), 0.5) 0, rgba(var(--color3), 0.7) 50%) no-repeat;
+    background: linear-gradient(120deg, rgba(var(--color4), 0.5) 0%, rgba(var(--color3), 0.7) 50%, rgba(var(--color1), 0.9) 100%)  no-repeat;
   }
 }
 

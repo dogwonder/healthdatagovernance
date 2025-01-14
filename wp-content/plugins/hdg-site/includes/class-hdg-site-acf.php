@@ -22,6 +22,7 @@ class HDG_Site_ACF {
 	public function hdg_register_wp_blocks() {
 
 		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/accordion/block.json' );
+		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/accordion-columns/block.json' );
 		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/breadcrumbs/block.json' );
 		register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/cards/block.json' );
     	register_block_type( HDG_SITE_PLUGIN_BLOCKS . 'build/cards/query/block.json' );

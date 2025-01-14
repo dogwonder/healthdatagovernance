@@ -40,7 +40,11 @@
 }
 
 .page-template-template-principles-alt {
+  [x-data] {
+    max-width: var(--wp--custom--width--container) !important;
+  }
   h1#h-about-the-principles {
     margin-block-start: 0 !important;
+    margin-block-end: var(--wp--custom--spacing--gap);
   } 
 }

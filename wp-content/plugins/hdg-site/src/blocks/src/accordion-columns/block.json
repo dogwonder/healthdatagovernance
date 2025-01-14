@@ -1,0 +1,19 @@
+{
+    "name": "acf/hdg-accordion-columns",
+    "title": "HDG Accordion Columns",
+    "description": "Show and hide sections block in columns",
+    "style": "file:./accordion-columns.css",
+    "category": "theme",
+    "icon": "menu",
+    "apiVersion": 2,
+    "supports": {
+        "jsx": true, 
+        "align": false,
+        "anchor": true
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "accordion-columns.php"
+    },
+    "align": "full"
+}

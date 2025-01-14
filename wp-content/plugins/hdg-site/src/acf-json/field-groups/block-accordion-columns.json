@@ -1,11 +1,11 @@
 {
-    "key": "group_5e8207534af24",
-    "title": "Block: Accordion",
+    "key": "group_678693a7b52e1",
+    "title": "Block: Accordion Columns",
     "fields": [
         {
-            "key": "field_5e82075fa60ec",
-            "label": "Accordion sections",
-            "name": "accordion_sections",
+            "key": "field_678693a7ed9e8",
+            "label": "Accordion Columns",
+            "name": "accordion_columns",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -16,15 +16,16 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
+            "layout": "block",
+            "pagination": 0,
             "min": 0,
             "max": 0,
-            "layout": "block",
-            "button_label": "Add section",
+            "collapsed": "",
+            "button_label": "Add Row",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_5e8207f4a60ed",
+                    "key": "field_678693bfed9e9",
                     "label": "Heading",
                     "name": "heading",
                     "aria-label": "",
@@ -38,14 +39,15 @@
                         "id": ""
                     },
                     "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "parent_repeater": "field_5e82075fa60ec"
+                    "parent_repeater": "field_678693a7ed9e8"
                 },
                 {
-                    "key": "field_5e8207fea60ee",
+                    "key": "field_678693c3ed9ea",
                     "label": "Content",
                     "name": "content",
                     "aria-label": "",
@@ -59,12 +61,12 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "allow_in_bindings": 1,
-                    "tabs": "all",
+                    "allow_in_bindings": 0,
+                    "tabs": "visual",
                     "toolbar": "basic",
                     "media_upload": 0,
                     "delay": 1,
-                    "parent_repeater": "field_5e82075fa60ec"
+                    "parent_repeater": "field_678693a7ed9e8"
                 }
             ]
         }
@@ -74,7 +76,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/hdg-accordion"
+                "value": "acf\/hdg-accordion-columns"
             }
         ]
     ],
@@ -87,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736872828
+    "modified": 1736874157
 }

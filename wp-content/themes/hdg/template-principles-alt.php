@@ -61,17 +61,16 @@ if ( class_exists( 'acf' ) ) {
 
 				<div class="entry-main stack">
 
-					<h1 id="h-about-the-principles" class="wp-block-heading hdg-block-heading hdg-pbe-md">Health Data Governance Principles</h1>
-
 					<div x-data="principleManager" @click.outside="restoreOriginalContent" class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
-						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:55%">
 							
 						<div id="wheel-container" class="wheel-container">
+							<h1 id="h-about-the-principles" class="wp-block-heading hdg-block-heading hdg-pbe-md">Health Data Governance Principles</h1>
 							<?php get_template_part( 'template-parts/_molecules/principles-sidebar' ); ?>
 						</div>
 							
 						</div>
-						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+						<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:45%">
 							<template x-if="!replaceContent">
 								<p>The Health Data Governance Principles bring a human rights and equity lens to the governance of health data and are oriented towards supporting sustainable and resilient public health systems that can deliver universal health coverage (UHC). They create a common vision where all people and communities can share, use and benefit from health data.<br /><br />
 								The Health Data Governance Principles have been primarily driven and developed by civil society through an inclusive and consultative, bottom-up process stewarded by Transform Health. This process brought together more than 200 contributors from more than 130 organisations through global and regional workshops and a one-month public consultation period.<br /><br />
