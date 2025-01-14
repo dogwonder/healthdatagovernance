@@ -131,6 +131,7 @@ svg#principles {
     border-radius: var(--radius);
     p {
       font-size: 90%;
+      width: 100%;
       a {
         text-decoration: none;
         &:hover {
@@ -156,6 +157,9 @@ svg#principles {
             }
             svg {
               fill: white;
+              path {
+                fill: white;
+              }
             }
           } @else if $color == #684998 {
             p > a {
@@ -166,6 +170,9 @@ svg#principles {
             }
             svg {
               fill: white;
+              path {
+                fill: white;
+              }
             }
           }
       }

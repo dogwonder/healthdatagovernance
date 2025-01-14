@@ -160,8 +160,10 @@ $nav-height: toRem(120);
     outline: var(--wp--preset--color--dark) solid var(--outline-size);
   }
   svg {
-    padding: 0.625rem;
+    border-radius: 50%;
+    padding: 1rem;
     height: toRem(64);
+    width: toRem(64);
     background: linear-gradient(90deg, rgba(var(--color4), 0.5) 0, rgba(var(--color3), 0.7) 50%) no-repeat;
   }
 }
