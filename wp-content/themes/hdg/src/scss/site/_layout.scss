@@ -112,7 +112,7 @@
 .hdg-page {
   .entry-content, 
   .entry-main {
-    .wp-block-heading:not(.hdg-card__heading):not(.hdg-card-media__heading):not(.hdg-hero h2) {
+    .wp-block-heading:not(.hdg-card__heading):not(.slick-slide .wp-block-heading):not(.hdg-card-media__heading):not(.hdg-hero h2) {
       margin-block-start: var(--wp--custom--spacing--xl) !important;
     }
     .hdg-page-header__title + h2.wp-block-heading {

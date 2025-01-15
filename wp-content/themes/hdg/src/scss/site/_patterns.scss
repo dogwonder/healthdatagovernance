@@ -176,3 +176,38 @@ svg#principles {
     }
   }
 }
+
+.wp-block-cb-carousel {
+  padding-inline: 0 !important;
+  .slick-track {
+    display: flex;
+    gap: 1rem;
+  }
+  .wp-block-cb-slide {
+    border-radius: var(--radius);
+    padding: var(--wp--custom--spacing--gap) !important;
+    display: flex; 
+    h2, h3 {
+      margin-block-start: 0 !important;
+    }
+    @for $i from 1 through 6 { // Adjust the upper limit as needed
+      &:nth-child(#{$i}) {
+          $color: nth($color-list, ($i - 1) % length($color-list) + 1);
+          background-color: $color;
+          @if $color == #434d9c or $color == #684998 {
+            h2,
+            h3, 
+            p {
+              color: white;
+              a {
+                color: inherit;
+                &:hover {
+                  text-decoration-color: white;
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+}

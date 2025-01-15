@@ -194,6 +194,31 @@
 
     };
 
+    const sliderEqualHeight = () => {
+        //Get .wp-block-cb-carousel
+        const sliders = document.querySelectorAll('.wp-block-cb-carousel');
+        //If no sliders bail
+        if (!sliders) return;
+        //Loop through sliders
+        sliders.forEach(slider => {
+            //Get the slides
+            const slides = slider.querySelectorAll('.wp-block-cb-slide');
+            //If no slides bail
+            if (!slides) return;
+            //Get the tallest slide
+            let tallestSlide = 0;
+            slides.forEach(slide => {
+                if (slide.offsetHeight > tallestSlide) {
+                    tallestSlide = slide.offsetHeight;
+                }
+            });
+            //Set the height of all slides to the tallest slide
+            slides.forEach(slide => {
+                slide.style.height = `${tallestSlide}px`;
+            });
+        });
+    }
+
     class GradientInteractive {
         constructor() {
             this.interBubble = document.querySelector('.interactive');
@@ -262,6 +287,7 @@
         smoothScroll();
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
+        sliderEqualHeight();
      });
 
      //After window load
