@@ -196,22 +196,23 @@
 
     const truncateAccordion = ()=>{
 
-        const accordion = document.querySelector('.hdg-accordion-columns');
+        // Select all elements with the class 'hdg-accordion-columns'
+        const accordions = document.querySelectorAll('.hdg-accordion-columns');
 
-        //If no accordion bail
-        if (!accordion) { return; }
+        // Loop through each accordion and apply the functionality
+        accordions.forEach(accordion => {
+            // Get all the section contents, .hdg-accordion__section-content
+            const sections = accordion.querySelectorAll('.hdg-accordion__section-content');
 
-        //Get all the section contents, .hdg-accordion__section-content
-        const sections = accordion.querySelectorAll('.hdg-accordion__section-content');
-
-        //Loop through each section
-        for (let i = 0; i < sections.length; i++) {
-            //Get the height of the section
-            const height = sections[i].offsetHeight;
-            if (height > 200) {
-                sections[i].style.height = '74px';
-            }
-        }
+            // Loop through each section
+            sections.forEach(section => {
+                // Get the height of the section
+                const height = section.offsetHeight;
+                if (height > 200) {
+                    section.style.height = '74px';
+                }
+            });
+        });
 
     }
 
