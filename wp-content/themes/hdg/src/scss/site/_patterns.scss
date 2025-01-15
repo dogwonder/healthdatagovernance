@@ -168,7 +168,7 @@ svg#principles {
       }
   }
   }
-  .wp-block-safe-svg-svg-icon {
+  &.wp-block-group.is-layout-grid .wp-block-safe-svg-svg-icon {
     margin: 0 !important;
     .safe-svg-inside {
       width: 3rem !important;
