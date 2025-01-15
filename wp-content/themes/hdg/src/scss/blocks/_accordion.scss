@@ -109,7 +109,8 @@
     margin-block-end: var(--wp--custom--spacing--gap);
     @include mq($from: lg) {
       display: grid;
-      grid-template-columns: 3ch 1fr 1fr 4rem;
+      gap: var(--wp--custom--spacing--gap);
+      grid-template-columns: 3ch 0.8fr 1.2fr 4rem;
     }
     &:not(.open) {
       .hdg-accordion__section-content {    
