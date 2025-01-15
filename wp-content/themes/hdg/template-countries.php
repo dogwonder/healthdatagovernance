@@ -106,12 +106,11 @@ $country_data_json = json_encode($country_data);
 			<div class="hdg-map">
 				<div id="map" class="hdg-map__container"></div>
 			</div>
-
 		</div>
 
 <script>
 // Initialize the map and set its view to the world
-const map = L.map('map').setView([20, 0], 2);
+const map = L.map('map').setView([20, 0], 3);
 // const map = L.map('map').setView([53, 12], 5);
 
 // Add a tile layer (OpenStreetMap tiles)
@@ -166,7 +165,7 @@ var marker = L.marker([adjustedLatitude, adjustedLongitude], { icon: customIcon 
 // Create a list of tags
 var tagsList = '';
 
-console.log(country.tags);
+// console.log(country.tags);
 if (country.tags && country.tags.length > 0) {
 	country.tags.forEach(function(tag) {
 		tagsList = `<span>${tag.name}</span>`;
