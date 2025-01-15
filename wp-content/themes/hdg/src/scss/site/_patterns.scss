@@ -159,9 +159,9 @@ svg#principles {
               }
             }
             svg {
-              fill: if($color == #434d9c, white, #d9b4fe);
+              fill: #d9b4fe;
               path {
-                fill: if($color == #434d9c, white, #d9b4fe);
+                fill: #d9b4fe;
               }
             }
           }
@@ -170,5 +170,9 @@ svg#principles {
   }
   .wp-block-safe-svg-svg-icon {
     margin: 0 !important;
+    .safe-svg-inside {
+      width: 3rem !important;
+      height: 3rem !important;
+    }
   }
 }
