@@ -114,6 +114,7 @@
     &:not(.open) {
       .hdg-accordion__section-content {    
         overflow: hidden;
+        height: 74px;
       }
     }
     &.open {

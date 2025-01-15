@@ -194,28 +194,6 @@
 
     };
 
-    const truncateAccordion = ()=>{
-
-        // Select all elements with the class 'hdg-accordion-columns'
-        const accordions = document.querySelectorAll('.hdg-accordion-columns');
-
-        // Loop through each accordion and apply the functionality
-        accordions.forEach(accordion => {
-            // Get all the section contents, .hdg-accordion__section-content
-            const sections = accordion.querySelectorAll('.hdg-accordion__section-content');
-
-            // Loop through each section
-            sections.forEach(section => {
-                // Get the height of the section
-                const height = section.offsetHeight;
-                if (height > 200) {
-                    section.style.height = '74px';
-                }
-            });
-        });
-
-    }
-
     class GradientInteractive {
         constructor() {
             this.interBubble = document.querySelector('.interactive');
@@ -284,7 +262,6 @@
         smoothScroll();
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
-        truncateAccordion();
      });
 
      //After window load
