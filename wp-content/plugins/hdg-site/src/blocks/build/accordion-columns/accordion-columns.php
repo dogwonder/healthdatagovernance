@@ -57,7 +57,7 @@ $block_classes_arr = array( $class_name, $block_classes );
 							</h4>
 						</div>
 
-						<div id="hdg-default-content-<?php echo get_row_index(); ?>" class="hdg-accordion__section-content" aria-labelledby="hdg-default-heading-<?php echo get_row_index(); ?>">
+						<div id="hdg-default-content-<?php echo get_row_index(); ?>" class="hdg-accordion__section-content stack" aria-labelledby="hdg-default-heading-<?php echo get_row_index(); ?>" x-on:click="open = !open" x-bind:aria-expanded="open.toString()">
 							<?php echo $accordion_column_content; ?>
 						</div>
 						

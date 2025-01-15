@@ -194,6 +194,27 @@
 
     };
 
+    const truncateAccordion = ()=>{
+
+        const accordion = document.querySelector('.hdg-accordion-columns');
+
+        //If no accordion bail
+        if (!accordion) { return; }
+
+        //Get all the section contents, .hdg-accordion__section-content
+        const sections = accordion.querySelectorAll('.hdg-accordion__section-content');
+
+        //Loop through each section
+        for (let i = 0; i < sections.length; i++) {
+            //Get the height of the section
+            const height = sections[i].offsetHeight;
+            if (height > 200) {
+                sections[i].style.height = '74px';
+            }
+        }
+
+    }
+
     class GradientInteractive {
         constructor() {
             this.interBubble = document.querySelector('.interactive');
@@ -262,6 +283,7 @@
         smoothScroll();
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
+        truncateAccordion();
      });
 
      //After window load

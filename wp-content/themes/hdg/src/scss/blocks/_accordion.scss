@@ -112,18 +112,8 @@
       grid-template-columns: 3ch 1fr 1fr 4rem;
     }
     &:not(.open) {
-      .hdg-accordion__section-content {
-        //truncate the content
-        p:not(:first-of-type) {
-          display: none;
-        }
-        p:first-of-type {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-        }
+      .hdg-accordion__section-content {    
+        overflow: hidden;
       }
     }
     &.open {
@@ -133,8 +123,8 @@
       svg.button-close {
         display: none;
       }
-      p {
-        margin-block-end: var(--wp--custom--spacing--gap);
+      .hdg-accordion__section-content {    
+        height: 100% !important;
       }
     }
   }
