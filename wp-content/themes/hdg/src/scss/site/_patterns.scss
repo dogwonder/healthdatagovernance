@@ -148,30 +148,20 @@ svg#principles {
       &:nth-child(#{$i}) {
           $color: nth($color-list, ($i - 1) % length($color-list) + 1);
           background-color: $color;
-          @if $color == #434d9c {
-            p > a {
+          @if $color == #434d9c or $color == #684998 {
+            p {
               color: white;
-              &:hover {
-                text-decoration-color: white;
+              a {
+                color: inherit;
+                &:hover {
+                  text-decoration-color: white;
+                }
               }
             }
             svg {
-              fill: white;
+              fill: if($color == #434d9c, white, #d9b4fe);
               path {
-                fill: white;
-              }
-            }
-          } @else if $color == #684998 {
-            p > a {
-              color: white;
-              &:hover {
-                text-decoration-color: white;
-              }
-            }
-            svg {
-              fill: white;
-              path {
-                fill: white;
+                fill: if($color == #434d9c, white, #d9b4fe);
               }
             }
           }
