@@ -1,4 +1,5 @@
 .govuk-breadcrumbs {
+  margin-block-end: var(--wp--custom--spacing--xl);
   ol.govuk-breadcrumbs__list {
     list-style-type: none;
     margin: 0;
