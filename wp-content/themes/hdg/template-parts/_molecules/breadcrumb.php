@@ -16,6 +16,15 @@ $parent = wp_get_post_parent_id( $currentpost_id );
 			<a class="govuk-breadcrumbs__link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'hdg' ); ?></a>
 		</li>
 
+		
+		<?php if ( is_singular( 'case-study' ) ) : ?>
+			<li class="govuk-breadcrumbs__list-item">
+			<a class="govuk-breadcrumbs__link" href="<?php echo esc_url( home_url( '/community' ) ); ?>">
+				<?php esc_html_e( 'Community', 'hdg' ); ?>
+			</a>
+			</li>
+		<?php endif; ?>
+
 		<?php if ( is_page() && $parent > 0 ) : ?>
 			<?php
 			// Get all ancestors and loop through them in reverse order
