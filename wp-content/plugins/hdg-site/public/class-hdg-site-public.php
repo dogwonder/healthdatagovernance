@@ -350,12 +350,22 @@ class HDG_Site_Public {
 			'default' => [
 				'has_image' => true, 
 				'has_description' => false,
+				'has_link' => true,
 				'grid_classes' => "",
 				'heading_level' => "h2",
 				'thumbnail_size' => "hdg-medium-card"
 			], 
 			'community-voice-card' => [
                 'post_type' => 'community-voice',
+				'has_link' => false,
+                'has_image' => true, 
+				'has_description' => false,
+				'heading_level' => "h2",
+                'thumbnail_size' => "hdg-medium-card"
+            ], 
+			'case-study-card' => [
+                'post_type' => 'case-study',
+				'has_link' => true,
                 'has_image' => true, 
 				'has_description' => false,
 				'heading_level' => "h2",

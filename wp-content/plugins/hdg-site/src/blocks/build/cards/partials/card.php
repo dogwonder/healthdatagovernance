@@ -19,7 +19,15 @@ $image_alt = get_post_meta(
     true
 );
 $has_image = has_post_thumbnail($card) ? true : false;
-$article_link = get_field( 'article_link', $card );
+
+$article_link = "";
+if ($has_link):
+	if($post_type == 'post') :
+		$article_link = get_field( 'article_link', $card );
+	else : 
+		$article_link = get_permalink($card);
+	endif;
+endif;
 ?>
 <div class="hdg-card <?php echo has_post_thumbnail( $card )
     ? " has-post-thumbnail"

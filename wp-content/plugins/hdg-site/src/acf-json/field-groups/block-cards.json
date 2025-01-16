@@ -41,7 +41,8 @@
             },
             "choices": {
                 "default": "Default",
-                "community-voice-card": "Community voice card"
+                "community-voice-card": "Community voice card",
+                "case-study-card": "Case study voice card"
             },
             "default_value": false,
             "return_format": "value",
@@ -77,7 +78,8 @@
             "post_type": [
                 "post",
                 "page",
-                "community-voice"
+                "community-voice",
+                "case-study"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -152,7 +154,8 @@
                     "choices": {
                         "post": "Post",
                         "page": "Page",
-                        "community-voice": "Community voice"
+                        "community-voice": "Community voice",
+                        "case-study": "Case study"
                     },
                     "default_value": "post",
                     "return_format": "value",
@@ -320,5 +323,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734432012
+    "modified": 1737027863
 }

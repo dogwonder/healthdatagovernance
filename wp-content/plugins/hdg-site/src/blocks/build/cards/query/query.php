@@ -17,6 +17,7 @@ $grid_classes = "";
 $cards_count = 0;
 $has_description = true;
 $has_image = $has_author = $has_meta = false;
+$has_image = false;
 $heading_level = "h2";
 $thumbnail_size = "hdg-medium-card";
 
