@@ -24,7 +24,12 @@
 		  {
 			"name": "Green",
 			"slug": "green",
-			"color": "#afeba5"
+			"color": "#4d8b74"
+		  },
+		  {
+			"name": "Highlight",
+			"slug": "highlight",
+			"color": "#6025a3"
 		  },
 		  {
 			"name": "Pink",
@@ -32,14 +37,9 @@
 			"color": "#d1b3e5"
 		  },
 		  {
-			"name": "Highlight",
-			"slug": "highlight",
-			"color": "#28eadb"
-		  },
-		  {
 			"name": "Blue",
 			"slug": "blue",
-			"color": "#6e99da"
+			"color": "#4b4cee"
 		  },
 		  {
 			"name": "Dark",

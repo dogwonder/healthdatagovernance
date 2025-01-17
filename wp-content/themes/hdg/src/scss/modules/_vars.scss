@@ -27,20 +27,51 @@ $bold: 700;
 $heavy: 900;
 
 //Colors
-$green: #b7dab8;
+$green: #c1efc5;
 $pink: #c6a2cc;
-$blue: #c9e7f2;
-$purple: #684998;
+$blue: #cae7f1;
+$purple: #6025a3;
+$blue: #4b4cee;
 $dark: #0d0f05;
 $light: #ffffff;
 
 $color-list: (
-    #434d9c,
+    #4b4cee,
     #c6a2cc,
-    #c9e7f2, 
-    #b7dab8,
-    #684998
+    #cae7f1, 
+    #c1efc5,
+    #6025a3
 );
+
+$color-map: (
+    1: (
+        background: #4b4cee,
+        accent: #cae7f1,
+        highlight: #cae7f1
+    ),
+    2: (
+        background: #d9a4f0,
+        accent: #bf84e7,
+        highlight: #6025a3
+    ),
+    3: (
+        background: #cae7f1,
+        accent: #4b4cee,
+        highlight: #4b4cee
+    ),
+    4: (
+        background: #c1efc5,
+        accent: #4d8b74,
+        highlight: #4b4cee
+    ), 
+    5: (
+        background: #6025a3,
+        accent: #d9a4f0,
+        highlight: #c1efc5
+    )
+);
+
+
 
 //Redeclare from vendor/_mq.scss -- https://github.com/sass-mq/sass-mq
 $mq-breakpoints: (
