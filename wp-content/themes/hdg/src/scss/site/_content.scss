@@ -93,6 +93,16 @@
         grid-template-columns: repeat(5, 1fr);
       }
     }
+    &.columns-6 {
+      @include mq($from: lg) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+    &.columns-7 {
+      @include mq($from: lg) {
+        grid-template-columns: repeat(7, 1fr);
+      }
+    }
   }
   .hdg-wp-block-gallery {
     overflow-x: hidden;
