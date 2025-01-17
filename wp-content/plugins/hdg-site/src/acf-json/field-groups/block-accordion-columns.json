@@ -67,6 +67,28 @@
                     "media_upload": 0,
                     "delay": 1,
                     "parent_repeater": "field_678693a7ed9e8"
+                },
+                {
+                    "key": "field_678a52ea0e805",
+                    "label": "PDF",
+                    "name": "pdf",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_678693a7ed9e8"
                 }
             ]
         }
@@ -89,5 +111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736876016
+    "modified": 1737118468
 }
