@@ -114,7 +114,7 @@ svg#principles {
 }
 
 .hdg-grid-cards {
-  margin-block: var(--wp--custom--spacing--gap);
+  margin-block: var(--wp--custom--spacing--xl);
   .is-layout-grid {
     display: grid;
     @include mq($from: lg) {
