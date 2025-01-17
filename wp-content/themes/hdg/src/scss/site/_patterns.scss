@@ -233,3 +233,12 @@ svg#principles {
     // }
   }
 }
+
+
+.wp-block-columns {
+  .wp-block-column {
+    .wp-block-heading:first-of-type {
+      margin-block-start: 0 !important
+    }
+  }
+}
