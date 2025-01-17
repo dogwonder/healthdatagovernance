@@ -209,7 +209,7 @@ svg#principles {
 
     &:has(.wp-block-safe-svg-svg-icon) {
       .hdg-grid-card__content {
-        padding-inline: var(--wp--custom--spacing--lg);
+        padding-inline: 1.4rem;
         @include stack(1rem);
         p:first-of-type {
           font-size: 120%;
