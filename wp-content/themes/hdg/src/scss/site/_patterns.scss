@@ -230,6 +230,7 @@ svg#principles {
         }
       }
       .wp-block-safe-svg-svg-icon {
+        max-width: 60%;
         border: 3px solid var(--wp--preset--color--highlight);
         border-radius: 50%;
         padding: var(--wp--custom--spacing--xs);
