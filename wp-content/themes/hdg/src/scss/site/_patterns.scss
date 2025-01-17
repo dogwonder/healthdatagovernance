@@ -168,8 +168,9 @@ svg#principles {
       height: 3rem;
     }
 
-    @for $i from 1 through 12 {
-      $color: map-get($color-map, $i);
+    @for $i from 1 through 10 { 
+      $color-index: ($i - 1) % length($color-map) + 1;
+      $color: map-get($color-map, $color-index);
       &:nth-child(#{$i}) {
         .hdg-grid-card__icon {
           border-color: map-get($color, accent);
