@@ -302,8 +302,8 @@ svg#principles {
     }
   }
   .wp-block-column:has(.wp-block-gallery) {
-      &.hdg-wp-block-gallery {
-        height: 19rem;
+      .hdg-wp-block-gallery {
+        height: 19rem !important;
         padding-inline-end: 1ch;
       }
   }

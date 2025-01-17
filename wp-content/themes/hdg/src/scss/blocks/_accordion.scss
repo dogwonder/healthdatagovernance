@@ -99,6 +99,10 @@
     border-bottom: 1px solid var(--wp--custom--color--border);
     padding-block-end: var(--wp--custom--spacing--gap);
     margin-block-end: var(--wp--custom--spacing--gap);
+    position: relative;
+    @include mq($until: lg) {
+      padding-inline-end: var(--wp--custom--spacing--gap);
+    }
     @include mq($from: lg) {
       display: grid;
       gap: var(--wp--custom--spacing--gap);
@@ -128,6 +132,11 @@
       cursor: pointer;
     }
   }
+  .hdg-accordion__section-counter {
+    @include mq($until: lg) {
+      display: none;
+    }
+  }
   .hdg-accordion__section-heading {
 
   }
@@ -135,6 +144,11 @@
   }
 
   .hdg-accordion__section-button {
+    @include mq($until: lg) {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
     &:hover {
       cursor: pointer;
     }
