@@ -131,7 +131,10 @@ svg#principles {
       border: 3px solid var(--wp--preset--color--highlight);
       border-radius: 50%;
       padding: var(--wp--custom--spacing--xs);
-      width: 60%;
+      width: 40%;
+      @include mq($from: lg) {
+        width: 60%;
+      }
       margin-inline: auto;
       position: relative;
       z-index: 2;
@@ -144,9 +147,9 @@ svg#principles {
       position: relative;
       z-index: 1;
       margin: -4rem 0 0 0;
-      background-color: var(--wp--preset--color--highlight);
       padding: var(--wp--custom--spacing--gap);
       padding-block-start: 5rem;
+      background-color: var(--wp--preset--color--highlight);
       border-radius: var(--radius);
       flex: 1;
       width: 100%;

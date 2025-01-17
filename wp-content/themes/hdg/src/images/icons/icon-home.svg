@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 5px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: blue;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        fill: #66aef8;
+      }
+
+      .cls-4 {
+        fill: #daa2f2;
+      }
+    </style>
+  </defs>
+  <ellipse class="cls-1" cx="127.92" cy="29.89" rx="13.22" ry="5.4"/>
+  <ellipse class="cls-2" cx="127.92" cy="226.74" rx="13.22" ry="5.4"/>
+  <circle class="cls-1" cx="127.92" cy="128.32" r="103.82"/>
+  <ellipse class="cls-1" cx="127.92" cy="213.67" rx="45.21" ry="18.46"/>
+  <ellipse class="cls-1" cx="127.92" cy="42.96" rx="45.21" ry="18.46"/>
+  <ellipse class="cls-1" cx="127.92" cy="187.89" rx="83.52" ry="21.51"/>
+  <ellipse class="cls-1" cx="127.92" cy="75.16" rx="83.04" ry="21.51"/>
+  <ellipse class="cls-1" cx="127.92" cy="152.91" rx="100.7" ry="24.59"/>
+  <ellipse class="cls-1" cx="127.92" cy="110.68" rx="102.16" ry="31.97"/>
+  <ellipse class="cls-1" cx="127.92" cy="128.32" rx="67.94" ry="103.82"/>
+  <ellipse class="cls-1" cx="127.92" cy="128.32" rx="25.23" ry="103.82"/>
+  <circle class="cls-2" cx="154.96" cy="33.17" r="3.27"/>
+  <circle class="cls-3" cx="140.86" cy="217.45" r="4.77"/>
+  <circle class="cls-3" cx="72.28" cy="68.72" r="4.77"/>
+  <circle class="cls-4" cx="182.26" cy="66.06" r="9.1"/>
+  <circle class="cls-4" cx="74.98" cy="193.34" r="7.18"/>
+</svg>

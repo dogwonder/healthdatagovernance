@@ -10,11 +10,11 @@
     grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-item-size), 1fr));
     
     @include mq($from: lg) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
     .hdg-card {
       &__heading  {
-        @extend %hdg-heading-xs;
+        @extend %hdg-heading-sm;
       }
     }
 
@@ -31,11 +31,64 @@
 
     &.cards-type--case-study-card {
       @include mq($from: lg) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
       .hdg-card {
-        &__heading  {
+        background-color: transparent;
+        padding: 0;
+        width: 100%;
+        &__inner {
+          display: flex;
+          flex-direction: column;
+        }
+        &__content {
+          background-color: #4b4cee;
+          flex: 1;
+          border-radius: var(--radius);
+          padding: 1.4rem;
+          position: relative;
+          z-index: 1;
+          margin: -4rem 0 0 0;
+          padding-block-start: 5rem;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+            border: 3px solid #cae7f1;
+            z-index: -1;
+            border-radius: var(--radius);
+          }
+        }
+        &__heading {
+          color: #cae7f1;
           @extend %hdg-heading-sm;
+          > a {
+            color: #cae7f1 !important;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+              text-decoration-color: #cae7f1;
+            }
+          }
+        }
+        &__image-placeholder {
+          background-color: transparent;
+          border: 3px solid #cae7f1;
+          border-radius: 50%;
+          padding: var(--wp--custom--spacing--xs);
+          width: 40%;
+          margin-inline: auto;
+          position: relative;
+          z-index: 2;
+          img {
+            border-radius: 50%;
+            background-color: var(--wp--preset--color--light);
+          }
         }
       }
     }
@@ -130,12 +183,8 @@
 
 }
 
-.hdg-media {
-
-}
 
 .hdg-card-media {
-  
   .wp-block-columns {
     display: flex;
     gap: var(--wp--custom--spacing--xl);
@@ -143,14 +192,5 @@
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
     }
-  }
-  &__image {
-  }
-  &__heading {
-    
-  }
-  &__text {
-  }
-  &__button {
   }
 }

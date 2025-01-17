@@ -366,7 +366,7 @@ class HDG_Site_Public {
 			'case-study-card' => [
                 'post_type' => 'case-study',
 				'has_link' => true,
-                'has_image' => true, 
+                'has_image' => false, 
 				'has_description' => false,
 				'heading_level' => "h2",
                 'thumbnail_size' => "hdg-medium-card"

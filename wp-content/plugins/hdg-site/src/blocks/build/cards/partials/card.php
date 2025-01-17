@@ -34,21 +34,28 @@ endif;
     : ""; ?> card-<?php echo $card_index; ?>"> 
 	<div class="hdg-card__inner">
 
-	<?php if ($has_image): ?>
-			<?php if (!empty($image)): ?>
-			<figure class="hdg-card__image">
-			<picture>
-				<?php if (has_post_thumbnail($card)) { ?>
-				<img src="<?php echo $image; ?>" alt="<?php echo $image_alt
-    ? $image_alt
-    : ""; ?>" loading="lazy" />
-				<?php } ?>
-			</picture>
-			</figure>
-			<?php endif; ?>
+	<?php if($post_type == 'case-study') : ?>
+		<div class="hdg-card__image hdg-card__image-placeholder hdg-card__image-placeholder--case-study">
+			<img src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.svg" alt="" loading="lazy" />
+		</div>
 	<?php else : ?>
+		<?php if ($has_image): ?>
+			<?php if (!empty($image)): ?>
+				<figure class="hdg-card__image">
+				<picture>
+					<?php if (has_post_thumbnail($card)) { ?>
+					<img src="<?php echo $image; ?>" alt="<?php echo $image_alt
+		? $image_alt
+		: ""; ?>" loading="lazy" />
+					<?php } ?>
+				</picture>
+				</figure>
+				<?php endif; ?>
+		<?php else : ?>
 			<div class="hdg-card__image hdg-card__image-placeholder"></div>
+		<?php endif; ?>
 	<?php endif; ?>
+	
 		
 		<div class="hdg-card__content">
 
