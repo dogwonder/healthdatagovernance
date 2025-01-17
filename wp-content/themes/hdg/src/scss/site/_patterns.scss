@@ -234,11 +234,22 @@ svg#principles {
   }
 }
 
-
 .wp-block-columns {
   .wp-block-column {
     .wp-block-heading:first-of-type {
       margin-block-start: 0 !important
     }
+  }
+  .wp-block-column:has(.wp-block-gallery) {
+    .wp-block-gallery.columns-4 {
+      @include mq($from: lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      &.hdg-wp-block-gallery {
+        height: 19rem;
+        padding-inline-end: 1ch;
+      }
+    }
+    
   }
 }
