@@ -241,6 +241,37 @@
     z-index: -1;
 }
 
+%gradient-box, 
+.gradient-box {
+  
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  max-width: 22em;
+
+  position: relative;
+  padding: 1em;
+  box-sizing: border-box;
+
+  $border: 5px;
+  color: #FFF;
+  background: white;
+  background-clip: padding-box; /* !important */
+  border: solid $border transparent; /* !important */
+  border-radius: 1em;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -$border; /* !important */
+    border-radius: inherit; /* !important */
+    background: linear-gradient(to right, #edf6f2, #4b4cee);
+  }
+}
+
 // Define the map with sizes and their corresponding values
 $sizes: (
   sm: var(--wp--custom--spacing--xs),

@@ -72,9 +72,10 @@
       aspect-ratio: 1 / 1;
       padding: 0;
       flex-grow: 0 !important;
-      border: 3px solid #503bf8;
-      border-radius: var(--radius);
+      // border: 3px solid #503bf8;
+      // border-radius: var(--radius);
       position: relative;
+      @extend %gradient-box;
       img {
         border-radius: var(--radius);
         background-color: white;
