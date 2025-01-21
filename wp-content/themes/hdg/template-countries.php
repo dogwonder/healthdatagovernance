@@ -107,7 +107,7 @@ $country_data_json = json_encode($country_data);
 			<div class="hdg-map">
 				<div id="map" class="hdg-map__container"></div>
 				<div class="hdg-map__regions">
-					<h2><?php esc_html_e( 'Regions', 'hdg' ); ?></h2>
+					<h3><?php esc_html_e( 'Regions', 'hdg' ); ?></h3>
 					<?php
 					$terms = get_terms(array(
 						'taxonomy' => 'region',
