@@ -23,7 +23,6 @@ $report = get_field('report') ?? '';
         <div class="stack">
             <p>
                 <?php
-                echo 'Source:  ';
                 $tags_list = get_the_tags();
                 if ($tags_list) {
                     foreach($tags_list as $tag) {

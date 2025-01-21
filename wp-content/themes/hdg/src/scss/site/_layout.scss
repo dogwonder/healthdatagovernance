@@ -130,8 +130,123 @@
     display: block;
     max-width: 100%;
     .hdg-map {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      @include mq($from: lg) {
+        flex-direction: row;
+      }
       max-width: 100%;
+      gap: var(--wp--custom--spacing--gap);
+      &__container {
+        order: 2;
+        @include mq($from: lg) {
+          order: 1;
+          max-width: 80%;
+        }
+      }
+      &__regions {
+        order: 1;
+        @include mq($from: lg) {
+          order: 2;
+        }
+      }
+      &__regions-list, 
+      &__countries-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      &__regions-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--wp--custom--spacing--gap);
+        margin-block-start: var(--wp--custom--spacing--lg);
+      }
+      &__regions-item {
+        @for $i from 1 through 6 { 
+          $color-index: ($i - 1) % length($color-map) + 1;
+          $color: map-get($color-map, $color-index);
+          &:nth-child(#{$i}) {
+            details {
+              background-color: map-get($color, background);
+              summary, .hdg-map__countries-item, button {
+                color: map-get($color, highlight);
+              }
+            }
+          }
+        }
+        details {
+          padding: 1rem;
+          border-radius: var(--radius);
+          margin-right: 4rem;
+          &:hover {
+            cursor: pointer;
+          }
+          summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--wp--custom--spacing--gap);
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            &::marker {
+              content: none;
+            }
+            svg {
+              width: 4rem;
+              height: 4rem;
+              position: relative;
+              right: -3rem;
+            }
+          }
+          &[open] {
+
+          } 
+        }
+      }
+      &__countries-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+      }
+      &__countries-item {
+        a {
+          color: inherit;
+        }
+      }
+      &__countries-popover {
+        position: relative;
+      }
+      &__countries-popover-button {
+        appearance: none;
+        text-decoration: none;
+        border: 0;
+        background-color: transparent;
+        font-weight: bold;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      // &__countries-popover-content {
+      //   position: absolute;
+      //   z-index: 4;
+      //   bottom: 100%;
+      //   justify-content: center;
+      //   align-items: center;
+      //   flex-direction: column;
+      //   width: 16rem;
+      //   padding: 1rem;
+      //   color: var(--wp--preset--color--dark);
+      //   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      //   background: linear-gradient(-140deg, #cde0d1, #bfb2d1, #d8edf3, #edf6f2);
+      //   &:before {
+      //       @extend %gradient-border;
+      //   }
+      //   &.open {
+      //     display: flex;
+      //   }
+      // }
     }
     #map {
       height: 65vh;
