@@ -190,7 +190,9 @@
             font-size: 1.2em;
             font-weight: bold;
             text-transform: uppercase;
+            &::-webkit-details-marker, 
             &::marker {
+              display: none;
               content: none;
             }
             svg {
