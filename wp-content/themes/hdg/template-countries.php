@@ -117,13 +117,14 @@ $country_data_json = json_encode($country_data);
 		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 		<div class="hdg-block hdg-hero is-style-default  alignfull has-text-align-left has-image ">
-        <div class="hdg-block__background">
+        	<div class="hdg-block__background">
 			<figure>
 				<picture>
 				<source media="(min-width: 64em)" srcset="<?php echo get_template_directory_uri(); ?>/dist/images/hero/5-Reports-1-1536x561.png">
 				<img src="<?php echo get_template_directory_uri(); ?>/dist/images/hero/5-Reports-1-640x234.png" alt="" width="640" height="234" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAGCAYAAADKfB7nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAhUlEQVQYlX2PQQrCQBRDXzLV+x9UcGEpre1MXIxWRerfBELIf1GSBRg4uAQawWhX2L02AE7Dcg9L3wUSOPrS2iqKUQEnIL/DRwT58IoLcg+7ph7Rvwk+sLc1zGNlvTcSsKr/FuT5WvSiUsS4wOnsXm6rvcLLVJlv2w9BI/uU66UyzX1SgAdeykd8MS+vngAAAABJRU5ErkJggg==)" fetchpriority="high">
 				</picture>
 			</figure>
+			</div>
 			<div class="hdg-hero__wrapper">
 				<div class="hdg-hero__inner">   
 					<div class="hdg-hero__content stack">
@@ -134,6 +135,7 @@ $country_data_json = json_encode($country_data);
 				</div>
         	</div>
         </div>
+
 	
 		
 
