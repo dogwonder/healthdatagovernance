@@ -285,9 +285,9 @@ countryData.forEach(function(country) {
 	// console.log(iconUrl);
 	const customIcon = L.icon({
 		iconUrl: iconUrl,
-		iconSize: [32, 32],
-		iconAnchor: [16, 32],
-		popupAnchor: [0, -32]
+		iconSize: [48, 48],
+		iconAnchor: [24, 48],
+		popupAnchor: [0, -48]
 	});
 
 	// Create a marker
