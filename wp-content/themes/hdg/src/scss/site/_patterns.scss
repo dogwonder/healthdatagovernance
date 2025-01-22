@@ -259,6 +259,14 @@ svg#principles {
   }
 }
 
+.wp-block-column .hdg-grid-cards {
+  .is-layout-grid {
+    @include mq($from: lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
 .wp-block-cb-carousel {
   padding-inline: 0 !important;
   .slick-track {

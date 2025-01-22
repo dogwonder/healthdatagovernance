@@ -69,6 +69,25 @@ if ( $country_query->have_posts() ) :
 		// Get the latitude and longitude from the lookup table
         $latitude = $coordinatesLookup[$iso_code]['latitude'] ?? '';
         $longitude = $coordinatesLookup[$iso_code]['longitude'] ?? '';
+
+		$region_terms = get_the_terms(get_the_ID(), 'region');
+		$default_region = array(
+			(object) array(
+				'term_id' => 0,
+				'name' => 'Default Region',
+				'slug' => 'default',
+				'term_group' => 0,
+				'term_taxonomy_id' => 0,
+				'taxonomy' => 'region',
+				'description' => '',
+				'parent' => 0,
+				'count' => 0,
+				'filter' => 'raw'
+			)
+		);
+
+		// If no region is assigned, use the default region
+		$region = (!empty($region_terms) && is_array($region_terms)) ? $region_terms : $default_region;
 		
         $country_data[] = array(
             'title' => get_the_title(),
@@ -78,8 +97,10 @@ if ( $country_query->have_posts() ) :
             'iso_code' => $iso_code, 
 			'report' => $report,
 			'latitude' => $latitude,
-			'longitude' => $longitude
+			'longitude' => $longitude, 
+			'region' => $region // Include the term slug for the region
         );
+
 		
     endwhile;
 endif;
@@ -117,7 +138,7 @@ $country_data_json = json_encode($country_data);
 					<?php if ($terms) : ?>
 						<ul class="hdg-map__regions-list">
 							<?php foreach ($terms as $term) : ?>
-								<li class="hdg-map__regions-item">
+								<li class="hdg-map__regions-item hdg-map__regions-item--<?php echo esc_attr($term->slug); ?>">
 									<details>
 										<summary>
 											<?php echo $term->name; ?>
@@ -181,7 +202,10 @@ $country_data_json = json_encode($country_data);
 													
 												<?php endwhile; ?>
 											</div>
+											<?php else : ?>
+											<p>Reports coming soon</p>
 										<?php endif; ?>
+
 									</details>
 
 								</li>
@@ -196,6 +220,14 @@ $country_data_json = json_encode($country_data);
 <script>
 // Initialize the map and set its view to the world
 const map = L.map('map').setView([20, 0], 3);
+
+const colors = {
+	'asia': '#4d8b74',
+	'africa': '#4b4cee',
+	'america': '#6025a3',
+	'europe': '#d9a4f0',
+	'oceania': '#d38420'
+};
 // const map = L.map('map').setView([53, 12], 5);
 
 // Add a tile layer (OpenStreetMap tiles)
@@ -219,10 +251,10 @@ L.tileLayer('<?php echo get_template_directory_uri(); ?>/src/map/{z}/{x}/{y}.png
 // L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 //Remove the zoom control
-map.zoomControl.remove();
+// map.zoomControl.remove();
 
 //Disable zooming
-map.scrollWheelZoom.disable();
+// map.scrollWheelZoom.disable();
 
 const countryData = <?php echo $country_data_json; ?>;
 // Define global offsets for latitude and longitude
@@ -232,12 +264,12 @@ const latitudeOffset = 0; // Adjust this value as needed
 const longitudeOffset = 0; // Adjust this value as needed
 
 // Define custom SVG icon
-const customIcon = L.icon({
-    iconUrl: '<?php echo get_template_directory_uri(); ?>/src/map/pin.svg', // Path to your custom SVG
-    iconSize: [32, 32], // Size of the icon
-    iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
-    popupAnchor: [0, -32] // Point from which the popup should open relative to the iconAnchor
-});
+// const customIcon = L.icon({
+//     iconUrl: '<?php echo get_template_directory_uri(); ?>/src/map/pin.svg', // Path to your custom SVG
+//     iconSize: [32, 32], // Size of the icon
+//     iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
+//     popupAnchor: [0, -32] // Point from which the popup should open relative to the iconAnchor
+// });
 
 // Store country markers using their ISO codes
 const countryMarkers = {};
@@ -245,10 +277,22 @@ const countryMarkers = {};
 // Loop through the countries array and add markers
 countryData.forEach(function(country) {
 
+	
 	const adjustedLatitude = parseFloat(country.latitude) + latitudeOffset;
 	const adjustedLongitude = parseFloat(country.longitude) + longitudeOffset;
+	const iconUrl = '<?php echo get_template_directory_uri(); ?>/src/map/pin-' + country.region[0].slug + '.svg';
+	
+	// console.log(iconUrl);
+	const customIcon = L.icon({
+		iconUrl: iconUrl,
+		iconSize: [32, 32],
+		iconAnchor: [16, 32],
+		popupAnchor: [0, -32]
+	});
+
 	// Create a marker
 	var marker = L.marker([adjustedLatitude, adjustedLongitude], { icon: customIcon }).addTo(map);
+
 
 	// Store the marker reference using the ISO code
     countryMarkers[country.iso_code] = marker;
@@ -279,6 +323,7 @@ countryData.forEach(function(country) {
 // Attach event listeners to buttons
 document.querySelectorAll('.hdg-map__countries-popover-button').forEach(button => {
     button.addEventListener('click', function() {
+
         const isoCode = this.getAttribute('data-iso-code');
         const marker = countryMarkers[isoCode];
 
