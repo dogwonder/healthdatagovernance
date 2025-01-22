@@ -111,19 +111,12 @@ $country_data_json = json_encode($country_data);
 ?>
 <div id="primary" class="hdg-content-wrapper">
 	
-	<?php
-	while ( have_posts() ) :
-		the_post();
-		get_template_part( 'template-parts/_templates/content', 'page' );
-	endwhile; // End of the loop.
-	?>
 
 		<!-- Leaflet CSS -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 		<!-- Leaflet JavaScript -->
 		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-	
 		<div class="entry-content">
 			<div class="hdg-map">
 				<div id="map" class="hdg-map__container"></div>
@@ -216,6 +209,13 @@ $country_data_json = json_encode($country_data);
 				</div>
 			</div>
 		</div>
+
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			get_template_part( 'template-parts/_templates/content', 'page' );
+		endwhile; // End of the loop.
+		?>
 
 <script>
 // Initialize the map and set its view to the world
