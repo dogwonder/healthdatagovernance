@@ -110,106 +110,12 @@ $country_data_json = json_encode($country_data);
 // print_r($country_data_json);
 ?>
 <div id="primary" class="hdg-content-wrapper">
-	
 
 		<!-- Leaflet CSS -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 		<!-- Leaflet JavaScript -->
 		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-		<div class="entry-content">
-			<div class="hdg-map">
-				<div id="map" class="hdg-map__container"></div>
-				<div class="hdg-map__regions">
-					<h3><?php esc_html_e( 'Regions', 'hdg' ); ?></h3>
-					<?php
-					$terms = get_terms(array(
-						'taxonomy' => 'region',
-						'hide_empty' => false
-					));
-					?>
-					<?php if ($terms) : ?>
-						<ul class="hdg-map__regions-list">
-							<?php foreach ($terms as $term) : ?>
-								<li class="hdg-map__regions-item hdg-map__regions-item--<?php echo esc_attr($term->slug); ?>">
-									<details>
-										<summary>
-											<?php echo $term->name; ?>
-											<svg xmlns="http://www.w3.org/2000/svg" id="icon-chevron" viewBox="0 0 128 128" fill="currentColor" role="img">
-												<g>
-													<polygon points="63.52 89.47 39.04 64.99 45.36 58.67 63.52 76.82 81.67 58.67 87.99 64.99 63.52 89.47" fill="currentColor" />
-													<polygon points="63.52 72.23 39.04 47.75 45.36 41.42 63.52 59.57 81.67 41.42 87.99 47.75 63.52 72.23" fill="currentColor" />
-												</g>
-												<path d="M63.52,120.73c-31.36,0-56.87-25.51-56.87-56.87S32.16,7,63.52,7s56.87,25.51,56.87,56.87-25.51,56.87-56.87,56.87ZM63.52,15.95c-26.42,0-47.92,21.5-47.92,47.92s21.5,47.92,47.92,47.92,47.92-21.5,47.92-47.92S89.94,15.95,63.52,15.95Z"/>
-												</svg>
-										</summary>
-										<?php
-										//For each term list the countries
-										$term_query = new WP_Query(array(
-											'post_type' => 'country',
-											'posts_per_page' => -1,
-											'tax_query' => array(
-												array(
-													'taxonomy' => 'region',
-													'field' => 'slug',
-													'terms' => $term->slug
-												)
-											)
-										));
-									
-										if ($term_query->have_posts()) : ?>
-											<div class="hdg-map__countries-list">
-												<?php while ($term_query->have_posts()) : $term_query->the_post(); ?>
-													<div class="hdg-map__countries-item">
-
-													<button
-														type="button"
-														class="hdg-map__countries-popover-button"
-														data-iso-code="<?php echo esc_attr(get_post_meta(get_the_ID(), 'iso_code', true)); ?>"
-													>
-														<?php the_title(); ?>
-													</button>
-														
-													<?php /* ?>
-													<div x-data="{ open: false, trigger: 'click' }" class="hdg-map__countries-popover">
-
-															<button
-																x-on:click="(trigger === 'click') ? open = !open : null"
-																type="button"
-																class="hdg-map__countries-popover-button"
-															>
-																<?php the_title(); ?>
-															</button>
-															<div
-															x-cloak
-															x-show="open"
-															:class="{ 'open': open }"
-															class="hdg-map__countries-popover-content"
-															>
-																<p>In reprehenderit, aute ullamco.</p>
-																<p x-text="poppverData.content"></p>
-															</div>
-														</div>
-													<?php */ ?>
-													</div>
-													
-												<?php endwhile; ?>
-											</div>
-											<?php else : ?>
-											<p>Reports coming soon</p>
-										<?php endif; ?>
-
-									</details>
-
-								</li>
-							<?php endforeach; ?>
-						</ul>
-					<?php endif; ?>
-
-				</div>
-			</div>
-		</div>
-
+	
 		<?php
 		while ( have_posts() ) :
 			the_post();
