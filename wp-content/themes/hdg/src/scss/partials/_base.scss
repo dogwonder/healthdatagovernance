@@ -67,7 +67,7 @@ hr {
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-  width: 100%;
+  width: 100% !important;
 }
 
 /* Remove all animations and transitions
