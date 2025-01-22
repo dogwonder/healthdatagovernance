@@ -129,7 +129,7 @@ $country_data_json = json_encode($country_data);
 				<div class="hdg-hero__inner">   
 					<div class="hdg-hero__content stack">
 						<div class="acf-innerblocks-container">
-							<?php the_title( '<h1 class="wp-block-heading" itemprop="headline">', '</h1>' ); ?>
+							<h1>National health data governance landscape reports</h1>
 						</div>
 					</div>
 				</div>
