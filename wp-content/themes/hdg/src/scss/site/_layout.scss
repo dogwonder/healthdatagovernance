@@ -227,6 +227,7 @@
           }
         }
       }
+      &__regions-item--america, 
       &__regions-item--north-and-south-america {
         $color: map-get(map-get($color-map, 5), background);
         $highlight: map-get(map-get($color-map, 5), highlight);
