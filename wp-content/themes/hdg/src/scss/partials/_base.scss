@@ -66,6 +66,10 @@ hr {
   border-bottom: 1px solid var(--wp--custom--color--border);
 }
 
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  width: 100%;
+}
+
 /* Remove all animations and transitions
 for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {

@@ -63,7 +63,7 @@ $block_classes_arr = array( $class_name, $block_classes );
 							<?php if($accordion_column_pdf) : 
 								 $accordion_column_url = $accordion_column_pdf['url'];	
 							?>
-								<p><a href="<?php echo $accordion_column_url; ?>" target="_blank" class="hdg-accordion__section-pdf hdg-button hdg-button--small">Download PDF</a></p>
+								<p><a href="<?php echo $accordion_column_url; ?>" target="_blank" class="hdg-accordion__section-pdf hdg-button hdg-button--small">Read more</a></p>
 							<?php endif; ?>
 						</div>
 						
