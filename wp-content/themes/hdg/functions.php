@@ -11,8 +11,9 @@
 SCRIPTS & ENQUEUEING
 *********************/
 $envs = array(
-	'development' => 'http://dev.hdgros.test',
-	'production'  => 'https://hdgros.com'
+	'development' => 'http://dev.healthdatagovernance.test',
+	'staging'  => 'https://hdg-staging.mystagingwebsite.com', 
+	'production'  => 'https://healthdatagovernance.org'
   );
 
   define('ENVIRONMENTS', serialize($envs));
