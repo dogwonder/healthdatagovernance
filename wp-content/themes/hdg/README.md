@@ -1,4 +1,4 @@
-# hdg Rós Wordpress theme
+# Health Data Governance Wordpress theme
 
 ## Requirements
 
@@ -41,7 +41,7 @@ For the Javascript we need to [manually download](https://frontend.design-system
 
 ## Custom typeface (optional)
 
-This theme uses the [Söhne typeface](https://klim.co.nz/collections/soehne/) by Klim Type Foundry, this is a licensed font for use on my own url (hdg Rós). If you wish to use this on your own website then you will need to [purchase a license](https://klim.co.nz/buy/soehne/). You can remove these form fontFamilies[] in theme.json, functions.php and typography.scss. These fonts are not included in the repo. 
+This theme uses the [Söhne typeface](https://klim.co.nz/collections/soehne/) by Klim Type Foundry, this is a licensed font for use on my own url (Health Data Governance). If you wish to use this on your own website then you will need to [purchase a license](https://klim.co.nz/buy/soehne/). You can remove these form fontFamilies[] in theme.json, functions.php and typography.scss. These fonts are not included in the repo. 
 
 ***NOTE*** I've added the `dist/fonts` folder to gitignore so the commerical fonts don't accidentally get committed to this public repo.
 
@@ -53,20 +53,20 @@ This requires [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/
 
 These are saved in `wp-plugins\hdg-blocks\src\acf-json`
 
-- hdg Rós Accordion - based on GOV.UK's [accordion pattern](https://design-system.service.gov.uk/components/accordion/)
-- hdg Rós Banner - text and background image similar to hero but less showy
-- hdg Rós Breadcrumbs - based on GOV.UK's [breadcrumbs pattern](https://design-system.service.gov.uk/components/breadcrumbs/) 
-- hdg Rós Content - text and image with button (reversible)
-- hdg Rós Cards - grid of cards linking to other pages, title, excerpt and featured image
-- hdg Rós Embed - lite embed custom element for [Youtube](https://github.com/paulirish/lite-youtube-embed) and [Vimeo](https://github.com/slightlyoff/lite-vimeo)
-- hdg Rós Promo card - offset image and content block
-- hdg Rós Hero Section - hero with big image / video as background
-- hdg Rós Related pages - list of related links
-- hdg Rós Summary list - based on GOV.UK's [summary list pattern](https://design-system.service.gov.uk/components/summary-list/) 
+- Health Data Governance Accordion - based on GOV.UK's [accordion pattern](https://design-system.service.gov.uk/components/accordion/)
+- Health Data Governance Banner - text and background image similar to hero but less showy
+- Health Data Governance Breadcrumbs - based on GOV.UK's [breadcrumbs pattern](https://design-system.service.gov.uk/components/breadcrumbs/) 
+- Health Data Governance Content - text and image with button (reversible)
+- Health Data Governance Cards - grid of cards linking to other pages, title, excerpt and featured image
+- Health Data Governance Embed - lite embed custom element for [Youtube](https://github.com/paulirish/lite-youtube-embed) and [Vimeo](https://github.com/slightlyoff/lite-vimeo)
+- Health Data Governance Promo card - offset image and content block
+- Health Data Governance Hero Section - hero with big image / video as background
+- Health Data Governance Related pages - list of related links
+- Health Data Governance Summary list - based on GOV.UK's [summary list pattern](https://design-system.service.gov.uk/components/summary-list/) 
 
 ## Custom block patterns (experimental / in progress)
 
-Included in the plugin *hdg: Blocks* alongside the custom blocks this allows for pre-made collections of blocks, accessible under the 'hdg Rós' in patterns dropdown
+Included in the plugin *hdg: Blocks* alongside the custom blocks this allows for pre-made collections of blocks, accessible under the 'Health Data Governance' in patterns dropdown
 
 - Layout page
 - Lockable content
@@ -80,7 +80,7 @@ Included in the plugin *hdg: Blocks* alongside the custom blocks this allows for
 
 `template-layout.php` 
 
-For home and gateway pages, allows for full width blocks (e.g. hdg Rós Hero / hdg Rós Feature) these can be used in any post or page but would be restricted to a fixed width and look weird. This also removes the page title (can be re-added via a heading block)
+For home and gateway pages, allows for full width blocks (e.g. Health Data Governance Hero / Health Data Governance Feature) these can be used in any post or page but would be restricted to a fixed width and look weird. This also removes the page title (can be re-added via a heading block)
 
 ### Guide template
 

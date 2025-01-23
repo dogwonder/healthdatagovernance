@@ -1,6 +1,6 @@
 <?php
 $site_description           = esc_attr( get_bloginfo( 'description', 'display' ) );
-$hdg_meta['title']       = 'hdg Rós - ' . $post->post_title ?? '';
+$hdg_meta['title']       = 'Health Data Governance - ' . $post->post_title ?? '';
 $hdg_meta['description'] = strip_shortcodes( wp_trim_words( get_post_field( 'post_content', $post ), 20 ) );
 $hdg_meta['description'] = rtrim( str_replace( '&hellip;', '', $hdg_meta['description'] ), '' );
 if ( has_post_thumbnail() ) {
