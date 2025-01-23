@@ -183,6 +183,10 @@ svg#principles {
         }
         .wp-block-safe-svg-svg-icon {
           border-color: map-get($color, accent) !important;
+          .fas {
+            background-color: map-get($color, accent) !important;
+            color: map-get($color, background) !important;
+          }
           .safe-svg-inside {
             background-color: map-get($color, accent) !important;
             svg {
@@ -245,6 +249,7 @@ svg#principles {
         display: flex;
         align-items: center;
         justify-content: center;
+        .fas, 
         .safe-svg-inside {
           width: 100% !important;
           height: 100% !important;
@@ -253,6 +258,9 @@ svg#principles {
           justify-content: center;
           border-radius: 50%;
           padding: 1rem;
+        }
+        .fas {
+          font-size: 3rem;
         }
       }
     }
