@@ -127,16 +127,14 @@
 //Countries
 .page-template-template-countries {
   .entry-content {
-    // width: 100%;
-    // display: block;
-    // max-width: 100%;
     .hdg-map {
       display: flex;
       flex-direction: column;
+      margin-block: var(--wp--custom--spacing--gap); 
+      // max-width: 100%;
       @include mq($from: lg) {
         flex-direction: row;
       }
-      max-width: 100%;
       gap: var(--wp--custom--spacing--gap);
       &__container {
         order: 2;
@@ -274,41 +272,12 @@
           cursor: pointer;
         }
       }
-      // &__countries-popover-content {
-      //   position: absolute;
-      //   z-index: 4;
-      //   bottom: 100%;
-      //   justify-content: center;
-      //   align-items: center;
-      //   flex-direction: column;
-      //   width: 16rem;
-      //   padding: 1rem;
-      //   color: var(--wp--preset--color--dark);
-      //   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      //   background: linear-gradient(-140deg, #cde0d1, #bfb2d1, #d8edf3, #edf6f2);
-      //   &:before {
-      //       @extend %gradient-border;
-      //   }
-      //   &.open {
-      //     display: flex;
-      //   }
-      // }
     }
     #map {
       height: 65vh;
       width: 100%;
       margin: 0 auto;
       background: transparent;
-      // &:before {
-      //   content: "";
-      //   position: absolute;
-      //   inset: 0;
-      //   border-radius: 15px;
-      //   border: 10px solid transparent;
-      //   background: linear-gradient(140deg, #9568aa, #d8edf3, #edf6f2) border-box;
-      //   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      //   mask-composite: exclude;
-      // }
       &:after {
         content: "";
         width: 40px;

@@ -1,1 +1,0 @@
-window.ko = require('knockout');

@@ -130,6 +130,7 @@ $country_data_json = json_encode($country_data);
 					<div class="hdg-hero__content stack">
 						<div class="acf-innerblocks-container">
 							<h1><?php esc_html_e( 'National health data governance landscape reports', 'hdg' ); ?></h1>
+							<img src="<?php echo get_template_directory_uri(); ?>/dist/images/icons/icon-assesment-tool.svg" alt="Assessment tool icon" width="128" height="128">
 						</div>
 					</div>
 				</div>
@@ -241,7 +242,7 @@ $country_data_json = json_encode($country_data);
 
 <script>
 // Initialize the map and set its view to the world
-const map = L.map('map').setView([20, 0], 3);
+const map = L.map('map').setView([20, 0], 2);
 
 const colors = {
 	'asia': '#4d8b74',
@@ -260,7 +261,8 @@ const colors = {
 // Add a tile layer using locally sourced images
 L.tileLayer('<?php echo get_template_directory_uri(); ?>/src/map/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 18,
+    maxZoom: 4,
+	minZoom: 1, 
     tileSize: 256,
     zoomOffset: 0
 }).addTo(map);
