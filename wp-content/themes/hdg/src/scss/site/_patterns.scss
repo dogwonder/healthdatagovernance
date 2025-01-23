@@ -171,7 +171,7 @@ svg#principles {
       height: 3rem;
     }
 
-    @for $i from 1 through 10 { 
+    @for $i from 1 through 15 { 
       $color-index: ($i - 1) % length($color-map) + 1;
       $color: map-get($color-map, $color-index);
       &:nth-child(#{$i}) {
