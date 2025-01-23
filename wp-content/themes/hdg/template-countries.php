@@ -135,7 +135,13 @@ $country_data_json = json_encode($country_data);
 				</div>
         	</div>
         </div>
-		
+
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			get_template_part( 'template-parts/_templates/content', 'page' );
+		endwhile; // End of the loop.
+		?>
 
 		<div class="entry-content">
 			<div class="hdg-map">
@@ -232,13 +238,6 @@ $country_data_json = json_encode($country_data);
 			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/wp-content/uploads/2025/01/National-health-data-governance-landscape-reports-Explanatory-Note-and-Methodology-.pdf" target="_blank" rel="noreferrer noopener">Full Explanatory Note &amp; Methodology PDF</a></div>
 			</div>
 		</div>
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			get_template_part( 'template-parts/_templates/content', 'page' );
-		endwhile; // End of the loop.
-		?>
 
 <script>
 // Initialize the map and set its view to the world
