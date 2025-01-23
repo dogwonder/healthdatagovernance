@@ -135,8 +135,6 @@ $country_data_json = json_encode($country_data);
 				</div>
         	</div>
         </div>
-
-	
 		
 
 		<div class="entry-content">
@@ -229,6 +227,9 @@ $country_data_json = json_encode($country_data);
 					<?php endif; ?>
 
 				</div>
+			</div>
+			<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/wp-content/uploads/2025/01/National-health-data-governance-landscape-reports-Explanatory-Note-and-Methodology-.pdf" target="_blank" rel="noreferrer noopener">Full Explanatory Note &amp; Methodology PDF</a></div>
 			</div>
 		</div>
 
