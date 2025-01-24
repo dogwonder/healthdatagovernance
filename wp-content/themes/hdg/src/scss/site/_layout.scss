@@ -196,8 +196,8 @@
         }
       }
       &__regions-item--africa {
-        $color: map-get(map-get($color-map, 1), background);
-        $highlight: map-get(map-get($color-map, 1), highlight);
+        $color: #4b4cee;
+        $highlight: #cae7f1;
         details {
           background-color: $color;
           summary, .hdg-map__countries-item, button, p {
@@ -206,8 +206,8 @@
         }
       }
       &__regions-item--asia {
-        $color: map-get(map-get($color-map, 4), background);
-        $highlight: map-get(map-get($color-map, 4), highlight);
+        $color: #4d8b74;
+        $highlight: #c1efc5;
         details {
           background-color: $color;
           summary, .hdg-map__countries-item, button, p {
@@ -216,8 +216,8 @@
         }
       }
       &__regions-item--europe {
-        $color: map-get(map-get($color-map, 2), background);
-        $highlight: map-get(map-get($color-map, 2), highlight);
+        $color: #d9a4f0;
+        $highlight: #6025a3;
         details {
           background-color: $color;
           summary, .hdg-map__countries-item, button, p {
@@ -227,8 +227,8 @@
       }
       &__regions-item--america, 
       &__regions-item--north-and-south-america {
-        $color: map-get(map-get($color-map, 5), background);
-        $highlight: map-get(map-get($color-map, 5), highlight);
+        $color: #6025a3;
+        $highlight: #d9a4f0;
         details {
           background-color: $color;
           summary, .hdg-map__countries-item, button, p {
@@ -237,8 +237,6 @@
         }
       }
       &__regions-item--oceania {
-        // $color: map-get(map-get($color-map, 1), background);
-        // $highlight: map-get(map-get($color-map, 1), highlight);
         $color: #d38420;
         $highlight: #f7e7d9;
         details {
