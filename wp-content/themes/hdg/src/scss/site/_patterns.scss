@@ -121,6 +121,13 @@ svg#principles {
       grid-template-columns: repeat(5, 1fr);
     }
   }
+  &.hdg-grid-cards--3 {
+    .is-layout-grid {
+      @include mq($from: lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
   &.hdg-grid-cards--6 {
     .is-layout-grid {
       @include mq($from: lg) {
