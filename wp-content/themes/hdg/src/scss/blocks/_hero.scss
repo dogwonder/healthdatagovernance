@@ -73,11 +73,10 @@
       }
     }
 
-    .wp-block-image {
-      img {
-        max-width: 8rem;
+    .safe-svg-cover .safe-svg-inside, 
+    .wp-block-image img  {
+      max-width: 8rem;
         margin-inline: auto;
-      }
     }
 
     //Block style varients - styles in block.json
