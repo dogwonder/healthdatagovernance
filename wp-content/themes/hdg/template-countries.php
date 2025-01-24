@@ -130,7 +130,7 @@ $country_data_json = json_encode($country_data);
 					<div class="hdg-hero__content stack">
 						<div class="acf-innerblocks-container">
 							<h1><?php esc_html_e( 'National health data governance landscape reports', 'hdg' ); ?></h1>
-							<img src="<?php echo get_template_directory_uri(); ?>/dist/images/icons/icon-assesment-tool.svg" alt="Assessment tool icon" width="128" height="128">
+							<img src="<?php echo get_template_directory_uri(); ?>/dist/images/icons/icon-reports.svg" alt="Assessment tool icon" width="128" height="128">
 						</div>
 					</div>
 				</div>
