@@ -73,6 +73,13 @@
       }
     }
 
+    .wp-block-image {
+      img {
+        max-width: 6rem;
+        margin-inline: auto;
+      }
+    }
+
     //Block style varients - styles in block.json
     &.is-style-monochrome {
       .hdg-block__background img {
