@@ -168,6 +168,7 @@ svg#principles {
       width: 100%;
       a {
         text-decoration: none;
+        word-break: break-word;
         &:hover {
           text-decoration: underline;
         }
