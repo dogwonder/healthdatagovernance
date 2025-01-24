@@ -122,8 +122,10 @@ svg#principles {
     }
   }
   &.hdg-grid-cards--6 {
-    @include mq($from: lg) {
-      grid-template-columns: repeat(6, 1fr);
+    .is-layout-grid {
+      @include mq($from: lg) {
+        grid-template-columns: repeat(6, 1fr);
+      }
     }
   }
   .hdg-grid-card {
