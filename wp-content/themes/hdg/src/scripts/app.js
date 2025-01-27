@@ -219,6 +219,39 @@
         });
     }
 
+    const galleryCount = () => {
+
+        // Get all instances of the wp-block-gallery
+        const galleries = document.querySelectorAll('.wp-block-gallery-columns');
+
+        // Loop through each gallery
+        galleries.forEach(gallery => {
+            // Get the value of the first image's data-image-total attribute
+            const firstImage = gallery.querySelector('.wp-block-image');
+            const imageTotal = firstImage ? firstImage.getAttribute('data-image-total') : null;
+
+            if (imageTotal) {
+                // Create a new element to display the total
+                const totalElement = document.createElement('span');
+                totalElement.classList.add('gallery-total');
+                totalElement.textContent = `(${imageTotal})`;
+
+                // Find the first h3 element within the gallery
+                const firstH3 = gallery.querySelector('h3');
+
+                if (firstH3) {
+                    // Insert the total element before the first h3 element
+                    firstH3.appendChild(totalElement);
+                } else {
+                    // If no h3 element is found, insert the total element above the gallery
+                    gallery.parentNode.insertBefore(totalElement, gallery);
+                }
+
+            }
+        });
+        
+    }
+
     class GradientInteractive {
         constructor() {
             this.interBubble = document.querySelector('.interactive');
@@ -288,6 +321,7 @@
         scrollWrapper();
         toggleNav('#nav-toggle', '#nav-primary', '#masthead');
         sliderEqualHeight();
+        galleryCount();
      });
 
      //After window load

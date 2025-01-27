@@ -61,6 +61,13 @@
     }
   }
   //Gallery
+  .wp-block-gallery-columns {
+    .wp-block-heading {
+      .gallery-total {
+        margin-inline-start: 0.5ch;
+      }
+    }
+  }
   .wp-block-gallery {
     display: grid;
     gap: var(--wp--custom--spacing--xs) !important;

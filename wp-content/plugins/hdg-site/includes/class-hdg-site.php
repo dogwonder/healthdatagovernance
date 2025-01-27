@@ -196,6 +196,9 @@ class HDG_Site {
 
 		$this->loader->add_filter('acf/prepare_field/name=featured_card_id', $plugin_acf, 'hdg_acf_field_wrapper_class');
 
+		//Gallery class
+		$this->loader->add_filter( 'render_block_core/gallery', $plugin_acf, 'hdg_utility_edit_gallery_markup', 10, 3 );
+
 	}
 
 	/**
