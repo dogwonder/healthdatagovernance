@@ -57,7 +57,7 @@ $has_image = has_post_thumbnail($card) ? true : false;
 			if($cards_type == 'article-card') :
 				$article_link = get_field('article_link', $card) ?? '';
 				if (!empty($article_link)) {
-					echo '<a href="' . esc_url($article_link) . '">' . get_the_title($card) . '</a>';
+					echo '<a target="_blank" href="' . esc_url($article_link) . '">' . get_the_title($card) . '</a>';
 				} else {
 					echo '<a href="' . esc_url(get_permalink($card)) . '">' . get_the_title($card) . '</a>';
 				}
