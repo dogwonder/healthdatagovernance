@@ -33,8 +33,8 @@ if ( class_exists( 'acf' ) ) {
 			<div class="hdg-block__background">
 				<figure>
 					<picture>
-						<source media="(min-width: 64em)" srcset="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/2-Principles.png">
-						<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/2-Principles-640x233.png" alt="" width="640" height="233" fetchpriority="high">
+						<source media="(min-width: 64em)" srcset="/wp-content/uploads/2024/12/2-Principles.png">
+						<img src="/wp-content/uploads/2024/12/2-Principles-640x233.png" alt="" width="640" height="233" fetchpriority="high">
 					</picture>
 				</figure>
 			</div>
@@ -48,7 +48,7 @@ if ( class_exists( 'acf' ) ) {
 							Health Data<br />
 							Governance Principles
 							</h1>
-							<img src="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/12/2-icons.svg" />
+							<img src="/wp-content/uploads/2024/12/2-icons.svg" />
 						</div>
 					</div>
 				</div>
@@ -74,8 +74,9 @@ if ( class_exists( 'acf' ) ) {
 							<template x-if="!replaceContent">
 								<p>The Health Data Governance Principles bring a human rights and equity lens to the governance of health data and are oriented towards supporting sustainable and resilient public health systems that can deliver universal health coverage (UHC). They create a common vision where all people and communities can share, use and benefit from health data.<br /><br />
 								The Health Data Governance Principles have been primarily driven and developed by civil society through an inclusive and consultative, bottom-up process stewarded by Transform Health. This process brought together more than 200 contributors from more than 130 organisations through global and regional workshops and a one-month public consultation period.<br /><br />
-								<strong>Download the Principles</strong> (<a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/EN-Health-Data-Governance-Principles-1.pdf">English</a> | <a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/FR-Health-Data-Governance-Principles.pdf">French</a> | <a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/SP-Health-Data-Governance-Principles.pdf">Spanish</a>)<br /><br />
-								<strong>Download a snapshot of the Principles</strong> (<a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/EN-Snapshot-of-the-Principles.pdf">English</a> | <a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/FR-Snapshot-of-the-Principles.pdf">French</a> | <a target="_blank" href="https://hdg-staging.mystagingwebsite.com/wp-content/uploads/2024/11/SP-Snapshot-of-the-Principles.pdf">Spanish</a>)</p>
+								<strong>Download the Principles</strong> (<a target="_blank" href="/wp-content/uploads/2024/11/EN-Health-Data-Governance-Principles-1.pdf">English</a> | <a target="_blank" href="
+								/wp-content/uploads/2024/11/FR-Health-Data-Governance-Principles.pdf">French</a> | <a target="_blank" href="/wp-content/uploads/2024/11/SP-Health-Data-Governance-Principles.pdf">Spanish</a>)<br /><br />
+								<strong>Download a snapshot of the Principles</strong> (<a target="_blank" href="/wp-content/uploads/2024/11/EN-Snapshot-of-the-Principles.pdf">English</a> | <a target="_blank" href="/wp-content/uploads/2024/11/FR-Snapshot-of-the-Principles.pdf">French</a> | <a target="_blank" href="/wp-content/uploads/2024/11/SP-Snapshot-of-the-Principles.pdf">Spanish</a>)</p>
 							</template>
 
 							<!-- Replaced Content -->

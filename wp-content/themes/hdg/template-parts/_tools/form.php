@@ -325,7 +325,7 @@ $principles = array_merge($core_prinicples_1, $core_prinicples_2, $core_prinicpl
                         Task: Using the document defined here: <span id="sourceDocumentURL">[source document link]</span>
                     </p>
                     <p class="govuk-notification-banner__heading govuk-!-text-break-word ">
-                        Identify the clauses or specific sentences that correspond to each of the following core principles found here https://hdg-staging.mystagingwebsite.com/wp-content/themes/hdg/src/vendor/core-principles.txt. 
+                        Identify the clauses or specific sentences that correspond to each of the following core principles found here. 
                     </p>
                     <p class="govuk-notification-banner__heading">
                         For each principle, provide the relevant clause or sentence from the document in a table format. 

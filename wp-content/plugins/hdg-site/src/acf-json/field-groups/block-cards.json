@@ -41,6 +41,7 @@
             },
             "choices": {
                 "default": "Default",
+                "article-card": "Article card",
                 "community-voice-card": "Community voice card",
                 "case-study-card": "Case study voice card"
             },
@@ -323,5 +324,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737027863
+    "modified": 1737973951
 }
