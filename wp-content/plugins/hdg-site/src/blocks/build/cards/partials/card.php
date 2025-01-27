@@ -54,10 +54,10 @@ $has_image = has_post_thumbnail($card) ? true : false;
 			<<?php echo $heading_level ?> class="hdg-card__heading">
 
 			<?php 
-			if($cards_type == 'article-card') :
+			if($cards_type == 'article-card' || $cards_type == 'community-voice-card') :
 				$article_link = get_field('article_link', $card) ?? '';
 				if (!empty($article_link)) {
-					echo '<a href="' . esc_url($article_link) . '">' . get_the_title($card) . '</a>';
+					echo '<a target="_blank" href="' . esc_url($article_link) . '">' . get_the_title($card) . '</a>';
 				} else {
 					echo '<a href="' . esc_url(get_permalink($card)) . '">' . get_the_title($card) . '</a>';
 				}
