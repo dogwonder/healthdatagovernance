@@ -28,7 +28,11 @@ $has_image = has_post_thumbnail($card) ? true : false;
 
 	<?php if($post_type == 'case-study') : ?>
 		<div class="hdg-card__image hdg-card__image-placeholder hdg-card__image-placeholder--case-study">
-			<img src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.svg" alt="" loading="lazy" />
+			<?php if (has_post_thumbnail($card)) { ?>
+				<img src="<?php echo $image; ?>" alt="<?php echo $image_alt ?>" loading="lazy" />
+			<?php } else { ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.svg" alt="" loading="lazy" />
+			<?php } ?>
 		</div>
 	<?php else : ?>
 		<?php if ($has_image): ?>
