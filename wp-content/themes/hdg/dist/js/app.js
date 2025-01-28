@@ -237,11 +237,11 @@
                 totalElement.textContent = `(${imageTotal})`;
 
                 // Find the first h3 element within the gallery
-                const firstH3 = gallery.querySelector('h3');
+                const firstHeading = gallery.querySelector('.wp-block-heading');
 
-                if (firstH3) {
+                if (firstHeading) {
                     // Insert the total element before the first h3 element
-                    firstH3.appendChild(totalElement);
+                    firstHeading.appendChild(totalElement);
                 } else {
                     // If no h3 element is found, insert the total element above the gallery
                     gallery.parentNode.insertBefore(totalElement, gallery);
