@@ -352,6 +352,7 @@ document.querySelectorAll('.hdg-map__countries-popover-button').forEach(button =
         const marker = countryMarkers[isoCode];
 
         if (marker) {
+			document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
             marker.openPopup();
             //map.setView(marker.getLatLng(), 5); // Adjust zoom level as needed
         }
