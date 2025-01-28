@@ -41,6 +41,15 @@ if (is_wp_error($versionData)) {
 <meta name="view-transition" content="same-origin" />
 <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/dist/images/fav/manifest.json">
 <?php include(locate_template( 'template-parts/_organisms/meta-tags.php' )) ; ?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYBBPRR3KE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DYBBPRR3KE');
+</script>
 </head>
 <body <?php body_class( 'no-js govuk-frontend-supported' ); ?>>
 <script>document.body.className = document.body.className.replace('no-js', 'js-enabled');</script>
