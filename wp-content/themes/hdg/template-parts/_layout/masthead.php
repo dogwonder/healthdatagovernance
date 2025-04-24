@@ -19,7 +19,7 @@
                     <?php if ( is_page_template( array( 'template-principles-core.php', 'template-principles-alt.php' ) ) ) : ?>
                         <img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo-principles.png" alt="<?php bloginfo( 'name' ); ?>">
                     <?php else : ?>
-                        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.png" alt="<?php bloginfo( 'name' ); ?>">
+                        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" width="120" height="117">
                     <?php endif; ?>
                 <?php endif; ?>
                 
