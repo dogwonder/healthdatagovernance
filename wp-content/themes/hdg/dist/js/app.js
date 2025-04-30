@@ -325,8 +325,8 @@
      });
 
      //After window load
-    window.addEventListener('load', function() {
-        new GradientHeight();
-    });
+    // window.addEventListener('load', function() {
+    //     new GradientHeight();
+    // });
     
 })();

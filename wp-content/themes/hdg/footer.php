@@ -28,6 +28,7 @@
       });
   }
 </script>
+<?php /* ?>
 <div class="gradient-bg" data-gradient>
       <svg xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -51,5 +52,6 @@
         <div class="interactive"></div>
       </div>
 </div>
+<?php */ ?>
 </body>
 </html>
